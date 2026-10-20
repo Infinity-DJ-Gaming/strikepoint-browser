@@ -1,6 +1,6 @@
 {
   "version": "6.0.0",
-  "builtAt": "2026-10-20T19:46:50.729556+00:00",
+  "builtAt": "2026-10-20T19:59:00.068981+00:00",
   "scope": "Bounded browser gameplay, render, local account-grant and real WebRTC checks",
   "unitChecks": 48,
   "coreBrowser": {
@@ -107,7 +107,7 @@
         "T stock hands show native fingerless gloves and hide SAS sleeves",
         "CT stock hands show native SAS gloves and sleeves",
         "actual buy-menu purchases retain selected animated weapon visibility",
-        "equipped glove skin replaces both CT and T stock meshes",
+        "equipped glove skin replaces stock CT gloves while retaining native SAS sleeves",
         "custom glove skin remains equipped after changing teams",
         "case opening uses synchronized normal and circular magnified reels",
         "case reward reveals the actual native 3D mesh",
@@ -782,7 +782,7 @@
     "inventory-ui.mjs": "de5d4552b6ce857b36fed0773ef7692697038d6472c112392494c107174250c0",
     "item-inspector.mjs": "3855ff8cd404f45b05c64e5e6c9fc3e483544e25e2811daa03af3b9effffb24d",
     "loadout.mjs": "c87189adfacaa51b4760e80e2eebb4b810dcc79336bec3edd92731e6d572ee54",
-    "main.js": "95b1e2d0b204d8137f44457b7b62a1e8b0018cd4fc5a8f31d3e0fb39180c3e85",
+    "main.js": "dba35bda67c04a63639c805592491387f795259128990bdc009b9eb6ec31d329",
     "mechanics.mjs": "8d7ae46dc8944f9d9b5abd984bc86e34487280ea4a6ecadb059f67f49cd532c4",
     "menu.mjs": "f21a8a094cb07073afe3c8ee8bfc53c28a808d9a99a8243d2ac14f67efa265d4",
     "nav.mjs": "40e6b6c01507393cfe4ff8d548c835253860e219f380f62a31260b2e0e48803d",
