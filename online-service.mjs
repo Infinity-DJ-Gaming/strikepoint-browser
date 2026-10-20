@@ -1,5 +1,5 @@
-import {ONLINE_CONFIG} from './online-config.mjs?v=20261020-5';
-import {randomCode,cleanCode,validCode,cleanName,members,availableSlot,canStart,REGIONS} from './online-protocol.mjs?v=20261020-5';
+import {ONLINE_CONFIG} from './online-config.mjs?v=20261020-6';
+import {randomCode,cleanCode,validCode,cleanName,members,availableSlot,canStart,REGIONS} from './online-protocol.mjs?v=20261020-6';
 
 export class OnlineService extends EventTarget{
  constructor(config=ONLINE_CONFIG){super();this.config=config;this.user=null;this.profile=null;this.room=null;this.code=null;this.friends={};this.requests={};this.invites={};this.party=null;this.partyCode=null;this.partyUnsubs=[];this.partyDisconnects=[];this.unsubs=[];this.roomUnsubs=[];this.disconnects=[];this.connected=false;this.initializing=null;}

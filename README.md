@@ -2,19 +2,19 @@
 
 Unofficial, noncommercial Counter-Strike practice and casual multiplayer in the browser, using native Valve map, model, animation, texture and sound assets. This is an independent browser implementation.
 
-**Play Update 5:** https://infinity-dj-gaming.github.io/strikepoint-browser/?update=5
+**Play Update 6:** https://infinity-dj-gaming.github.io/strikepoint-browser/?update=6
 
 ## Multiplayer
 
 Google/email sign-in, profiles, friend codes, accepted friend requests, presence and invitations use Firebase. Create a private room or find a real open room in your selected region. Up to five friends can form a party and queue on the same team. Ready up, then let the host start. Bots can fill empty 5v5 slots. WebRTC carries gameplay; Metered TURN relays connections that need it.
 
-**K** push-to-talk after enabling the microphone. **Y** All text chat. **U** Team text chat. Voice supports Team, Party and All channels, per-player mute and receive volume. Escape opens the match menu. The online match continues while its menu is open. Local practice still pauses explicitly with Escape.
+Enable the microphone in the lobby before joining a room. Party voice and Party text work before queueing. **K** push-to-talk after enabling the microphone. **Y** All text chat. **U** Team text chat. Voice supports Team, Party and All channels, per-player mute and receive volume. Escape opens the match menu. The online match continues while its menu is open. Local practice still pauses explicitly with Escape.
 
 WASD move, mouse aim, Shift walk, Ctrl crouch, Space jump, B buy, R reload, F inspect, G drop, E use/defuse/pickup, 1/2/3 weapons, 4 grenades, 5 C4. Controls are remappable. Ordinary guns do not ADS; eligible scoped weapons zoom. Settings cover graphics, audio, crosshair, HUD, bots and local bunny-hop practice.
 
 Weapon selection now applies native poses immediately and synchronizes the visible model. **Settings → Repair Weapon View** rebuilds the cached native rig and restores standard offsets without deleting inventory.
 
-See [UPDATE-5.md](UPDATE-5.md) for operation, validation and limitations.
+See [UPDATE-6.md](UPDATE-6.md) for operation, validation and limitations.
 
 ## Local use and source
 

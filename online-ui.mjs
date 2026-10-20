@@ -1,6 +1,6 @@
-import {OnlineService} from './online-service.mjs?v=20261020-5';
-import {OnlineTransport} from './online-transport.mjs?v=20261020-5';
-import {members,canStart,REGIONS} from './online-protocol.mjs?v=20261020-5';
+import {OnlineService} from './online-service.mjs?v=20261020-6';
+import {OnlineTransport} from './online-transport.mjs?v=20261020-6';
+import {members,canStart,REGIONS} from './online-protocol.mjs?v=20261020-6';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const $=id=>document.getElementById(id);
 export function installOnline({isReady,onMatch,onLeave,onData,onPeer,config}={}){

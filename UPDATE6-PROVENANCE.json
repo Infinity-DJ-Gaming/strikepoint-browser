@@ -1,0 +1,32 @@
+{
+  "update": 6,
+  "nativeTeamHands": {
+    "CT": "arms.glb: firstperson_default_gloves_arms + firstperson_sleeves / glove_hardknuckle_black + sleeve_ctm_sas",
+    "T": "barearms.glb: glove_fingerless + bare_arm_133"
+  },
+  "compatibleStockMesh": {
+    "elite": "assets/arsenal/legacy/elite.glb"
+  },
+  "caseUIReference": {
+    "layout/inspect.xml": "6a1c7629360d74c5e5ac1aaef52081b74bf043ca3dcac1b40c40b96bbb399cba",
+    "scripts/inspect.js": "51fedd21906b65e351dad2b5e1e17540199dc513e336f07e6f055c4bab772ac1",
+    "styles/popups/popup_capability_decodable.css": "d96aaf88033679455512108da8fd22f6836a28e98451e6a32501648840b901db",
+    "styles/popups/popup_inventory_inspect.css": "07023338cccd3e71f10bf93336c6a2c9fd5165a56c479555203f07406db1402f",
+    "scripts/popups/popup_capability_decodable.js": "ae24a9e06cba4b68a6c999d04b97ac9317ef24859fea39f39275526e444e8078",
+    "layout/popups/popup_capability_decodable.xml": "66af03832c0232fc97254cf8379ebc9a81ad993f7d4c1cfcfb3d74a56301e982",
+    "layout/popups/popup_inventory_inspect.xml": "abbb8c53a1cf0561d2417906d0f8949c747a34e85d53fd2bb9b8ff0164ff0c70",
+    "images/masks/case-opening-outer.svg": "23ce984e4927f40a0647564658e10283fb2d76ca1b760b2c228afb44ed40816d",
+    "images/masks/case-opening.svg": "ed7319a39873242face1cb0eaf7da548121428df6d934830b8e41250d1922e72"
+  },
+  "caseTiming": {
+    "seconds": 6,
+    "bezier": [
+      0.075,
+      0.82,
+      0.165,
+      1
+    ],
+    "cardRatio": 1.125
+  },
+  "generatedGameArtOrAudio": false
+}

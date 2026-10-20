@@ -1162,7 +1162,7 @@ export const ARSENAL={
     "slot": "secondary",
     "category": "pistols",
     "team": "Both",
-    "model": "arsenal/elite.glb",
+    "model": "arsenal/legacy/elite.glb",
     "damage": 38.0,
     "clip": 30.0,
     "reserveClips": 2.0,
