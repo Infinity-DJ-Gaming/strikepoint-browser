@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-19",
+  "unit_checks": 42,
+  "original_browser_checks": 32,
+  "update3_browser_checks": 24,
+  "groups": {
+    "browser": {
+      "checks": [
+        "all bots have finite native poses during freeze time",
+        "bots use varied team-legal guns",
+        "native round-start music loops during freeze",
+        "blur and pointer release do not pause the match",
+        "Escape explicitly pauses",
+        "viewmodel moves toward the camera to crop the long forearms",
+        "armored gun damage produces camera shake",
+        "real aimed player fire registers damage against animated bots",
+        "native death animation finishes on the ground without T-pose reset",
+        "player death enters first-person teammate spectating",
+        "Space cycles living spectator targets",
+        "both teams leave spawn through native collision routes",
+        "no missing resources or application errors"
+      ],
+      "errors": []
+    },
+    "ai": {
+      "checks": [
+        "expert aiming causes more actual hit damage than easy with the same firing sequence",
+        "bots physically launch their smoke, flash, HE and fire grenade inventories",
+        "a native T bot plants at the actual bombsite after the three-second action",
+        "a bot-only round reaches an objective, elimination or timer result without runtime failure"
+      ],
+      "errors": [],
+      "skills": [
+        1962.2055044185545,
+        3825.740075520065
+      ],
+      "utility": {
+        "thrown": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "grenades": 4,
+        "clips": "throwOverhand"
+      },
+      "selfPlay": {
+        "ended": true,
+        "roundTime": 46.99990000000384,
+        "bombTime": 40,
+        "planted": false,
+        "bots": [
+          {
+            "x": 57.95442280071709,
+            "y": -0.6846466241521153,
+            "z": 17.801580052945,
+            "h": 35.11975836123092,
+            "state": "crouchIdle",
+            "role": "anchor",
+            "recoveries": 0
+          },
+          {
+            "x": 47.299997868971,
+            "y": -3.2334036920454845,
+            "z": -10.348851024506791,
+            "h": 0,
+            "state": "deathChest",
+            "role": "anchor",
+            "recoveries": 0
+          },
+          {
+            "x": 63.29461498063199,
+            "y": 1.6899320718851645,
+            "z": 33.51116172386646,
+            "h": 0,
+            "state": "deathChest",
+            "role": "anchor",
+            "recoveries": 0
+          },
+          {
+            "x": 41.05396292665114,
+            "y": -3.209594529044803,
+            "z": -10.437888685305627,
+            "h": 0,
+            "state": "deathChest",
+            "role": "anchor",
+            "recoveries": 0
+          },
+          {
+            "x": 53.239795574772494,
+            "y": -2.4366739359458753,
+            "z": 15.046226817716796,
+            "h": 0,
+            "state": "deathChest",
+            "role": "rotate",
+            "recoveries": 0
+          }
+        ],
+        "allies": [
+          {
+            "x": 54.654401350421736,
+            "y": -1.5612719247153093,
+            "z": 19.01655864569118,
+            "h": 0,
+            "state": "deathChest",
+            "recoveries": 0
+          },
+          {
+            "x": 52.33339522810038,
+            "y": 2.431572116304532,
+            "z": 9.21355648757654,
+            "h": 0,
+            "state": "deathChest",
+            "recoveries": 0
+          },
+          {
+            "x": 55.133155792850346,
+            "y": 2.4349574611668268,
+            "z": 10.701882919058502,
+            "h": 0,
+            "state": "deathChest",
+            "recoveries": 0
+          },
+          {
+            "x": 53.12607158912694,
+            "y": -3.174037275478751,
+            "z": -2.060022047681426,
+            "h": 0,
+            "state": "deathChest",
+            "recoveries": 0
+          }
+        ]
+      }
+    },
+    "feedback": {
+      "checks": [
+        "native freeze music actually plays after user interaction",
+        "freeze music stops when the live round begins",
+        "bot reload reaches exactly zero and restores ammunition",
+        "a real fall damages health and triggers camera shake",
+        "match time continues while another tab has focus",
+        "spectator elevation follows the watched player without inversion",
+        "bot flashes do not give the player false flash-assist credit"
+      ],
+      "errors": [],
+      "fall": {
+        "before": 100,
+        "after": 61.04687499999989,
+        "peak": 0.05193750000000013
+      },
+      "reload": {
+        "reload": 0,
+        "ammo": 30
+      }
+    }
+  },
+  "native_clip_rig_combinations": 30,
+  "scenario_total": 122,
+  "scope": "Bounded desktop Edge scenarios, including a project subpath. This is not proof of exact Source 2 equivalence."
+}

@@ -1,0 +1,12 @@
+Counter-Strike game content in assets/ is converted from the user's installed CS2.
+Models, textures, animations, maps, sounds, fonts and Valve interface art remain
+the property of Valve Corporation and their respective rights holders.
+Conversion does not change ownership or grant an open-source asset license.
+
+Asset extraction: Source 2 Viewer / ValveResourceFormat, https://s2v.app
+https://github.com/ValveResourceFormat/ValveResourceFormat (MIT; notice in vendor/)
+
+Browser libraries: Three.js, three-mesh-bvh and meshoptimizer. Their license
+notices are retained in vendor/. Conversion scripts use glTF Transform and sharp.
+
+This is an unofficial private browser practice adaptation, not a Valve release.
