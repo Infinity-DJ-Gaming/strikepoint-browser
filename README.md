@@ -1,31 +1,31 @@
 # Strikepoint · Browser practice
 
-Unofficial, noncommercial Counter-Strike practice in the browser, using native Valve map, model, animation, texture and sound assets. This is an independent browser implementation, not the Source 2 executable or Valve matchmaking.
+Unofficial, noncommercial Counter-Strike practice and casual multiplayer in the browser, using native Valve map, model, animation, texture and sound assets. This is an independent browser implementation.
 
-**Play:** https://infinity-dj-gaming.github.io/strikepoint-browser/
+**Play Update 5:** https://infinity-dj-gaming.github.io/strikepoint-browser/?update=5
 
-## Update 4
+## Multiplayer
 
-Navigation portals, collision movement, gravity, jump recovery, finite freeze poses and native death animations are repaired. Four bot difficulties vary aim, reaction, bursts, memory, utility decisions, cover movement and site roles. Bots use different team-legal weapons, throw physical grenades, plant and defuse. Stronger bots check throwing arcs and can penetrate thin paired surfaces.
+Google/email sign-in, profiles, friend codes, accepted friend requests, presence and invitations use Firebase. Create a private room or find a real open room in your selected region. Up to five friends can form a party and queue on the same team. Ready up, then let the host start. Bots can fill empty 5v5 slots. WebRTC carries gameplay; Metered TURN relays connections that need it.
 
-The hand/weapon frame is closer, with the long forearms cropped. Confirmed hits have optional feedback; shots and falls cause configurable camera shake. Native music plays through freeze time. After death, Space, arrows or mouse buttons cycle first-person spectator targets. Leaving the tab releases input while the match continues; Escape pauses.
+**K** push-to-talk after enabling the microphone. **Y** All text chat. **U** Team text chat. Voice supports Team, Party and All channels, per-player mute and receive volume. Escape opens the match menu. The online match continues while its menu is open. Local practice still pauses explicitly with Escape.
 
-122 bounded desktop Edge checks passed, plus 30 native animation/character combinations. See the release's validation report and UPDATE-4.md for exact scope and limitations.
+WASD move, mouse aim, Shift walk, Ctrl crouch, Space jump, B buy, R reload, F inspect, G drop, E use/defuse/pickup, 1/2/3 weapons, 4 grenades, 5 C4. Controls are remappable. Ordinary guns do not ADS; eligible scoped weapons zoom. Settings cover graphics, audio, crosshair, HUD, bots and local bunny-hop practice.
 
-## Source and local use
+Weapon selection now applies native poses immediately and synchronizes the visible model. **Settings → Repair Weapon View** rebuilds the cached native rig and restores standard offsets without deleting inventory.
 
-The client JavaScript, HTML, CSS and native data catalogs are browsable here. The large native assets and bundled runtime libraries are distributed in the tested **strikepoint-web.zip** release asset rather than Git history. Download that final archive from Releases and extract it into one directory. Run `python -m http.server 4173` there, then open `http://127.0.0.1:4173/` in a desktop browser with hardware acceleration.
+See [UPDATE-5.md](UPDATE-5.md) for operation, validation and limitations.
 
-The Pages workflow downloads the final release archive and publishes its exact static contents. The preview archive is an earlier packaging pass; use strikepoint-web.zip.
+## Local use and source
 
-## Controls and local inventory
+Client JavaScript, HTML, CSS, native data catalogs and Firebase rules are browsable in this repository. Large native assets and bundled runtime libraries are in the tested **strikepoint-web.zip** release asset. Extract it into one directory, run `python -m http.server 4173`, then open http://127.0.0.1:4173/ in a desktop browser. The Pages workflow publishes the exact static release archive; use the final archive rather than an earlier preview.
 
-WASD move, mouse aim, Shift walk, Ctrl crouch, Space jump, B buy, R reload, F inspect, E use/defuse, 1/2/3 weapons, 4 grenades, 5 C4, Escape pause. Controls are remappable. Ordinary guns do not ADS; eligible scoped guns zoom. Settings include graphics, audio, crosshair, HUD, bots and optional bunny hopping.
+The complete development checkout and validation report are also delivered as local artifacts. Firebase rules live in `firebase/database.rules.json`. `dist/online-config.mjs` in the development checkout contains the public Firebase app identifiers and the documented browser-scoped Metered credential key. It contains no admin/server management secret. The public static source uses the same modules at repository root.
 
-CSCoins, finishes and settings are local browser data, with no monetary value or Steam inventory connection. No real-money purchases or cashout exist. Browser storage is specific to the website's origin.
+## Persistence and limits
 
-## Ownership and fidelity
+Profiles and social data persist in Firebase; CSCoins, finishes and practice stats remain browser-local, have no monetary value and are shared by accounts using that browser. There are no real-money purchases, cashout or Steam inventory transfers. A browser host can cheat; this is casual play with no trusted ranked results, dedicated server or host migration. Matchmaking uses a selected region, not precise location.
 
-Valve and the original contributors retain ownership of their game content. Conversion does not grant an open-source asset license. No game models or sound recordings were generated. Attribution and source hashes are included in the release. The user-provided historical CS:GO source informed browser rules; the C++ engine was not compiled into the game.
+Metered uses the existing shared 500 MB trial allowance; relay service can stop at the cap. No billing upgrade was made. Firebase remains on Spark. Voice requires the user's own microphone consent.
 
-Bots, grenade planning, hitbox/material approximations, animation retargeting, lighting, finishes and audio propagation are not bit-for-bit Source 2 behavior. There is no native multiplayer, Steam matchmaking or full bot economy. See UPDATE-4.md and the included asset notices.
+Valve and the original contributors retain ownership of their content. Conversion does not grant an open-source asset license. No game models or sound recordings were generated. Native provenance and source hashes are included. Historical CS:GO source informed browser rules; its C++ engine was not compiled into the game. Browser lighting, finishes, bot tactics, animation retargeting, penetration and audio propagation approximate Source behavior. See the included asset notices.

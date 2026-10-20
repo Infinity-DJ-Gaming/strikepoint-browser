@@ -1,5 +1,5 @@
 import * as T from 'three';
-import {ARSENAL} from './arsenal-data.mjs';
+import {ARSENAL} from './arsenal-data.mjs?v=20261020-5';
 import {clone} from './vendor/utils/SkeletonUtils.js';
 const base=name=>name.replace(/_\d+$/,'');
 const labels={rifle:'ak47',pistol:'deagle',glock:'glock18',awp:'awp',knife:'knife_default_t',c4:'c4',smoke:'smokegrenade',flash:'flashbang',he:'hegrenade',molotov:'molotov'};
@@ -8,10 +8,10 @@ export function bindNativeWeapon(asset,model,kind){
  const root=clone(asset.scene),branch=weaponBranch(model,kind),target=new Map();branch?.traverse(o=>target.set(base(o.name),o));let matched=0,total=0;
  const authored=new Map();function resolve(b){if(!b||b===root)return branch||model;const native=target.get(base(b.name));if(native)return native;if(authored.has(b))return authored.get(b);const retained=b.clone(false);authored.set(b,retained);resolve(b.parent).add(retained);return retained;}
  root.traverse(o=>{if(!o.isSkinnedMesh)return;const bones=o.skeleton.bones.map(b=>{total++;const native=target.get(base(b.name));if(native)matched++;return native||resolve(b);});const skeleton=new T.Skeleton(bones,o.skeleton.boneInverses.map(m=>m.clone()));o.bind(skeleton,o.bindMatrix.clone());o.frustumCulled=false;});
- model.add(root);const weapon=target.get('weapon'),anchorInverse=weapon?.matrix.clone().invert()||new T.Matrix4();if(branch)branch.matrixAutoUpdate=false;if(!total&&branch){branch.add(root);if(kind==='c4')root.position.x=.06;}
+ root.visible=false;model.add(root);const weapon=target.get('weapon'),anchorInverse=weapon?.matrix.clone().invert()||new T.Matrix4();if(branch)branch.matrixAutoUpdate=false;if(!total&&branch){branch.add(root);if(kind==='c4')root.position.x=.06;}
  // Native weapon tracks are relative to the animated wpn attachment, not
  // the camera origin. Preserve that parent frame while skinning every part.
- return {root,native:true,branch,matched,total,retained:authored.size,owner:model,follow:model.getObjectByName('wpn'),anchorInverse,mixer:new T.AnimationMixer(root),clips:asset.animations};
+ return {root,native:true,branch,matched,total,retained:authored.size,retainedBones:[...authored.values()],owner:model,follow:model.getObjectByName('wpn'),anchorInverse,mixer:new T.AnimationMixer(root),clips:asset.animations};
 }
 export function updateNativeWeapon(g){if(!g?.branch||!g.follow)return;g.owner.updateWorldMatrix(true,true);g.branch.matrix.copy(g.owner.matrixWorld).invert().multiply(g.follow.matrixWorld).multiply(g.anchorInverse);g.branch.matrixWorldNeedsUpdate=true;g.branch.updateWorldMatrix(false,true);}
 export function createNativeView(arms,bareArms,weapons,parent,materials){
@@ -21,3 +21,5 @@ export function createNativeView(arms,bareArms,weapons,parent,materials){
  const views={};for(const [kind,asset] of Object.entries(weapons)){views[kind]=bindNativeWeapon(asset,model,kind);materials(views[kind].root);views[kind].root.visible=false;}
  return {model,mixer:new T.AnimationMixer(model),views,bare};
 }
+
+export function detachNativeWeapon(g){g?.root.removeFromParent();for(const bone of g?.retainedBones||[])bone.removeFromParent();}

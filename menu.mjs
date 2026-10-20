@@ -1,5 +1,5 @@
 const $=id=>document.getElementById(id);
-const panes=['home','play','inventory','loadout','store','news'];
+const panes=['home','play','inventory','loadout','store','news','online'];
 let activeTab='home',launchMode='bomb',launchCallback=null,queueTimer=null,elapsed=0,toastTimer=null;
 
 function emit(name,detail={}){document.dispatchEvent(new CustomEvent(name,{detail}));}
@@ -10,7 +10,7 @@ export function selectMenuTab(tab){
  if(tab==='settings'){$('openSettings').click();audio('menuAccept');return;}
  if(!panes.includes(tab))return;
  activeTab=tab;$('menu').dataset.menuTab=tab;
- for(const name of panes)$(name+'Pane').classList.toggle('hidden',name!==tab);
+ for(const name of panes)$(name+'Pane')?.classList.toggle('hidden',name!==tab);
  document.querySelectorAll('.lobby-header [data-tab]').forEach(button=>button.classList.toggle('selected',button.dataset.tab===tab));
  emit('cs:menu-tab',{tab});
 }
@@ -21,7 +21,7 @@ export function installMenu({start,explore}){
  document.querySelectorAll('[data-tab]').forEach(button=>button.onclick=()=>{audio('menuAccept');selectMenuTab(button.dataset.tab);});
  document.querySelectorAll('[data-play-mode]').forEach(button=>button.onclick=()=>{
   if(button.dataset.playMode==='practice')return;
-  audio('menuInvalid');toast(button.dataset.playMode==='competitive'?'Online matchmaking is available in the official Counter-Strike 2 game.':'Workshop maps are available in the official Counter-Strike 2 game.');
+  if(button.dataset.playMode==='competitive'){selectMenuTab('online');return;}audio('menuInvalid');toast(button.dataset.playMode==='competitive'?'Online matchmaking is available in the official Counter-Strike 2 game.':'Workshop maps are available in the official Counter-Strike 2 game.');
  });
  document.querySelectorAll('[data-practice-mode]').forEach(button=>button.onclick=()=>{
   launchMode=button.dataset.practiceMode;

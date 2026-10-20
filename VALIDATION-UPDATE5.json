@@ -1,0 +1,689 @@
+{
+  "version": "5.0.0",
+  "builtAt": "2026-10-20T12:59:32.254805+00:00",
+  "scope": "Bounded browser practice and casual multiplayer checks; not Source 2 parity or a complete external-account audit",
+  "unitChecks": 48,
+  "unitFailures": 0,
+  "coreBrowser": {
+    "passed": 32,
+    "checks": [
+      "native assets load without missing files",
+      "bunny-hop setting persists",
+      "player lands on native collision, above the street",
+      "AK right-click does not ADS",
+      "AK reload uses its native hand clip",
+      "current CS2 magazine reload discards the old rounds",
+      "native inspect animation advances",
+      "native jump apex and landing",
+      "holding Space does not auto-jump by default",
+      "crouch lowers the native hull",
+      "optional bunny hopping chains jumps",
+      "real AWP equips",
+      "AWP first scope zoom",
+      "AWP second scope zoom",
+      "AWP scope cycles back to normal",
+      "Deagle right-click does not ADS",
+      "Deagle is semi automatic",
+      "Glock secondary toggles three-round burst",
+      "knife secondary uses native heavy attack",
+      "grenade pin uses native animation",
+      "real smoke grenade follows a collision trajectory and blooms",
+      "native C4 plants at A",
+      "planted bomb can win after attacker dies",
+      "native C4 plants at B",
+      "planted bomb can win after attacker dies",
+      "native round timeout resolves",
+      "real mesh hit detection eliminates a defender",
+      "pause stops timers",
+      "buy menu spends money while the server clock continues",
+      "unused equipment can be refunded",
+      "CT bot completes the ten-second defuse",
+      "no runtime errors or missing assets"
+    ]
+  },
+  "groups": {
+    "rules": {
+      "checks": [
+        "unauthenticated profiles and rooms are denied",
+        "players can edit only their own public profile",
+        "friend acceptance requires a recipient-approved request",
+        "presence is readable only by self and accepted friends",
+        "host creates a bounded room, guests claim their own slot",
+        "only the host can start or change room ownership",
+        "signalling is limited to actual room members and recipients",
+        "matchmaking discovery is bounded and owner-controlled",
+        "guests can leave without deleting other players or the room"
+      ]
+    },
+    "partyRules": {
+      "checks": [
+        "players may form and join their own five-person party slots",
+        "only the party leader can queue or alter party metadata",
+        "a leader can reserve only the exact accepted party roster",
+        "another accepted party can reserve the empty opposing side",
+        "members cannot alter another player\u2019s ready state or party ownership"
+      ]
+    },
+    "online": {
+      "checks": [
+        "email signup creates separate private Firebase identities and public profiles",
+        "recipient-approved friend request is reciprocal",
+        "room invitation connects two browsers over real WebRTC data channels",
+        "host starts a two-human match with correct opposing teams",
+        "guest purchases are validated and applied by the host",
+        "guest weapon drops and pickups are synchronized by the host",
+        "guest movement reaches host simulation and collision",
+        "guest shots are traced by the host and damage the opposing human",
+        "guest reload completes with host-owned ammunition",
+        "host damage and round result replicate to the guest",
+        "host advances the next round and revives the guest",
+        "closing the host room returns the guest to the lobby"
+      ],
+      "errors": []
+    },
+    "partiesDirect": {
+      "relay": false,
+      "checks": [
+        "two accepted party members automatically queue into the same room and team",
+        "a second party joins the opposing team through the same region queue",
+        "all chat reaches three players and displays markup as literal text",
+        "team chat stays within the sender\u2019s team",
+        "microphone capture stays off until explicitly enabled",
+        "enabling voice keeps the microphone muted until push-to-talk",
+        "real WebRTC audio reaches both peers on the all-player voice channel",
+        "releasing push-to-talk immediately mutes the outgoing microphone",
+        "team voice removes the enemy sender track while preserving the teammate track",
+        "host relays guest party voice only to its permitted audience",
+        "guest audio is relayed through the host to another browser with sender identity preserved",
+        "three humans start a synchronized 5v5 match with seven bot replacements",
+        "the in-match menu can stop microphone capture without disconnecting",
+        "a guest attacker plants the C4 through host-side objective validation",
+        "a guest defender defuses with a kit and receives the shared round result",
+        "parties survive leaving a match lobby"
+      ],
+      "errors": []
+    },
+    "partiesMeteredRelay": {
+      "relay": true,
+      "checks": [
+        "two accepted party members automatically queue into the same room and team",
+        "a second party joins the opposing team through the same region queue",
+        "all chat reaches three players and displays markup as literal text",
+        "team chat stays within the sender\u2019s team",
+        "microphone capture stays off until explicitly enabled",
+        "enabling voice keeps the microphone muted until push-to-talk",
+        "real WebRTC audio reaches both peers on the all-player voice channel",
+        "releasing push-to-talk immediately mutes the outgoing microphone",
+        "team voice removes the enemy sender track while preserving the teammate track",
+        "host relays guest party voice only to its permitted audience",
+        "guest audio is relayed through the host to another browser with sender identity preserved",
+        "Metered relay is selected with direct ICE candidates disabled",
+        "three humans start a synchronized 5v5 match with seven bot replacements",
+        "the in-match menu can stop microphone capture without disconnecting",
+        "a guest attacker plants the C4 through host-side objective validation",
+        "a guest defender defuses with a kit and receives the shared round result",
+        "parties survive leaving a match lobby"
+      ],
+      "errors": []
+    },
+    "update4Regression": {
+      "checks": [
+        "all bots have finite native poses during freeze time",
+        "bots use varied team-legal guns",
+        "native round-start music loops during freeze",
+        "blur and pointer release do not pause the match",
+        "Escape explicitly pauses",
+        "viewmodel moves toward the camera to crop the long forearms",
+        "armored gun damage produces camera shake",
+        "real aimed player fire registers damage against animated bots",
+        "native death animation finishes on the ground without T-pose reset",
+        "player death enters first-person teammate spectating",
+        "Space cycles living spectator targets",
+        "both teams leave spawn through native collision routes",
+        "no missing resources or application errors"
+      ],
+      "errors": []
+    }
+  },
+  "weaponVisibility": {
+    "checks": 98,
+    "result": [
+      {
+        "key": "rifle",
+        "finish": "stock",
+        "count": 3303
+      },
+      {
+        "key": "pistol",
+        "finish": "stock",
+        "count": 1617
+      },
+      {
+        "key": "knife",
+        "finish": "stock",
+        "count": 1813
+      },
+      {
+        "key": "glock",
+        "finish": "stock",
+        "count": 1296
+      },
+      {
+        "key": "awp",
+        "finish": "stock",
+        "count": 4220
+      },
+      {
+        "key": "c4",
+        "finish": "stock",
+        "count": 4351
+      },
+      {
+        "key": "smoke",
+        "finish": "stock",
+        "count": 551
+      },
+      {
+        "key": "flash",
+        "finish": "stock",
+        "count": 828
+      },
+      {
+        "key": "he",
+        "finish": "stock",
+        "count": 1368
+      },
+      {
+        "key": "molotov",
+        "finish": "stock",
+        "count": 4152
+      },
+      {
+        "key": "m4a1",
+        "finish": "stock",
+        "count": 4194
+      },
+      {
+        "key": "m4a1_silencer",
+        "finish": "stock",
+        "count": 4278
+      },
+      {
+        "key": "famas",
+        "finish": "stock",
+        "count": 4371
+      },
+      {
+        "key": "galilar",
+        "finish": "stock",
+        "count": 3134
+      },
+      {
+        "key": "aug",
+        "finish": "stock",
+        "count": 3923
+      },
+      {
+        "key": "sg556",
+        "finish": "stock",
+        "count": 3280
+      },
+      {
+        "key": "ssg08",
+        "finish": "stock",
+        "count": 4290
+      },
+      {
+        "key": "g3sg1",
+        "finish": "stock",
+        "count": 5088
+      },
+      {
+        "key": "scar20",
+        "finish": "stock",
+        "count": 4548
+      },
+      {
+        "key": "hkp2000",
+        "finish": "stock",
+        "count": 1369
+      },
+      {
+        "key": "usp_silencer",
+        "finish": "stock",
+        "count": 1683
+      },
+      {
+        "key": "elite",
+        "finish": "stock",
+        "count": 4217
+      },
+      {
+        "key": "p250",
+        "finish": "stock",
+        "count": 1402
+      },
+      {
+        "key": "tec9",
+        "finish": "stock",
+        "count": 1767
+      },
+      {
+        "key": "fiveseven",
+        "finish": "stock",
+        "count": 1286
+      },
+      {
+        "key": "cz75a",
+        "finish": "stock",
+        "count": 1506
+      },
+      {
+        "key": "revolver",
+        "finish": "stock",
+        "count": 1219
+      },
+      {
+        "key": "mac10",
+        "finish": "stock",
+        "count": 3246
+      },
+      {
+        "key": "mp9",
+        "finish": "stock",
+        "count": 3789
+      },
+      {
+        "key": "mp7",
+        "finish": "stock",
+        "count": 3235
+      },
+      {
+        "key": "mp5sd",
+        "finish": "stock",
+        "count": 2818
+      },
+      {
+        "key": "ump45",
+        "finish": "stock",
+        "count": 3222
+      },
+      {
+        "key": "p90",
+        "finish": "stock",
+        "count": 4866
+      },
+      {
+        "key": "bizon",
+        "finish": "stock",
+        "count": 3549
+      },
+      {
+        "key": "nova",
+        "finish": "stock",
+        "count": 1748
+      },
+      {
+        "key": "xm1014",
+        "finish": "stock",
+        "count": 1361
+      },
+      {
+        "key": "mag7",
+        "finish": "stock",
+        "count": 2566
+      },
+      {
+        "key": "sawedoff",
+        "finish": "stock",
+        "count": 2161
+      },
+      {
+        "key": "m249",
+        "finish": "stock",
+        "count": 5229
+      },
+      {
+        "key": "negev",
+        "finish": "stock",
+        "count": 4654
+      },
+      {
+        "key": "taser",
+        "finish": "stock",
+        "count": 1743
+      },
+      {
+        "key": "decoy",
+        "finish": "stock",
+        "count": 838
+      },
+      {
+        "key": "incendiary",
+        "finish": "stock",
+        "count": 784
+      },
+      {
+        "key": "rifle",
+        "finish": "legacy",
+        "count": 3385
+      },
+      {
+        "key": "pistol",
+        "finish": "legacy",
+        "count": 1875
+      },
+      {
+        "key": "glock",
+        "finish": "legacy",
+        "count": 1270
+      },
+      {
+        "key": "awp",
+        "finish": "legacy",
+        "count": 4327
+      },
+      {
+        "key": "m4a1",
+        "finish": "legacy",
+        "count": 3610
+      },
+      {
+        "key": "m4a1_silencer",
+        "finish": "legacy",
+        "count": 4442
+      },
+      {
+        "key": "famas",
+        "finish": "legacy",
+        "count": 4159
+      },
+      {
+        "key": "galilar",
+        "finish": "legacy",
+        "count": 2964
+      },
+      {
+        "key": "aug",
+        "finish": "legacy",
+        "count": 4406
+      },
+      {
+        "key": "sg556",
+        "finish": "legacy",
+        "count": 3658
+      },
+      {
+        "key": "ssg08",
+        "finish": "legacy",
+        "count": 4290
+      },
+      {
+        "key": "g3sg1",
+        "finish": "legacy",
+        "count": 5209
+      },
+      {
+        "key": "scar20",
+        "finish": "legacy",
+        "count": 4576
+      },
+      {
+        "key": "hkp2000",
+        "finish": "legacy",
+        "count": 1366
+      },
+      {
+        "key": "usp_silencer",
+        "finish": "legacy",
+        "count": 1651
+      },
+      {
+        "key": "elite",
+        "finish": "legacy",
+        "count": 3230
+      },
+      {
+        "key": "p250",
+        "finish": "legacy",
+        "count": 1301
+      },
+      {
+        "key": "tec9",
+        "finish": "legacy",
+        "count": 1891
+      },
+      {
+        "key": "fiveseven",
+        "finish": "legacy",
+        "count": 1368
+      },
+      {
+        "key": "cz75a",
+        "finish": "legacy",
+        "count": 1455
+      },
+      {
+        "key": "revolver",
+        "finish": "legacy",
+        "count": 1678
+      },
+      {
+        "key": "mac10",
+        "finish": "legacy",
+        "count": 2990
+      },
+      {
+        "key": "mp9",
+        "finish": "legacy",
+        "count": 3657
+      },
+      {
+        "key": "mp7",
+        "finish": "legacy",
+        "count": 3117
+      },
+      {
+        "key": "mp5sd",
+        "finish": "legacy",
+        "count": 3124
+      },
+      {
+        "key": "ump45",
+        "finish": "legacy",
+        "count": 3361
+      },
+      {
+        "key": "p90",
+        "finish": "legacy",
+        "count": 4543
+      },
+      {
+        "key": "bizon",
+        "finish": "legacy",
+        "count": 3318
+      },
+      {
+        "key": "nova",
+        "finish": "legacy",
+        "count": 1663
+      },
+      {
+        "key": "xm1014",
+        "finish": "legacy",
+        "count": 1628
+      },
+      {
+        "key": "mag7",
+        "finish": "legacy",
+        "count": 2732
+      },
+      {
+        "key": "sawedoff",
+        "finish": "legacy",
+        "count": 1915
+      },
+      {
+        "key": "m249",
+        "finish": "legacy",
+        "count": 5547
+      },
+      {
+        "key": "negev",
+        "finish": "legacy",
+        "count": 4454
+      },
+      {
+        "key": "knife",
+        "finish": "bayonet",
+        "count": 1943
+      },
+      {
+        "key": "knife",
+        "finish": "knife_butterfly",
+        "count": 1788
+      },
+      {
+        "key": "knife",
+        "finish": "knife_canis",
+        "count": 2219
+      },
+      {
+        "key": "knife",
+        "finish": "knife_cord",
+        "count": 1894
+      },
+      {
+        "key": "knife",
+        "finish": "knife_css",
+        "count": 2213
+      },
+      {
+        "key": "knife",
+        "finish": "knife_falchion",
+        "count": 1619
+      },
+      {
+        "key": "knife",
+        "finish": "knife_flip",
+        "count": 1673
+      },
+      {
+        "key": "knife",
+        "finish": "knife_gut",
+        "count": 2310
+      },
+      {
+        "key": "knife",
+        "finish": "knife_gypsy_jackknife",
+        "count": 1537
+      },
+      {
+        "key": "knife",
+        "finish": "knife_karambit",
+        "count": 1963
+      },
+      {
+        "key": "knife",
+        "finish": "knife_kukri",
+        "count": 2011
+      },
+      {
+        "key": "knife",
+        "finish": "knife_m9_bayonet",
+        "count": 2236
+      },
+      {
+        "key": "knife",
+        "finish": "knife_outdoor",
+        "count": 2064
+      },
+      {
+        "key": "knife",
+        "finish": "knife_push",
+        "count": 2135
+      },
+      {
+        "key": "knife",
+        "finish": "knife_skeleton",
+        "count": 1686
+      },
+      {
+        "key": "knife",
+        "finish": "knife_stiletto",
+        "count": 1420
+      },
+      {
+        "key": "knife",
+        "finish": "knife_survival_bowie",
+        "count": 3051
+      },
+      {
+        "key": "knife",
+        "finish": "knife_tactical",
+        "count": 2595
+      },
+      {
+        "key": "knife",
+        "finish": "knife_ursus",
+        "count": 2354
+      },
+      {
+        "key": "knife",
+        "finish": "knife_widowmaker",
+        "count": 1962
+      },
+      {
+        "key": "knife",
+        "finish": "repaired",
+        "count": 1969
+      }
+    ]
+  },
+  "sourceSHA256": {
+    "arsenal-audio.mjs": "844b76838ee4f88155accfe2b3df73e37e6f61c1b1e63d9ed173537af23c8657",
+    "arsenal-data.mjs": "95b5bd64d7e8476cd1dedd5a009d9ccbccdf172d5aaae940fd88cc037050f558",
+    "audio-data.mjs": "042e692ac8c506cb2575760e60ee28f67a13986d02d768fb70eb5982f30c9bc2",
+    "audio.mjs": "860b204d1db3a543016f2d72aa3f7264b44263d332b8652a7b150938c4abfe58",
+    "ballistics.mjs": "3c6f5fa0a9c58897121ab8722073bbe7a50de356300ead92928da966b6fe63b8",
+    "bot-animation-data.mjs": "96885d2b795333486e326069906201f2cda3e6503afcc00b9657bce1652bf14e",
+    "bot-brain.mjs": "a02f782fb908a1394318c114a047024f276834138b6cfa03b975b5ff3b31b14b",
+    "combat.mjs": "62e7ed57e8ea3ae49fcfee3cd64b2592c73dd2da627fcddfb7c48b0f694884bd",
+    "cosmetic-renderer.mjs": "8cb36136f694e500dd7207e2d6981536ff10e942d31043368989b192454cf2fe",
+    "cosmetics-data.mjs": "e4f24917e5ffe8c20bea882d670e0236d207f508334792b473906b32e0b8ab7c",
+    "impact-data.mjs": "9e31fc26afc062d720ffd2938d0f704bebf6d0bf46f3a4f1fbc2613769cf348c",
+    "index.html": "4efe9c458c6e821c6e1cecbd111aa2bca05557d288854ebc56f3a847af24aafe",
+    "inventory-ui.mjs": "27336fa6ae4c8a4fb159d66953f9260d9043b97fc38068f31d7ff12d78e3ac31",
+    "loadout.mjs": "4e230c7c70ff4913738da07b5d2aa68e7aadcf3c78210ce27c752686f2353dd1",
+    "main.js": "d04f01298a12f56279d880f858122fd00bc3cfea46aa4789bfe3e78cac4a8b56",
+    "mechanics.mjs": "0ca364af14822ad7542a682f156211b1361b70b13a89f1cd77a9dcb227cdbfab",
+    "menu.mjs": "f21a8a094cb07073afe3c8ee8bfc53c28a808d9a99a8243d2ac14f67efa265d4",
+    "nav.mjs": "40e6b6c01507393cfe4ff8d548c835253860e219f380f62a31260b2e0e48803d",
+    "online-comms.mjs": "65af064225311896d61c5136c8099562cda0d85108b0b827064ce81b791270b8",
+    "online-config.mjs": "603b783eab27d0ee6f4d09e2b1503d03573baf1ff5befb8aa3fa4e94205658f3",
+    "online-match.mjs": "1844494fdb512d90112a780a19191d1da6a3061b8803ddae2119e53247e4e2d1",
+    "online-protocol.mjs": "e3a04f4c33690963875fe9863b10475f002e8e93f6bd9e695e652a7f5a8ec748",
+    "online-service.mjs": "db80559396acb5ff7ec5e6ad732242b390f9e8f41cfcf08bf883128cc48f477d",
+    "online-transport.mjs": "16a9b5cd2311c609553c4308b1b2d6d0b3f927a52f645cee55417d5ba418284e",
+    "online-ui.mjs": "5ea233598f9bf90f6e39e99f081d907fe3e13f6152095a33da0c3676e1d43586",
+    "physics.mjs": "5396660900edd7f1469a3916a24d2c4e3a76a739fff491cb8a42474b4ffb56db",
+    "progression.mjs": "ec3aa4b065525b83d8d4871af47b7a8545a998b1289c3df0f3a2943527c5a208",
+    "settings.mjs": "f2a893322104ecbacbafd21eea4d66f5d935b82bb8d8feceb64d9e65b67c63dc",
+    "simulation-clock.js": "48cd5e2e7923a7c174b2e1f2493d0638d113b61dedd2fccae6e731d32e426727",
+    "style.css": "42480f90e58ab13780a424082d7b7d78f0ea44aedf82155563a242a544b059ee",
+    "update3.css": "aa3bbc1d8009e3110c79603c40f057411b827d92c4434885fd63ef4159b5ec9b",
+    "update4.css": "6054c9b0287743d9c27a9f4f2039e15c429ecca4b6ed1f2beae92cee5ed5a94d",
+    "update5.css": "866b680d61c0514dcc42c4c2898c0c00db85f1ef66d714c8ed3c96fa2df24e80",
+    "vendor/firebase/firebase-app.js": "6f817f88134fadc0b99c4d9662de6f6f4db6384eae942cffcd0487a8a0080397",
+    "vendor/firebase/firebase-auth.js": "7dc746c3713f3bcd57b0e1c127e2016147e566065a78ead650433f759ade2522",
+    "vendor/firebase/firebase-database.js": "8f793f01746d3ba86ee79ea4b3110adae0abde05570ad06c77d60e24c79dd232",
+    "viewmodel.mjs": "557a83f96def349c1bb585905b9c8e4fbb327086b1ae527efdda3fa4117c2d7a",
+    "weapon-data.mjs": "6c1015a48549b0f13ba1685a15f600e3066a0d33c49e3e82c3b8b3094852b9f8"
+  },
+  "verificationLimits": [
+    "Firebase test identities and rules used local emulators; actual visitor Google consent is not automated.",
+    "Voice tests used a fake browser microphone and real WebRTC RTP.",
+    "Forced relay tests used the actual Metered credential and selected relay ICE candidates.",
+    "No cross-continent latency guarantee, trusted ranking or hostile-host protection."
+  ]
+}

@@ -1,6 +1,6 @@
-import {SKINS,SKIN_BY_ID,CASES,CASE_BY_ID,finishPreview,COSMETIC_AUDIO} from './cosmetics-data.mjs';
-import {RARITY_COLORS,rarityKey,wearCategory,rollDrop} from './progression.mjs';
-import {ARSENAL} from './arsenal-data.mjs';import {allowed,categoryOf,iconPath} from './loadout.mjs';
+import {SKINS,SKIN_BY_ID,CASES,CASE_BY_ID,finishPreview,COSMETIC_AUDIO} from './cosmetics-data.mjs?v=20261020-5';
+import {RARITY_COLORS,rarityKey,wearCategory,rollDrop} from './progression.mjs?v=20261020-5';
+import {ARSENAL} from './arsenal-data.mjs?v=20261020-5';import {allowed,categoryOf,iconPath} from './loadout.mjs?v=20261020-5';
 const $=id=>document.getElementById(id),escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 export function installInventory({progress,loadout,onEquip,onSelectWeapon,sound,getTeam}){
  let inventoryMode='owned',query='',filter='',page=0,loadoutTeam=getTeam(),busy=false;
