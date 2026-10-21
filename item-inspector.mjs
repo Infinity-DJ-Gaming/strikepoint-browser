@@ -1,6 +1,6 @@
 import * as T from 'three';
 import {clone} from './vendor/utils/SkeletonUtils.js';
-import {applyNativeFinish} from './cosmetic-renderer.mjs?v=20261020-6';
+import {applyNativeFinish} from './cosmetic-renderer.mjs?v=20261020-7';
 // Render the actual native mesh and material recipe; no inventory-image billboard.
 export async function showItemInspector(container,skin,item,loadAsset){
  const status=document.createElement('small');status.textContent='LOADING NATIVE 3D MODEL…';container.replaceChildren(status);

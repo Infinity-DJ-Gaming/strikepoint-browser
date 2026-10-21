@@ -1,4 +1,4 @@
-import {members,makePacket,readPacket} from './online-protocol.mjs?v=20261020-6';
+import {members,makePacket,readPacket} from './online-protocol.mjs?v=20261020-7';
 
 // One host connection per guest avoids the N² traffic of a full mesh.
 // Firebase carries only session negotiation; snapshots use WebRTC data channels.

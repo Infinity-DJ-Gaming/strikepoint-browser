@@ -1,6 +1,6 @@
-import {ARSENAL_AUDIO} from './arsenal-audio.mjs?v=20261020-6';
-import {IMPACT_AUDIO} from './impact-data.mjs?v=20261020-6';
-import {COSMETIC_AUDIO} from './cosmetics-data.mjs?v=20261020-6';
+import {ARSENAL_AUDIO} from './arsenal-audio.mjs?v=20261020-7';
+import {IMPACT_AUDIO} from './impact-data.mjs?v=20261020-7';
+import {COSMETIC_AUDIO} from './cosmetics-data.mjs?v=20261020-7';
 import {NATIVE_AUDIO} from './audio-data.mjs?v=20261019-3';
 // Native recordings only. Audio starts on a user gesture, as browsers require.
 export class GameAudio{
@@ -14,8 +14,9 @@ export class GameAudio{
  schedule(events,group='weapon'){this.cancel(group);for(const [time,key] of events)this.pending.push({time,key,group});}
  cancel(group){this.pending=this.pending.filter(e=>e.group!==group);}
  tick(dt){for(let i=this.pending.length-1;i>=0;i--){const event=this.pending[i];event.time-=dt;if(event.time<=0){this.play(event.key,.3);this.pending.splice(i,1);}}}
- menu(on){this.musicMode=on;this.updateMusic();}
- updateMusic(){this.music.volume=this.background&&this.settings.muteBackground?0:this.settings.volume*(this.settings.musicVolume??.25);if(this.context&&this.musicMode)this.music.play().catch(()=>{});else this.music.pause();if(this.stinger)this.stinger.volume=this.background&&this.settings.muteBackground?0:this.settings.volume*(this.stingerKey==='bombTenSecMusic'?this.settings.tenSecondMusic??.08:this.settings.roundMusic??.16);for(const e of this.activeFallbacks)e.clip.volume=this.level(e.key,e.volume);for(const e of this.activeGains){e.gain.gain.value=this.level(e.key,e.volume);if(e.pan)e.pan.panningModel=this.settings.spatialAudio===false?'equalpower':'HRTF';}}
+ menu(on){if(on){this.mvp?.pause();this.stinger?.pause();}this.musicMode=on;this.updateMusic();}
+ playMvp(kit){if(!kit)return;this.mvp?.pause();this.mvp=new Audio(kit.mvp);this.mvpKit=kit.id;this.updateMusic();this.mvp.play().catch(()=>{});this.played.push({key:'mvp:'+kit.id,time:performance.now()});}
+ updateMusic(){this.music.volume=this.background&&this.settings.muteBackground?0:this.settings.volume*(this.settings.musicVolume??.25);if(this.context&&this.musicMode)this.music.play().catch(()=>{});else this.music.pause();if(this.stinger)this.stinger.volume=this.background&&this.settings.muteBackground?0:this.settings.volume*(this.stingerKey==='bombTenSecMusic'?this.settings.tenSecondMusic??.08:this.settings.roundMusic??.16);if(this.mvp)this.mvp.volume=this.background&&this.settings.muteBackground?0:this.settings.volume*(this.settings.mvpMusic??.35);for(const e of this.activeFallbacks)e.clip.volume=this.level(e.key,e.volume);for(const e of this.activeGains){e.gain.gain.value=this.level(e.key,e.volume);if(e.pan)e.pan.panningModel=this.settings.spatialAudio===false?'equalpower':'HRTF';}}
  cue(key){if(this.stinger)this.stinger.pause();this.stingerKey=key;this.stinger=new Audio(this.files[key]);this.stinger.loop=key==='roundStartMusic';this.updateMusic();this.stinger.play().catch(()=>{});}
  stopLoops(){for(const loop of this.loops)try{loop.stop();}catch{}this.loops.clear();}
  level(key,volume){if(this.background&&this.settings.muteBackground)return 0;const bus=/^step|jumpLaunch|land/.test(key)?'stepsVolume':/^menu|case|reveal|matchReady/.test(key)?'uiVolume':/Voice$|^tWin$|^ctWin$/.test(key)?'voiceVolume':/Loop$|smokeEmit|smokeClear/.test(key)?'ambientVolume':'weaponsVolume';if(this.settings.botChatter===false&&bus==='voiceVolume')return 0;return Math.min(1,Math.max(0,volume*this.settings.volume*(this.settings[bus]??1)));}

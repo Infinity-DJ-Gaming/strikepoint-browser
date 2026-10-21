@@ -1,0 +1,188 @@
+{
+  "version": "7.0.0",
+  "name": "After the Round",
+  "validatedAt": "2026-10-21T02:33:56.198210+00:00",
+  "unitTests": {
+    "passed": 48,
+    "failed": 0
+  },
+  "suites": {
+    "all-gloves.json": {
+      "passed": true,
+      "count": 94,
+      "checks": []
+    },
+    "online-validation.json": {
+      "passed": true,
+      "count": 14,
+      "checks": [
+        "email signup creates separate private Firebase identities and public profiles",
+        "recipient-approved friend request is reciprocal",
+        "room invitation connects two browsers over real WebRTC data channels",
+        "host starts a two-human match with correct opposing teams",
+        "guest purchases are validated and applied by the host",
+        "guest weapon drops and pickups are synchronized by the host",
+        "guest movement reaches host simulation and collision",
+        "guest shots are traced by the host and damage the opposing human",
+        "guest reload completes with host-owned ammunition",
+        "post-round guest shots still damage opponents while the winner stays locked",
+        "the frozen MVP and native anthem are shared with the guest",
+        "host damage and round result replicate to the guest",
+        "host automatically advances after the five-second aftermath and revives the guest",
+        "closing the host room returns the guest to the lobby"
+      ]
+    },
+    "optics-validation.json": {
+      "passed": true,
+      "count": 6,
+      "checks": [
+        "stock aug has a finite aligned native optic, green reticle and 45-degree zoom",
+        "stock sg556 has a finite aligned native optic, green reticle and 45-degree zoom",
+        "legacy aug has a finite aligned native optic, green reticle and 45-degree zoom",
+        "legacy sg556 has a finite aligned native optic, green reticle and 45-degree zoom",
+        "AWP retains its separate sniper scope and has no rifle green-dot overlay",
+        "scope, skin and unscoping transitions produce no runtime or shader errors"
+      ]
+    },
+    "party-comms-relay-validation.json": {
+      "passed": true,
+      "count": 20,
+      "checks": [
+        "microphone can be prepared in the lobby before joining any room or party",
+        "party voice carries actual RTP before a match room exists",
+        "party text works before queueing",
+        "two accepted party members automatically queue into the same room and team",
+        "a second party joins the opposing team through the same region queue",
+        "all chat reaches three players and displays markup as literal text",
+        "team chat stays within the sender\u2019s team",
+        "prepared microphone survives party-to-match lobby transition",
+        "enabling voice keeps the microphone muted until push-to-talk",
+        "real WebRTC audio reaches both peers on the all-player voice channel",
+        "releasing push-to-talk immediately mutes the outgoing microphone",
+        "team voice removes the enemy sender track while preserving the teammate track",
+        "host relays guest party voice only to its permitted audience",
+        "guest audio is relayed through the host to another browser with sender identity preserved",
+        "Metered relay is selected with direct ICE candidates disabled",
+        "three humans start a synchronized 5v5 match with seven bot replacements",
+        "the in-match menu can stop microphone capture without disconnecting",
+        "a guest attacker plants the C4 through host-side objective validation",
+        "a guest defender defuses with a kit and receives the shared round result",
+        "parties survive leaving a match lobby"
+      ]
+    },
+    "party-comms-validation.json": {
+      "passed": true,
+      "count": 19,
+      "checks": [
+        "microphone can be prepared in the lobby before joining any room or party",
+        "party voice carries actual RTP before a match room exists",
+        "party text works before queueing",
+        "two accepted party members automatically queue into the same room and team",
+        "a second party joins the opposing team through the same region queue",
+        "all chat reaches three players and displays markup as literal text",
+        "team chat stays within the sender\u2019s team",
+        "prepared microphone survives party-to-match lobby transition",
+        "enabling voice keeps the microphone muted until push-to-talk",
+        "real WebRTC audio reaches both peers on the all-player voice channel",
+        "releasing push-to-talk immediately mutes the outgoing microphone",
+        "team voice removes the enemy sender track while preserving the teammate track",
+        "host relays guest party voice only to its permitted audience",
+        "guest audio is relayed through the host to another browser with sender identity preserved",
+        "three humans start a synchronized 5v5 match with seven bot replacements",
+        "the in-match menu can stop microphone capture without disconnecting",
+        "a guest attacker plants the C4 through host-side objective validation",
+        "a guest defender defuses with a kit and receives the shared round result",
+        "parties survive leaving a match lobby"
+      ]
+    },
+    "party-rules-validation.json": {
+      "passed": true,
+      "count": 6,
+      "checks": [
+        "players may form and join their own five-person party slots",
+        "party voice signalling is restricted to accepted senders and recipients",
+        "only the party leader can queue or alter party metadata",
+        "a leader can reserve only the exact accepted party roster",
+        "another accepted party can reserve the empty opposing side",
+        "members cannot alter another player\u2019s ready state or party ownership"
+      ]
+    },
+    "profile-rules.json": {
+      "passed": true,
+      "count": 4,
+      "checks": [
+        "bounded case-insensitive username prefix returns only matching profiles",
+        "profile discovery rejects anonymous, unbounded, short and oversized queries",
+        "server permits curated pictures and rejects URLs and unapproved IDs",
+        "name and search index must change together and cannot be spoofed"
+      ]
+    },
+    "rules-validation.json": {
+      "passed": true,
+      "count": 9,
+      "checks": [
+        "unauthenticated profiles and rooms are denied",
+        "players can edit only their own public profile",
+        "friend acceptance requires a recipient-approved request",
+        "presence is readable only by self and accepted friends",
+        "host creates a bounded room, guests claim their own slot",
+        "only the host can start or change room ownership",
+        "signalling is limited to actual room members and recipients",
+        "matchmaking discovery is bounded and owner-controlled",
+        "guests can leave without deleting other players or the room"
+      ]
+    },
+    "update6-regression.json": {
+      "passed": true,
+      "count": 10,
+      "checks": [
+        "T stock hands show native fingerless gloves and hide SAS sleeves",
+        "CT stock hands show native SAS gloves and sleeves",
+        "actual buy-menu purchases retain selected animated weapon visibility",
+        "equipped glove skin replaces stock CT gloves while retaining native SAS sleeves",
+        "custom glove skin remains equipped after changing teams",
+        "case opening uses synchronized normal and circular magnified reels",
+        "case reward reveals the actual native 3D mesh",
+        "3D reward supports drag inspection and clean close",
+        "developer grant requires the verified tester account and includes every finish",
+        "developer grant is idempotent and removed on sign-out"
+      ]
+    },
+    "update7-browser.json": {
+      "passed": true,
+      "count": 14,
+      "checks": [
+        "partial reload keeps every unfired bullet: 7/90 becomes 30/67",
+        "dropping a rifle preserves its magazine and pooled reserve",
+        "Use picks up the actual dropped weapon without creating ammunition",
+        "round decision starts a playable five-second aftermath",
+        "movement continues after the round result",
+        "post-round enemy deaths drop weapons without awarding another round",
+        "the next round starts automatically after five seconds",
+        "bomb detonation locks the attacker win and leaves distant survivors in the aftermath",
+        "the dedicated Knives category immediately exposes native knife finishes",
+        "case gold special-item card opens its real rare finish pool",
+        "EZ4ENCE can be purchased with CSCoins and equipped",
+        "winning-team MVP plays the equipped native music kit",
+        "CT hand wraps retain visible, unpainted bare hands and fingers",
+        "legacy and current glove material families compile without WebGL errors"
+      ]
+    },
+    "weapon-visibility.json": {
+      "passed": true,
+      "count": 98,
+      "checks": []
+    }
+  },
+  "nativeMusicDecodes": 20,
+  "nativeGloveFinishesRendered": 94,
+  "nativeWeaponVisibilityChecks": 98,
+  "firebaseRulesSHA256": "f254cc32e597382416628d687e4edb454e3b50794bc736a74f23ff350aaa0fae",
+  "firebaseRulesPublished": true,
+  "limitations": [
+    "Curated native profile portraits; custom uploads are unavailable.",
+    "Browser-hosted casual multiplayer and local cosmetics.",
+    "Source 2 material, optical, animation and blast effects are approximated.",
+    "No real user microphone capture or automated Google consent."
+  ]
+}

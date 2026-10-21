@@ -1,9 +1,12 @@
-import {ARSENAL} from './arsenal-data.mjs?v=20261020-6';
-import {nativeWeapons} from './weapon-data.mjs?v=20261020-6';
+import {ARSENAL} from './arsenal-data.mjs?v=20261020-7';
+import {nativeWeapons} from './weapon-data.mjs?v=20261020-7';
 export const UNIT=.0254;
 export const MOVEMENT={gravity:800*UNIT,jumpImpulse:301.993377*UNIT,friction:5.2,stopSpeed:80*UNIT,accelerate:5.5,airAccelerate:12,airCap:30*UNIT,step:18*UNIT,height:72*UNIT,crouchHeight:54*UNIT,radius:16*UNIT,eye:64*UNIT,crouchEye:46*UNIT};
 export const WEAPONS={};
-for(const [key,n] of Object.entries(ARSENAL)){const convert=a=>({...a,maxSpeed:(a.maxSpeed??n.maxSpeed)*UNIT});WEAPONS[key]={...n,reserve:n.reserveClips,maxSpeed:n.maxSpeed*UNIT,scopedSpeed:n.scopedSpeed*UNIT,range:n.range*UNIT,alternate:convert(n.alternate||{}),singleReload:['nova','xm1014','sawedoff'].includes(key)};}
+// Classic pooled ammunition: partial reloads retain every unfired round.
+const reserves={m4a1:90,m4a1_silencer:80,famas:90,galilar:90,aug:90,sg556:90,mac10:100,mp9:120,mp7:120,mp5sd:120,ump45:100,rifle:90,pistol:35,glock:120,hkp2000:52,usp_silencer:24,p250:26,elite:120,fiveseven:100,tec9:90,cz75a:12,revolver:8,awp:30,ssg08:90,scar20:90,g3sg1:90,nova:32,xm1014:32,sawedoff:32,mag7:32,m249:200,negev:300,bizon:120,p90:100};
+function classicReserve(key,n){return reserves[key]??(n.clip?n.clip*(n.reserveClips||3):0);}
+for(const [key,n] of Object.entries(ARSENAL)){const convert=a=>({...a,maxSpeed:(a.maxSpeed??n.maxSpeed)*UNIT});WEAPONS[key]={...n,reserve:classicReserve(key,n),maxSpeed:n.maxSpeed*UNIT,scopedSpeed:n.scopedSpeed*UNIT,range:n.range*UNIT,alternate:convert(n.alternate||{}),singleReload:['nova','xm1014','sawedoff'].includes(key)};}
 WEAPONS.knife={label:'Knife',animKey:'default_t',icon:'knife',slot:'knife',clip:0,reserve:0,damage:40,cycle:.4,reload:0,deploy:1,maxSpeed:250*UNIT,spread:0,stand:0,crouch:0,moving:0,automatic:false,range:48*UNIT,armorRatio:1.7,headshot:1,rangeModifier:1};
 WEAPONS.c4={...WEAPONS.knife,label:'C4 Explosive',animKey:'c4',icon:'c4',slot:'bomb',maxSpeed:250*UNIT};
 WEAPONS.smoke={...WEAPONS.knife,label:'Smoke Grenade',animKey:'smoke',icon:'smokegrenade',slot:'grenade',maxSpeed:245*UNIT};
@@ -33,8 +36,7 @@ export function inaccuracy(w,{speed=0,crouch=false,walk=false,air=false,vertical
  return Math.min(1,(base??0)+move*(w.moving??0)+airExtra+penalty);
 }
 
-// Current CS2 magazine rule (Valve, March 18 2026): discard remaining rounds.
-export function completeReload(ammo,reserve,clip){return reserve>0?{ammo:clip,reserve:reserve-1,discarded:ammo}:{ammo,reserve,discarded:0};}
+export function completeReload(ammo,reserve,clip){const take=Math.max(0,Math.min(clip-ammo,reserve));return {ammo:ammo+take,reserve:reserve-take,discarded:0};}
 export function fovFor(weapon,zoom=0){const horizontal=zoom>0&&weapon.zoomLevels?(zoom===1?weapon.zoom1:weapon.zoom2):90;return 2*Math.atan(Math.tan(horizontal*Math.PI/360)*.75)*180/Math.PI;}
 export function canScope(weapon){return weapon.zoomLevels>0;}
 

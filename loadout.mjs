@@ -1,4 +1,4 @@
-import {ARSENAL} from './arsenal-data.mjs?v=20261020-6';
+import {ARSENAL} from './arsenal-data.mjs?v=20261020-7';
 export const DEFAULT_LOADOUT={T:{pistols:['glock','elite','p250','tec9','pistol'],midtier:['mac10','mp7','ump45','xm1014','negev'],rifles:['galilar','rifle','sg556','ssg08','awp']},CT:{pistols:['hkp2000','usp_silencer','p250','fiveseven','pistol'],midtier:['mp9','mp7','mag7','xm1014','negev'],rifles:['famas','m4a1','m4a1_silencer','aug','awp']}};
 export function allowed(key,team){const w=ARSENAL[key];return !!w&&(w.team==='Both'||w.team==='both'||w.team==='ANY'||w.team===team||!w.team);}
 export function categoryOf(key){const w=ARSENAL[key];return w?.slot==='secondary'?'pistols':w?.category==='rifles'?'rifles':w?.slot==='primary'?'midtier':'equipment';}
