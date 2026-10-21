@@ -13,12 +13,12 @@
       "$uid": {
         ".read": "auth != null",
         ".write": "auth != null && auth.uid == $uid",
-        ".validate": "newData.hasChildren(['displayName','avatar','tag','region','createdAt','updatedAt'])",
+        ".validate": "newData.hasChildren(['displayName','avatar','tag','region','createdAt','updatedAt']) && (!newData.child('searchName').exists() || newData.child('searchName').val() == newData.child('displayName').val().toLowerCase())",
         "displayName": {
           ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 24"
         },
         "avatar": {
-          ".validate": "newData.val() == 'ct' || newData.val() == 't'"
+          ".validate": "newData.val() == 'ct' || newData.val() == 't' || newData.val() == 'agent-5308' || newData.val() == 'agent-5306' || newData.val() == 'agent-5404' || newData.val() == 'agent-5601' || newData.val() == 'agent-4711' || newData.val() == 'agent-4757' || newData.val() == 'agent-5108' || newData.val() == 'agent-5106' || newData.val() == 'agent-5504' || newData.val() == 'agent-4726' || newData.val() == 'agent-4730' || newData.val() == 'agent-4777'"
         },
         "tag": {
           ".validate": "newData.isString() && root.child('handles').child(newData.val()).val() == $uid && (!data.exists() || data.val() == newData.val())"
@@ -34,8 +34,15 @@
         },
         "$other": {
           ".validate": false
+        },
+        "searchName": {
+          ".validate": "newData.isString() && newData.val() == newData.parent().child('displayName').val().toLowerCase()"
         }
-      }
+      },
+      ".indexOn": [
+        "searchName"
+      ],
+      ".read": "auth != null && query.orderByChild == 'searchName' && query.limitToFirst != null && query.limitToFirst > 0 && query.limitToFirst <= 20 && query.startAt != null && query.startAt.length >= 2 && query.startAt.length <= 24 && query.endAt == query.startAt + '\\uf8ff'"
     },
     "presence": {
       "$uid": {
