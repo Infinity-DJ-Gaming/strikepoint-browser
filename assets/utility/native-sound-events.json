@@ -1,0 +1,128 @@
+{
+  "reload-ak.vnmclip": [
+    {
+      "frame": 4.0,
+      "event": "Weapon_AK47.Inspect_F245"
+    },
+    {
+      "frame": 11.0,
+      "event": "Weapon_AK47.Clipout"
+    },
+    {
+      "frame": 21.0,
+      "event": "Weapon_AK47.Inspect_F100"
+    },
+    {
+      "frame": 32.0,
+      "event": "Weapon_AK47.Clipin"
+    },
+    {
+      "frame": 33.0,
+      "event": "Weapon_AK47.AddAmmo"
+    },
+    {
+      "frame": 48.0,
+      "event": "Weapon_AK47.BoltPull"
+    },
+    {
+      "frame": 50.0,
+      "event": "Weapon_AK47.Inspect_F245"
+    }
+  ],
+  "reload_awp.vnmclip": [
+    {
+      "frame": 8.0,
+      "event": "Weapon_AWP.Clipout"
+    },
+    {
+      "frame": 46.0,
+      "event": "Weapon_AWP.Clipin"
+    },
+    {
+      "frame": 60.0,
+      "event": "Weapon_AWP.Cliphit"
+    },
+    {
+      "frame": 79.0,
+      "event": "Weapon_AWP.BoltBack"
+    },
+    {
+      "frame": 89.0,
+      "event": "Weapon_AWP.BoltForward"
+    }
+  ],
+  "reload_deagle.vnmclip": [
+    {
+      "frame": 10.0,
+      "event": "Weapon_DEagle.Clipout"
+    },
+    {
+      "frame": 21.0,
+      "event": "Weapon_DEagle.Clipin"
+    },
+    {
+      "frame": 23.0,
+      "event": "Weapon_DEagle.AddAmmo"
+    },
+    {
+      "frame": 41.0,
+      "event": "Weapon_DEagle.Slideback"
+    },
+    {
+      "frame": 47.0,
+      "event": "Weapon_DEagle.Slideforward"
+    }
+  ],
+  "reload_glock.vnmclip": [
+    {
+      "frame": 14.0,
+      "event": "Weapon_Glock.Clipout"
+    },
+    {
+      "frame": 25.0,
+      "event": "Weapon_Glock.Clipin"
+    },
+    {
+      "frame": 44.0,
+      "event": "Weapon_Glock.Slideback"
+    },
+    {
+      "frame": 50.0,
+      "event": "Weapon_Glock.Sliderelease"
+    }
+  ],
+  "plant_c4.vnmclip": [
+    {
+      "frame": 3.0,
+      "event": "c4.initiate"
+    },
+    {
+      "frame": 20.0,
+      "event": "c4.keypressquiet"
+    },
+    {
+      "frame": 29.0,
+      "event": "c4.keypressquiet"
+    },
+    {
+      "frame": 37.0,
+      "event": "c4.keypressquiet"
+    },
+    {
+      "frame": 44.0,
+      "event": "c4.keypressquiet"
+    },
+    {
+      "frame": 50.0,
+      "event": "c4.keypressquiet"
+    },
+    {
+      "frame": 59.0,
+      "event": "c4.keypressquiet"
+    },
+    {
+      "frame": 65.0,
+      "event": "c4.keypressquiet"
+    }
+  ]
+}

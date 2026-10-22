@@ -1,11 +1,8 @@
 name: Publish browser practice
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
-    inputs:
-      tag:
-        description: Release tag containing strikepoint-web.zip
-        required: true
-        default: update-5
 permissions:
   contents: read
   pages: write
@@ -20,18 +17,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Download the tested static release
-        env:
-          GH_TOKEN: ${{ github.token }}
-          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
-        run: |
-          mkdir -p build
-          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern strikepoint-web.zip --dir build
-          python -m zipfile -e build/strikepoint-web.zip build/site
+      - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: build/site
+          path: .
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

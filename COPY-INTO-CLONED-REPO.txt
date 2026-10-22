@@ -1,0 +1,11 @@
+COPY THESE FILES INTO YOUR CLONED REPOSITORY
+
+1. In GitHub Desktop, clone Infinity-DJ-Gaming/strikepoint-browser.
+2. Choose Repository > Show in Explorer.
+3. Copy ALL contents of this folder into that repository folder. Merge folders and replace matching files. Include .github, assets, vendor, index.html and the other root files. Keep the clone's existing .git folder.
+4. Commit the changes in GitHub Desktop, then Push origin on main.
+5. The included .github/workflows/pages.yml deploys directly from the pushed files. It replaces the previous workflow that downloaded the release ZIP.
+
+Put index.html directly in the repository root. Do not put this enclosing strikepoint-github-files folder or a ZIP into the repository.
+
+The separate strikepoint-native-textures folder is for optional local original-resolution textures; it is not needed for this upload.

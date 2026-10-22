@@ -1,0 +1,328 @@
+{
+  "method": "Original native per-sample world transforms converted to original arms.glb local hierarchy. No hand/finger trajectories synthesized. Source2 procedural twist helpers are absent;8TWIST bones retain original local bind transforms and inherit their animated arm parents.",
+  "clips": [
+    {
+      "role": "deploy",
+      "source": "animation/anims/viewmodel/arms/inspects/pedestal_gloves_deploy.vnmclip_c",
+      "name": "native_gloves_deploy",
+      "duration": 2,
+      "samples": 61,
+      "mappedBones": 46,
+      "mappedBoneNames": [
+        "root_motion",
+        "arm_upper_L",
+        "arm_lower_L",
+        "hand_L",
+        "finger_middle_meta_L",
+        "finger_middle_0_L",
+        "finger_middle_1_L",
+        "finger_middle_2_L",
+        "finger_pinky_meta_L",
+        "finger_pinky_0_L",
+        "finger_pinky_1_L",
+        "finger_pinky_2_L",
+        "finger_index_meta_L",
+        "finger_index_0_L",
+        "finger_index_1_L",
+        "finger_index_2_L",
+        "finger_thumb_0_L",
+        "finger_thumb_1_L",
+        "finger_thumb_2_L",
+        "finger_ring_meta_L",
+        "finger_ring_0_L",
+        "finger_ring_1_L",
+        "finger_ring_2_L",
+        "arm_upper_R",
+        "arm_lower_R",
+        "hand_R",
+        "finger_middle_meta_R",
+        "finger_middle_0_R",
+        "finger_middle_1_R",
+        "finger_middle_2_R",
+        "finger_pinky_meta_R",
+        "finger_pinky_0_R",
+        "finger_pinky_1_R",
+        "finger_pinky_2_R",
+        "finger_index_meta_R",
+        "finger_index_0_R",
+        "finger_index_1_R",
+        "finger_index_2_R",
+        "finger_thumb_0_R",
+        "finger_thumb_1_R",
+        "finger_thumb_2_R",
+        "finger_ring_meta_R",
+        "finger_ring_0_R",
+        "finger_ring_1_R",
+        "finger_ring_2_R",
+        "wpn"
+      ],
+      "maximumWorldMatrixErrorBeforeFloatEncoding": 2.3841845830931097e-07,
+      "handBounds": {
+        "min": [
+          -0.30193523986128673,
+          -0.5925170712918759,
+          0.028500731428431014
+        ],
+        "max": [
+          0.24865129498079133,
+          -0.07736984729822677,
+          0.32001690323229004
+        ]
+      },
+      "handSamples": [
+        {
+          "time": 0,
+          "node": "hand_L",
+          "position": [
+            0.24865129498079133,
+            -0.5925170712918759,
+            0.13128721714484284
+          ]
+        },
+        {
+          "time": 0,
+          "node": "hand_R",
+          "position": [
+            -0.30193523986128673,
+            -0.521700273658155,
+            0.03570591240122384
+          ]
+        },
+        {
+          "time": 1,
+          "node": "hand_L",
+          "position": [
+            0.16493990813207327,
+            -0.1336054110452394,
+            0.3156635002936057
+          ]
+        },
+        {
+          "time": 1,
+          "node": "hand_R",
+          "position": [
+            -0.16253618226196903,
+            -0.13830680805811849,
+            0.3073518789629001
+          ]
+        }
+      ]
+    },
+    {
+      "role": "loop",
+      "source": "animation/anims/viewmodel/arms/inspects/pedestal_gloves_loop.vnmclip_c",
+      "name": "native_gloves_loop",
+      "duration": 8.5,
+      "samples": 256,
+      "mappedBones": 46,
+      "mappedBoneNames": [
+        "root_motion",
+        "arm_upper_L",
+        "arm_lower_L",
+        "hand_L",
+        "finger_middle_meta_L",
+        "finger_middle_0_L",
+        "finger_middle_1_L",
+        "finger_middle_2_L",
+        "finger_pinky_meta_L",
+        "finger_pinky_0_L",
+        "finger_pinky_1_L",
+        "finger_pinky_2_L",
+        "finger_index_meta_L",
+        "finger_index_0_L",
+        "finger_index_1_L",
+        "finger_index_2_L",
+        "finger_thumb_0_L",
+        "finger_thumb_1_L",
+        "finger_thumb_2_L",
+        "finger_ring_meta_L",
+        "finger_ring_0_L",
+        "finger_ring_1_L",
+        "finger_ring_2_L",
+        "arm_upper_R",
+        "arm_lower_R",
+        "hand_R",
+        "finger_middle_meta_R",
+        "finger_middle_0_R",
+        "finger_middle_1_R",
+        "finger_middle_2_R",
+        "finger_pinky_meta_R",
+        "finger_pinky_0_R",
+        "finger_pinky_1_R",
+        "finger_pinky_2_R",
+        "finger_index_meta_R",
+        "finger_index_0_R",
+        "finger_index_1_R",
+        "finger_index_2_R",
+        "finger_thumb_0_R",
+        "finger_thumb_1_R",
+        "finger_thumb_2_R",
+        "finger_ring_meta_R",
+        "finger_ring_0_R",
+        "finger_ring_1_R",
+        "finger_ring_2_R",
+        "wpn"
+      ],
+      "maximumWorldMatrixErrorBeforeFloatEncoding": 2.3841845830931097e-07,
+      "handBounds": {
+        "min": [
+          -0.15784320311457728,
+          -0.14076695268002778,
+          0.27108634383576846
+        ],
+        "max": [
+          0.12773900295653512,
+          -0.07078103379381395,
+          0.31199153587401185
+        ]
+      },
+      "handSamples": [
+        {
+          "time": 0,
+          "node": "hand_L",
+          "position": [
+            0.12644082020567626,
+            -0.07736790705494595,
+            0.29630566778295064
+          ]
+        },
+        {
+          "time": 0,
+          "node": "hand_R",
+          "position": [
+            -0.1507165399053198,
+            -0.129689167420932,
+            0.3082828681351316
+          ]
+        },
+        {
+          "time": 4.266666889190674,
+          "node": "hand_L",
+          "position": [
+            0.11981566223439546,
+            -0.08314809481841387,
+            0.30355360554296085
+          ]
+        },
+        {
+          "time": 4.266666889190674,
+          "node": "hand_R",
+          "position": [
+            -0.14685465015674526,
+            -0.137007001886178,
+            0.3023502570352101
+          ]
+        }
+      ]
+    },
+    {
+      "role": "anim",
+      "source": "animation/anims/viewmodel/arms/inspects/pedestal_gloves_anim.vnmclip_c",
+      "name": "native_gloves_anim",
+      "duration": 8.5,
+      "samples": 256,
+      "mappedBones": 46,
+      "mappedBoneNames": [
+        "root_motion",
+        "arm_upper_L",
+        "arm_lower_L",
+        "hand_L",
+        "finger_middle_meta_L",
+        "finger_middle_0_L",
+        "finger_middle_1_L",
+        "finger_middle_2_L",
+        "finger_pinky_meta_L",
+        "finger_pinky_0_L",
+        "finger_pinky_1_L",
+        "finger_pinky_2_L",
+        "finger_index_meta_L",
+        "finger_index_0_L",
+        "finger_index_1_L",
+        "finger_index_2_L",
+        "finger_thumb_0_L",
+        "finger_thumb_1_L",
+        "finger_thumb_2_L",
+        "finger_ring_meta_L",
+        "finger_ring_0_L",
+        "finger_ring_1_L",
+        "finger_ring_2_L",
+        "arm_upper_R",
+        "arm_lower_R",
+        "hand_R",
+        "finger_middle_meta_R",
+        "finger_middle_0_R",
+        "finger_middle_1_R",
+        "finger_middle_2_R",
+        "finger_pinky_meta_R",
+        "finger_pinky_0_R",
+        "finger_pinky_1_R",
+        "finger_pinky_2_R",
+        "finger_index_meta_R",
+        "finger_index_0_R",
+        "finger_index_1_R",
+        "finger_index_2_R",
+        "finger_thumb_0_R",
+        "finger_thumb_1_R",
+        "finger_thumb_2_R",
+        "finger_ring_meta_R",
+        "finger_ring_0_R",
+        "finger_ring_1_R",
+        "finger_ring_2_R",
+        "wpn"
+      ],
+      "maximumWorldMatrixErrorBeforeFloatEncoding": 2.3841845830931097e-07,
+      "handBounds": {
+        "min": [
+          -0.15784320311457728,
+          -0.14076695268002778,
+          0.27108634383576846
+        ],
+        "max": [
+          0.12773900295653512,
+          -0.07078103379381395,
+          0.31199153587401185
+        ]
+      },
+      "handSamples": [
+        {
+          "time": 0,
+          "node": "hand_L",
+          "position": [
+            0.12644082020567626,
+            -0.07736790705494595,
+            0.29630566778295064
+          ]
+        },
+        {
+          "time": 0,
+          "node": "hand_R",
+          "position": [
+            -0.1507165399053198,
+            -0.129689167420932,
+            0.3082828681351316
+          ]
+        },
+        {
+          "time": 4.266666889190674,
+          "node": "hand_L",
+          "position": [
+            0.11981566223439546,
+            -0.08314809481841387,
+            0.30355360554296085
+          ]
+        },
+        {
+          "time": 4.266666889190674,
+          "node": "hand_R",
+          "position": [
+            -0.14685465015674526,
+            -0.137007001886178,
+            0.3023502570352101
+          ]
+        }
+      ]
+    }
+  ],
+  "file": "assets/cosmetics/models/glove-inspect-arms.glb",
+  "sha256": "b8a18c2c4ac8874449f136bc22e48932f3ca37b8744af2560899a94a1de82222"
+}

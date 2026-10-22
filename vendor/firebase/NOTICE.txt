@@ -1,0 +1,4 @@
+Firebase JavaScript SDK 13.0.0
+Copyright Google LLC and Firebase contributors. Distributed under the Apache License 2.0 as included in the source headers.
+Official browser modules downloaded from https://www.gstatic.com/firebasejs/13.0.0/ . Only firebase-app.js import URLs were changed to their adjacent local copy.
+Documentation: https://firebase.google.com/docs/web/setup

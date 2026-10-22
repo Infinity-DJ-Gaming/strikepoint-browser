@@ -1,0 +1,8 @@
+{
+  "hiddenNodesRemoved": 21,
+  "visibleTriangles": 2547909,
+  "unusedAttributesRemoved": 1360,
+  "bytes": 36197416,
+  "files": 245,
+  "notes": "Same visible source triangle topology; redundant native normals/tangents/secondary UVs removed because browser computes normals and uses only base color. Original collision is untouched. Meshopt uses 16-bit position quantization and 14-bit UV quantization."
+}

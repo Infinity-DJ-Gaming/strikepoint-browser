@@ -1,0 +1,4 @@
+# Push extracted game files, not archives or the separate local native library.
+*.zip
+strikepoint-native-textures/
+node_modules/

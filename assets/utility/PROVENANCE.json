@@ -1,0 +1,104 @@
+{
+  "source": "Installed Counter-Strike 2",
+  "ownership": "Valve Corporation retains ownership; unofficial browser conversion.",
+  "models": {
+    "flashbang": {
+      "source": "weapons/models/grenade/flashbang/weapon_flashbang.vmdl_c",
+      "output": "assets/utility/flashbang.glb"
+    },
+    "hegrenade": {
+      "source": "weapons/models/grenade/hegrenade/weapon_hegrenade.vmdl_c",
+      "output": "assets/utility/hegrenade.glb"
+    },
+    "molotov": {
+      "source": "weapons/models/grenade/molotov/weapon_molotov.vmdl_c",
+      "output": "assets/utility/molotov.glb"
+    }
+  },
+  "sources": {
+    "smoke.png": "materials/particle/particle_smokegrenade_color_tga_ab564465.vtex_c",
+    "smoke-alpha.png": "materials/particle/particle_smokegrenade_trans_tga_9bc0185f.vtex_c",
+    "fire.png": "materials/effects/fire_cloud1_color_tga_d783e8ef.vtex_c",
+    "fire-atlas.webp": "materials/particle/fire_onsurface/fire_onsurface.vtex_c (sequence 0, 30 original frames repacked losslessly into 8 x 4 cells of 256px)",
+    "utility-arms.glb": "agents/models/ctm_sas/ctm_sas.vmdl_c (30 original utility viewmodel animation clips, geometry removed)"
+  },
+  "animations": [
+    "animation/anims/viewmodel/grenade/grenade_hegrenade/pullpin_hegrenade",
+    "animation/anims/viewmodel/grenade/grenade_hegrenade/throwcharge_low_hegrenade",
+    "animation/anims/viewmodel/grenade/grenade_hegrenade/throwcharge_mid_hegrenade",
+    "animation/anims/viewmodel/grenade/grenade_hegrenade/throwcharge_high_hegrenade",
+    "animation/anims/viewmodel/grenade/grenade_hegrenade/throw_underhand_hegrenade",
+    "animation/anims/viewmodel/grenade/grenade_hegrenade/throw_overhand_hegrenade",
+    "animation/anims/viewmodel/grenade/grenade_hegrenade/draw_hegrenade",
+    "animation/anims/viewmodel/grenade/grenade_hegrenade/lookat01_hegrenade",
+    "animation/anims/viewmodel/grenade/grenade_hegrenade/lookat02_hegrenade",
+    "animation/anims/viewmodel/grenade/grenade_hegrenade/idle_hegrenade",
+    "animation/anims/viewmodel/grenade/grenade_molotov/pullpin_molotov",
+    "animation/anims/viewmodel/grenade/grenade_molotov/throwcharge_low_molotov",
+    "animation/anims/viewmodel/grenade/grenade_molotov/throwcharge_mid_molotov",
+    "animation/anims/viewmodel/grenade/grenade_molotov/throwcharge_high_molotov",
+    "animation/anims/viewmodel/grenade/grenade_molotov/throw_underhand_molotov",
+    "animation/anims/viewmodel/grenade/grenade_molotov/throw_overhand_molotov",
+    "animation/anims/viewmodel/grenade/grenade_molotov/draw_molotov",
+    "animation/anims/viewmodel/grenade/grenade_molotov/lookat01_molotov",
+    "animation/anims/viewmodel/grenade/grenade_molotov/lookat02_molotov",
+    "animation/anims/viewmodel/grenade/grenade_molotov/idle_molotov",
+    "animation/anims/viewmodel/grenade/grenade_flashbang/pullpin_flashbang",
+    "animation/anims/viewmodel/grenade/grenade_flashbang/throwcharge_low_flashbang",
+    "animation/anims/viewmodel/grenade/grenade_flashbang/throwcharge_mid_flashbang",
+    "animation/anims/viewmodel/grenade/grenade_flashbang/throwcharge_high_flashbang",
+    "animation/anims/viewmodel/grenade/grenade_flashbang/throw_underhand_flashbang",
+    "animation/anims/viewmodel/grenade/grenade_flashbang/throw_overhand_flashbang",
+    "animation/anims/viewmodel/grenade/grenade_flashbang/draw_flashbang",
+    "animation/anims/viewmodel/grenade/grenade_flashbang/lookat01_flashbang",
+    "animation/anims/viewmodel/grenade/grenade_flashbang/lookat02_flashbang",
+    "animation/anims/viewmodel/grenade/grenade_flashbang/idle_flashbang"
+  ],
+  "files": [
+    {
+      "file": "fire-atlas.webp",
+      "bytes": 723048,
+      "sha256": "e50f5febada02789cdae99120ae2b14bda4919b3e726373b5e895f721a2cc347"
+    },
+    {
+      "file": "fire.png",
+      "bytes": 28193,
+      "sha256": "a6ffd75ae5da4809fcc3a979f28c5a871ecf943714ec841ce7fd22860465a5bb"
+    },
+    {
+      "file": "flashbang.glb",
+      "bytes": 386744,
+      "sha256": "e1393083ef3e9952ca4d48d8e3c4004fe17253d32464a0499c2689169008de44"
+    },
+    {
+      "file": "hegrenade.glb",
+      "bytes": 294624,
+      "sha256": "6cf61d66adf8bf1fc6ec5656e35aaf3ec6ca59347946680641f239beb004c553"
+    },
+    {
+      "file": "molotov.glb",
+      "bytes": 644840,
+      "sha256": "bc0becb239ef7368bf6a64df05ae63e4b45291ca4617bcc0012a1ca5a09f3979"
+    },
+    {
+      "file": "native-sound-events.json",
+      "bytes": 2348,
+      "sha256": "6a5710e5ea8075c0ed5c58a7604123bb8a920de22f88bd74db9f2d07deb242d7"
+    },
+    {
+      "file": "smoke-alpha.png",
+      "bytes": 3498,
+      "sha256": "6dad649600397851561e8b90a98a46a67453a33274fa3919514b2fcd3afa0f96"
+    },
+    {
+      "file": "smoke.png",
+      "bytes": 6718,
+      "sha256": "4833b870c3f932b590e685bc2bf132e585a8b3d4a6f73624e1d4379f4050e0be"
+    },
+    {
+      "file": "utility-arms.glb",
+      "bytes": 1912052,
+      "sha256": "7dd40e8560c2830367e0c783ee2c3dd5ef94f7fa23ccc75406d2c59f73a5122a"
+    }
+  ]
+}

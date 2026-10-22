@@ -1,0 +1,221 @@
+{
+  "source": "Installed Counter-Strike 2 csgo/pak01_dir.vpk",
+  "exporter": "Source 2 Viewer CLI 20.1; native additive clips composed over native bind pose",
+  "ownership": "Valve Corporation retains ownership. Unofficial browser adaptation.",
+  "sourceModel": "agents/models/ctm_sas/ctm_sas.vmdl_c",
+  "geometry": "Removed; animation-only native skeleton and sampled channels.",
+  "retargeting": "Filter tracks by exact target bone name present in destination model before creating an AnimationAction. Core humanoid bone transforms are shared by SAS and Phoenix. Missing non-shared bones are character-specific attachment/jiggle bones, not replacement motion.",
+  "staticPosePlayback": "Clips with a single sample must have a finite runtime duration or LoopOnce+clampWhenFinished to prevent Three.js repeat division by zero. Hold original samples; do not generate motion.",
+  "deathPlayback": "LoopOnce, clampWhenFinished=true. Continue updating the death action until it completes, then retain final pose. Do not call stopAllAction on the visible corpse: Three.js restores bind pose.",
+  "compatibility": {
+    "SAS": {
+      "matchingAnimatedBodyBones": 94,
+      "missingAnimatedBodyBones": [],
+      "ignoredNonBodyAnimationNodes": [
+        "bolt",
+        "clip",
+        "cliprelease",
+        "detonator_switch",
+        "econ",
+        "handle",
+        "muzzle",
+        "pin",
+        "ring",
+        "switch_cover",
+        "trigger",
+        "weapon",
+        "weapon_offset"
+      ]
+    },
+    "Phoenix": {
+      "matchingAnimatedBodyBones": 86,
+      "missingAnimatedBodyBones": [
+        "jiggle_climbinggear_01",
+        "jiggle_climbinggear_02",
+        "jiggle_front_micropouches",
+        "jiggle_front_pouch_01",
+        "jiggle_front_pouch_02",
+        "jiggle_holster",
+        "jiggle_hood",
+        "jiggle_radio"
+      ],
+      "ignoredNonBodyAnimationNodes": [
+        "bolt",
+        "clip",
+        "cliprelease",
+        "detonator_switch",
+        "econ",
+        "handle",
+        "muzzle",
+        "pin",
+        "ring",
+        "switch_cover",
+        "trigger",
+        "weapon",
+        "weapon_offset"
+      ]
+    }
+  },
+  "clips": {
+    "crouchIdle": {
+      "name": "animation/anims/world/rifle/_default_rifle/idle_crouch_rifle",
+      "ending": "idle_crouch_rifle",
+      "duration": 0,
+      "loop": true,
+      "holdLastFrame": false,
+      "staticPose": true,
+      "minimumRuntimeDuration": 0.03333333333333333,
+      "source": "animation/anims/world/rifle/_default_rifle/idle_crouch_rifle.vnmclip_c"
+    },
+    "crouchMove": {
+      "name": "animation/anims/world/rifle/_default_rifle/crouch_n_rifle",
+      "ending": "crouch_n_rifle",
+      "duration": 0.7999999523162842,
+      "loop": true,
+      "holdLastFrame": false,
+      "staticPose": false,
+      "minimumRuntimeDuration": 0.7999999523162842,
+      "source": "animation/anims/world/rifle/_default_rifle/crouch_n_rifle.vnmclip_c"
+    },
+    "plant": {
+      "name": "animation/anims/world/equipment/c4/planting",
+      "ending": "planting",
+      "duration": 3.299999952316284,
+      "loop": false,
+      "holdLastFrame": true,
+      "staticPose": false,
+      "minimumRuntimeDuration": 3.299999952316284,
+      "source": "animation/anims/world/equipment/c4/planting.vnmclip_c"
+    },
+    "plantCrouch": {
+      "name": "animation/anims/world/equipment/c4/planting_crouch",
+      "ending": "planting_crouch",
+      "duration": 3.299999952316284,
+      "loop": false,
+      "holdLastFrame": true,
+      "staticPose": false,
+      "minimumRuntimeDuration": 3.299999952316284,
+      "source": "animation/anims/world/equipment/c4/planting_crouch.vnmclip_c"
+    },
+    "throwUnderhand": {
+      "name": "animation/anims/world/grenade/_default_grenade/throw_underhand_grenade",
+      "ending": "throw_underhand_grenade",
+      "duration": 0.8666999936103821,
+      "loop": false,
+      "holdLastFrame": true,
+      "staticPose": false,
+      "minimumRuntimeDuration": 0.8666999936103821,
+      "source": "animation/anims/world/grenade/_default_grenade/throw_underhand_grenade.vnmclip_c"
+    },
+    "throwOverhand": {
+      "name": "animation/anims/world/grenade/_default_grenade/throw_overhand_grenade",
+      "ending": "throw_overhand_grenade",
+      "duration": 1.0999675989151,
+      "loop": false,
+      "holdLastFrame": true,
+      "staticPose": false,
+      "minimumRuntimeDuration": 1.0999675989151,
+      "source": "animation/anims/world/grenade/_default_grenade/throw_overhand_grenade.vnmclip_c"
+    },
+    "reloadAK": {
+      "name": "animation/anims/world/rifle/rifle_ak/reload_ak",
+      "ending": "reload_ak",
+      "duration": 2.433300018310547,
+      "loop": false,
+      "holdLastFrame": true,
+      "staticPose": false,
+      "minimumRuntimeDuration": 2.433300018310547,
+      "source": "animation/anims/world/rifle/rifle_ak/reload_ak.vnmclip_c"
+    },
+    "reloadM4": {
+      "name": "animation/anims/world/rifle/rifle_m4a4/reload_m4a4",
+      "ending": "reload_m4a4",
+      "duration": 3.066699981689453,
+      "loop": false,
+      "holdLastFrame": true,
+      "staticPose": false,
+      "minimumRuntimeDuration": 3.066699981689453,
+      "source": "animation/anims/world/rifle/rifle_m4a4/reload_m4a4.vnmclip_c"
+    },
+    "defuseLoop": {
+      "name": "animation/anims/world/shared/defuse/defuse_loop_rifle",
+      "ending": "defuse_loop_rifle",
+      "duration": 2,
+      "loop": true,
+      "holdLastFrame": false,
+      "staticPose": false,
+      "minimumRuntimeDuration": 2,
+      "source": "animation/anims/world/shared/defuse/defuse_loop_rifle.vnmclip_c"
+    },
+    "defuseCrouchLoop": {
+      "name": "animation/anims/world/shared/defuse/defuse_crouch_loop_rifle",
+      "ending": "defuse_crouch_loop_rifle",
+      "duration": 2,
+      "loop": true,
+      "holdLastFrame": false,
+      "staticPose": false,
+      "minimumRuntimeDuration": 2,
+      "source": "animation/anims/world/shared/defuse/defuse_crouch_loop_rifle.vnmclip_c"
+    },
+    "defuseEnter": {
+      "name": "animation/anims/world/shared/defuse/defuse_enter_rifle",
+      "ending": "defuse_enter_rifle",
+      "duration": 1,
+      "loop": false,
+      "holdLastFrame": true,
+      "staticPose": false,
+      "minimumRuntimeDuration": 1,
+      "source": "animation/anims/world/shared/defuse/defuse_enter_rifle.vnmclip_c"
+    },
+    "flashed": {
+      "name": "animation/anims/world/shared/flashed",
+      "ending": "flashed",
+      "duration": 0,
+      "loop": true,
+      "holdLastFrame": false,
+      "staticPose": true,
+      "minimumRuntimeDuration": 0.03333333333333333,
+      "source": "animation/anims/world/shared/flashed.vnmclip_c"
+    },
+    "flashedCrouch": {
+      "name": "animation/anims/world/shared/flashed_crouch",
+      "ending": "flashed_crouch",
+      "duration": 0,
+      "loop": true,
+      "holdLastFrame": false,
+      "staticPose": true,
+      "minimumRuntimeDuration": 0.03333333333333333,
+      "source": "animation/anims/world/shared/flashed_crouch.vnmclip_c"
+    },
+    "deathChest": {
+      "name": "animation/anims/world/shared/death_chest_a",
+      "ending": "death_chest_a",
+      "duration": 2.5,
+      "loop": false,
+      "holdLastFrame": true,
+      "staticPose": false,
+      "minimumRuntimeDuration": 2.5,
+      "source": "animation/anims/world/shared/death_chest_a.vnmclip_c"
+    },
+    "deathGut": {
+      "name": "animation/anims/world/shared/death_gut_a",
+      "ending": "death_gut_a",
+      "duration": 2.3666999340057373,
+      "loop": false,
+      "holdLastFrame": true,
+      "staticPose": false,
+      "minimumRuntimeDuration": 2.3666999340057373,
+      "source": "animation/anims/world/shared/death_gut_a.vnmclip_c"
+    }
+  },
+  "file": {
+    "path": "assets/arsenal/bot-actions.glb",
+    "bytes": 1316304,
+    "sha256": "1a459525e07e7ec3e81e4b667bdd0a0209b35dd5964e661416d05b91b7f97d97"
+  },
+  "directClipExports": {
+    "deathChest": "animation/anims/world/shared/death_chest_a.vnmclip_c",
+    "deathGut": "animation/anims/world/shared/death_gut_a.vnmclip_c"
+  },
+  "directClipMerge": "Original native death animation channels were copied into the animation-only bank by exact authored bone name. No poses, interpolation samples or movement trajectories were synthesized."
+}

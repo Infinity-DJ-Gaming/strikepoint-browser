@@ -1,0 +1,10 @@
+{
+  "source": "Installed CS2 game/csgo/pak01_dir.vpk",
+  "reticleSource": "materials/models/weapons/shared/scope/scope_dot_white_color_tga_be26db34.vtex_c",
+  "reticleFile": "native-scope-dot.png",
+  "processing": "Original texture decoded with Source 2 Viewer CLI 20.1. CSS applies the requested green tint using its original luminance mask.",
+  "models": ["Original weapon_rif_aug native GLB", "Original weapon_rif_sg556 native GLB", "Original compatible legacy finish models"],
+  "rendering": "WebGL viewmodel alignment to the lens plane and screen-space optical masking; approximates the engine optic stencil. Sniper HUD remains separate.",
+  "generatedArtwork": false,
+  "ownership": "Valve and original contributors retain ownership."
+}

@@ -1,0 +1,129 @@
+{
+  "source": "Installed Counter-Strike 2 game/csgo/pak01_dir.vpk",
+  "metadata": "scripts/items/items_game.txt and resource/csgo_english.txt",
+  "exporter": "Source 2 Viewer CLI 20.1; original native square UI portraits converted to 256px WebP with Sharp",
+  "moderation": "Curated gallery allowlist only. No arbitrary uploaded or remote user pictures are accepted by this gallery. This is not automated image moderation.",
+  "ownership": "Valve and original contributors retain ownership. No generated images.",
+  "files": [
+    {
+      "id": "agent-5308",
+      "nativeItemId": 5308,
+      "nativeName": "customplayer_ctm_fbi_variantb",
+      "label": "Special Agent Ava | FBI",
+      "source": "panorama/images/econ/characters/customplayer_ctm_fbi_variantb_square_png.vtex_c",
+      "file": "./assets/avatars/agent-5308.webp",
+      "bytes": 7242,
+      "sha256": "3d70d90b31c3db2e9b80a964bc49cbe89255340fa13951a095d1c71feb8747a3"
+    },
+    {
+      "id": "agent-5306",
+      "nativeItemId": 5306,
+      "nativeName": "customplayer_ctm_fbi_variantg",
+      "label": "Markus Delrow | FBI HRT",
+      "source": "panorama/images/econ/characters/customplayer_ctm_fbi_variantg_square_png.vtex_c",
+      "file": "./assets/avatars/agent-5306.webp",
+      "bytes": 6138,
+      "sha256": "9d2bc42b79879fe1a70df72ef06306d4d87b3be04e356fa452b38d0e12df9fdb"
+    },
+    {
+      "id": "agent-5404",
+      "nativeItemId": 5404,
+      "nativeName": "customplayer_ctm_st6_varianti",
+      "label": "Lt. Commander Ricksaw | NSWC SEAL",
+      "source": "panorama/images/econ/characters/customplayer_ctm_st6_varianti_square_png.vtex_c",
+      "file": "./assets/avatars/agent-5404.webp",
+      "bytes": 8366,
+      "sha256": "5a2ee91714ed08f8ae99eba9fc1af4391d9069e3181a9d71e8ea1510e4ba96f2"
+    },
+    {
+      "id": "agent-5601",
+      "nativeItemId": 5601,
+      "nativeName": "customplayer_ctm_sas_variantf",
+      "label": "B Squadron Officer | SAS",
+      "source": "panorama/images/econ/characters/customplayer_ctm_sas_variantf_square_png.vtex_c",
+      "file": "./assets/avatars/agent-5601.webp",
+      "bytes": 7886,
+      "sha256": "e7410d929648734c28df62b43b1324277fd9f112807ec7a8df25f01b3a8d4228"
+    },
+    {
+      "id": "agent-4711",
+      "nativeItemId": 4711,
+      "nativeName": "customplayer_ctm_swat_variante",
+      "label": "Cmdr. Mae 'Dead Cold' Jamison | SWAT",
+      "source": "panorama/images/econ/characters/customplayer_ctm_swat_variante_square_png.vtex_c",
+      "file": "./assets/avatars/agent-4711.webp",
+      "bytes": 7218,
+      "sha256": "92a48089cb4b29ae30368f5a3d2e813b1a77c3a18d4d50a29f44218db2190a2b"
+    },
+    {
+      "id": "agent-4757",
+      "nativeItemId": 4757,
+      "nativeName": "customplayer_ctm_diver_varianta",
+      "label": "Cmdr. Davida 'Goggles' Fernandez | SEAL Frogman",
+      "source": "panorama/images/econ/characters/customplayer_ctm_diver_varianta_square_png.vtex_c",
+      "file": "./assets/avatars/agent-4757.webp",
+      "bytes": 7706,
+      "sha256": "6b233586c1164d23aca5e41e03d53f733e6bc849fa22d90b7bdbfb46c45a7e3e"
+    },
+    {
+      "id": "agent-5108",
+      "nativeItemId": 5108,
+      "nativeName": "customplayer_tm_leet_variantf",
+      "label": "The Elite Mr. Muhlik | Elite Crew",
+      "source": "panorama/images/econ/characters/customplayer_tm_leet_variantf_square_png.vtex_c",
+      "file": "./assets/avatars/agent-5108.webp",
+      "bytes": 7190,
+      "sha256": "1c775927eb70b74c68490765897c0275a254c949ceb4297336c8908a2302534c"
+    },
+    {
+      "id": "agent-5106",
+      "nativeItemId": 5106,
+      "nativeName": "customplayer_tm_leet_varianth",
+      "label": "Osiris | Elite Crew",
+      "source": "panorama/images/econ/characters/customplayer_tm_leet_varianth_square_png.vtex_c",
+      "file": "./assets/avatars/agent-5106.webp",
+      "bytes": 5978,
+      "sha256": "e906ac1531fc1ae5d4187770ea3e30bba90c1b80b765e7a820a6d3766987c8dd"
+    },
+    {
+      "id": "agent-5504",
+      "nativeItemId": 5504,
+      "nativeName": "customplayer_tm_balkan_varianth",
+      "label": "'The Doctor' Romanov | Sabre",
+      "source": "panorama/images/econ/characters/customplayer_tm_balkan_varianth_square_png.vtex_c",
+      "file": "./assets/avatars/agent-5504.webp",
+      "bytes": 6410,
+      "sha256": "c86229b650d3e0873bcf364985f7edb7e69bc75d2f6296f60ef894fe119813bf"
+    },
+    {
+      "id": "agent-4726",
+      "nativeItemId": 4726,
+      "nativeName": "customplayer_tm_professional_varf",
+      "label": "Sir Bloody Miami Darryl | The Professionals",
+      "source": "panorama/images/econ/characters/customplayer_tm_professional_varf_square_png.vtex_c",
+      "file": "./assets/avatars/agent-4726.webp",
+      "bytes": 8004,
+      "sha256": "0d4e7035461e9ff4bfa94c4095987b71cd80fe6659a5aa40f74d4b575b72d7c3"
+    },
+    {
+      "id": "agent-4730",
+      "nativeItemId": 4730,
+      "nativeName": "customplayer_tm_professional_varj",
+      "label": "Getaway Sally | The Professionals",
+      "source": "panorama/images/econ/characters/customplayer_tm_professional_varj_square_png.vtex_c",
+      "file": "./assets/avatars/agent-4730.webp",
+      "bytes": 6844,
+      "sha256": "0d5c8b90f0dfa0bf87f441b5aefbbb87a6d3d6e4ab9d0b0941b81e3fc41546a8"
+    },
+    {
+      "id": "agent-4777",
+      "nativeItemId": 4777,
+      "nativeName": "customplayer_tm_jungle_raider_variante",
+      "label": "Vypa Sista of the Revolution | Guerrilla Warfare",
+      "source": "panorama/images/econ/characters/customplayer_tm_jungle_raider_variante_square_png.vtex_c",
+      "file": "./assets/avatars/agent-4777.webp",
+      "bytes": 6428,
+      "sha256": "0eac59e00f75f2573e47e58cdb9b53dfd53ed56a7650330bee94f5c1e23c57b1"
+    }
+  ]
+}
