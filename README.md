@@ -2,7 +2,7 @@
 
 Unofficial, noncommercial Counter-Strike practice and casual multiplayer in the browser, using native Valve map, model, animation, texture and sound assets. This is an independent browser implementation.
 
-**Play Update 7:** https://infinity-dj-gaming.github.io/strikepoint-browser/?update=7
+**Play Update 8:** https://infinity-dj-gaming.github.io/strikepoint-browser/?update=8
 
 ## Multiplayer
 
@@ -16,7 +16,7 @@ Rounds have a five-second playable aftermath before automatically advancing. Sho
 
 Weapon selection now applies native poses immediately and synchronizes the visible model. **Settings → Repair Weapon View** rebuilds the cached native rig and restores standard offsets without deleting inventory.
 
-See [UPDATE-7.md](UPDATE-7.md) for operation, validation and limitations.
+See [UPDATE-8.md](UPDATE-7.md) for operation, validation and limitations.
 
 ## Local use and source
 
@@ -31,3 +31,6 @@ Profiles and social data persist in Firebase; CSCoins, finishes and practice sta
 Metered uses the existing shared 500 MB trial allowance; relay service can stop at the cap. No billing upgrade was made. Firebase remains on Spark. Voice requires the user's own microphone consent.
 
 Valve and the original contributors retain ownership of their content. Conversion does not grant an open-source asset license. No game models or sound recordings were generated. Native provenance and source hashes are included. Historical CS:GO source informed browser rules; its C++ engine was not compiled into the game. Browser lighting, finishes, bot tactics, animation retargeting, penetration and audio propagation approximate Source behavior. See the included asset notices.
+
+
+Update 8 restores native packed material channels, improves public skin textures and uses the original animated first-person glove inspection. Settings → Video → Attach Native Folder enables original-resolution finish inputs from a local exported library. The public web build stays below GitHub Pages’ size limit; the complete original texture library remains local. See UPDATE-8.md for exact quality boundaries and validation.

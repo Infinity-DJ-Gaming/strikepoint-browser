@@ -1,4 +1,4 @@
-import {OnlineTransport} from './online-transport.mjs?v=20261020-7';
+import {OnlineTransport} from './online-transport.mjs?v=20261021-8';
 // Party negotiation is isolated from match signalling and restricted to its roster.
 export class PartyVoiceService extends EventTarget{
  constructor(service){super();this.source=service;this.room=null;this.code=null;}

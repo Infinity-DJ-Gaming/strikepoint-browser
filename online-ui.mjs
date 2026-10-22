@@ -1,8 +1,8 @@
-import {AVATARS,AVATARS_BY_ID} from './avatar-data.mjs?v=20261020-7';
+import {AVATARS,AVATARS_BY_ID} from './avatar-data.mjs?v=20261021-8';
 const avatarUrl=id=>AVATARS_BY_ID[id]?.file||'./assets/ui/'+(id==='t'?'t':'ct')+'_logo_1c.svg';
-import {OnlineService} from './online-service.mjs?v=20261020-7';
-import {OnlineTransport} from './online-transport.mjs?v=20261020-7';
-import {members,canStart,REGIONS} from './online-protocol.mjs?v=20261020-7';
+import {OnlineService} from './online-service.mjs?v=20261021-8';
+import {OnlineTransport} from './online-transport.mjs?v=20261021-8';
+import {members,canStart,REGIONS} from './online-protocol.mjs?v=20261021-8';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const $=id=>document.getElementById(id);
 export function installOnline({isReady,onMatch,onLeave,onData,onPeer,config}={}){

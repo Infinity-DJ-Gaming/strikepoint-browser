@@ -1,0 +1,38 @@
+import * as T from 'three';
+import {decodeNativePNG} from './native-png.mjs?v=20261021-8';
+// Browser textures are a bounded fallback. An attached native folder bypasses
+// every resize/encoder and decodes the original material RGBA as straight data.
+let directory=null,index=null,revision=0,filter=16,metadataPromise;
+const cache=new Map();
+const pending=[];let loading=0;
+function webTexture(url){return new Promise((resolve,reject)=>{pending.push({url,resolve,reject});pump();});}
+function pump(){while(loading<4&&pending.length){const job=pending.shift();loading++;(async()=>{let error;for(let attempt=0;attempt<3;attempt++){try{const url=new URL(job.url,location.href);url.searchParams.set('v','20261021-8');return await new T.TextureLoader().loadAsync(url.href);}catch(e){error=e;if(attempt<2)await new Promise(r=>setTimeout(r,250*(attempt+1)));}}throw error;})().then(job.resolve,job.reject).finally(()=>{loading--;pump();});}}
+const keyFor=url=>'./'+new URL(url,location.href).pathname.split('/assets/').slice(1).map(p=>'assets/'+p).join('/');
+async function metadata(){return metadataPromise??=fetch('./assets/SKIN-TEXTURE-QUALITY.json?v=20261021-8').then(r=>r.ok?r.json():{}).catch(()=>({}));}
+function database(){return new Promise((resolve,reject)=>{const r=indexedDB.open('strikepoint-native-textures',1);r.onupgradeneeded=()=>r.result.createObjectStore('folder');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
+async function saved(value){const db=await database();return new Promise((resolve,reject)=>{const tx=db.transaction('folder',value?'readwrite':'readonly'),s=tx.objectStore('folder'),r=value?s.put(value,'native'):s.get('native');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);tx.oncomplete=()=>db.close();});}
+export async function attachNativeTextureFolder(handle){const f=await handle.getFileHandle('native-texture-index.json'),data=JSON.parse(await(await f.getFile()).text());if(data.schema!==1||!data.entries||Object.keys(data.entries).length<1)throw Error('Choose the exported native texture folder containing native-texture-index.json.');directory=handle;index=data.entries;revision++;document.dispatchEvent(new CustomEvent('cs:native-textures-changed'));return Object.keys(index).length;}
+export async function restoreNativeTextures(){try{const handle=await saved();if(handle&&await handle.queryPermission({mode:'read'})==='granted')await attachNativeTextureFolder(handle);}catch(error){console.info('Native texture folder:',error.message);}}
+export async function selectNativeTextures(){
+ if(window.showDirectoryPicker){const handle=await showDirectoryPicker({id:'strikepoint-native-textures',mode:'read'}),count=await attachNativeTextureFolder(handle);await saved(handle);return count;}
+ const files=await new Promise((resolve,reject)=>{const input=document.createElement('input');input.type='file';input.webkitdirectory=true;input.multiple=true;input.onchange=()=>resolve([...input.files]);input.oncancel=()=>reject(new DOMException('No folder selected','AbortError'));input.click();}),map=new Map(files.map(f=>[f.webkitRelativePath.split('/').slice(1).join('/'),f]));
+ const folder=prefix=>({async getDirectoryHandle(name){return folder(prefix+name+'/');},async getFileHandle(name){const f=map.get(prefix+name);if(!f)throw Error('Missing native texture: '+name);return {getFile:async()=>f};}});return attachNativeTextureFolder(folder(''));
+}
+export function nativeTextureStatus(){return {attached:!!directory,count:index?Object.keys(index).length:0,revision};}
+export function setSkinTextureFiltering(value){filter=Math.max(1,Math.min(16,value));for(const r of cache.values())r.promise.then(t=>{t.anisotropy=filter;t.needsUpdate=true;}).catch(()=>{});}
+async function nativeFile(record){let folder=directory;const bits=record.path.split('/');if(bits.some(p=>p==='..'||!p))throw Error('Invalid native texture path');for(const bit of bits.slice(0,-1))folder=await folder.getDirectoryHandle(bit);return (await folder.getFileHandle(bits.at(-1))).getFile();}
+async function create(url,color,alpha){const reference=keyFor(url),record=index?.[reference];let t;
+ if(record){const decoded=await decodeNativePNG(await(await nativeFile(record)).arrayBuffer());let pixels=decoded.data;if(alpha){pixels=new Uint8Array(decoded.width*decoded.height);for(let i=0;i<pixels.length;i++)pixels[i]=decoded.data[i*4+3];}else for(let i=3;i<decoded.data.length;i+=4)decoded.data[i]=255;t=new T.DataTexture(pixels,decoded.width,decoded.height,alpha?T.RedFormat:T.RGBAFormat);t.userData.nativeOriginal=true;t.userData.nativeSource=record.source;t.needsUpdate=true;
+ }else{const info=(await metadata()).textures?.[reference];if(alpha){if(!info?.alpha)return null;url=info.alpha;}t=await webTexture(url);if(alpha){const canvas=new OffscreenCanvas(t.image.width,t.image.height),ctx=canvas.getContext('2d');ctx.drawImage(t.image,0,0);const rgba=ctx.getImageData(0,0,canvas.width,canvas.height).data,pixels=new Uint8Array(canvas.width*canvas.height);for(let i=0;i<pixels.length;i++)pixels[i]=rgba[i*4];const original=t;t=new T.DataTexture(pixels,canvas.width,canvas.height,T.RedFormat);t.needsUpdate=true;original.dispose();}t.userData.nativeOriginal=false;}
+ if(!t)return null;t.flipY=false;t.wrapS=t.wrapT=T.RepeatWrapping;t.colorSpace=color?T.SRGBColorSpace:T.NoColorSpace;t.anisotropy=filter;t.minFilter=T.LinearMipmapLinearFilter;t.magFilter=T.LinearFilter;t.generateMipmaps=true;return t;
+}
+function trim(){let bytes=[...cache.values()].reduce((sum,r)=>sum+(r.bytes||0),0);for(const [key,r]of cache){if(cache.size<=48&&bytes<134217728)break;if(r.refs===0){cache.delete(key);bytes-=r.bytes||0;r.promise.then(t=>t?.dispose()).catch(()=>{});}}}
+export function textureLease(){const keys=new Set();return {async load(url,color=false,alpha=false){if(!url)return null;const key=revision+'|'+url+'|'+color+'|'+alpha;let r=cache.get(key);if(!r){r={refs:0,promise:null};r.promise=create(url,color,alpha).then(t=>{r.bytes=(t?.image?.width||0)*(t?.image?.height||0)*5.34;trim();return t;}).catch(error=>{if(cache.get(key)===r)cache.delete(key);throw error;});cache.set(key,r);}else{cache.delete(key);cache.set(key,r);}if(!keys.has(key)){keys.add(key);r.refs++;}return r.promise;},release(){for(const key of keys){const r=cache.get(key);if(r)r.refs=Math.max(0,r.refs-1);}keys.clear();trim();}};}
+export async function textureAlphaConstant(url){if(!url)return 1;if(index?.[keyFor(url)])return null;return (await metadata()).textures?.[keyFor(url)]?.constantAlpha??null;}
+export function skinTextureDiagnostics(){return {cached:cache.size,active:[...cache.values()].filter(r=>r.refs>0).length,...nativeTextureStatus()};}
+export function installNativeTextureControls(){
+ const section=document.querySelector('[data-settings-section="Video"]');if(!section)return;
+ const row=document.createElement('div');row.className='setting-row';row.innerHTML='<span>Original-resolution skin textures<small id="nativeTextureStatus">Enhanced web textures · Attach the exported native folder for untouched full-resolution finish maps.</small></span><button id="attachNativeTextures" class="text-button">ATTACH NATIVE FOLDER</button>';section.append(row);
+ const status=row.querySelector('small'),button=row.querySelector('button'),refresh=()=>{const state=nativeTextureStatus();if(state.attached)status.textContent=state.count.toLocaleString()+' original texture references attached · Native resolution · No recompression';};
+ button.onclick=async()=>{button.disabled=true;try{await selectNativeTextures();refresh();}catch(error){if(error.name!=='AbortError')status.textContent=error.message;}finally{button.disabled=false;}};document.addEventListener('cs:native-textures-changed',refresh);refresh();
+}

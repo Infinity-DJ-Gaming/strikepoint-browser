@@ -1,5 +1,5 @@
-import {createPartyVoice} from './party-voice.mjs?v=20261020-7';
-import {members} from './online-protocol.mjs?v=20261020-7';
+import {createPartyVoice} from './party-voice.mjs?v=20261021-8';
+import {members} from './online-protocol.mjs?v=20261021-8';
 export class OnlineComms{
  constructor(service,transport,{config,inMatch,releaseInput,lock,status}){
   this.service=service;this.matchTransport=transport;const party=createPartyVoice(service);this.partyContext=party.context;this.partyTransport=party.transport;this.sessionKey=null;this.config=config;this.inMatch=inMatch;this.releaseInput=releaseInput;this.lock=lock;this.status=status;this.stream=null;this.ptt=false;this.channel='team';this.volume=.8;this.audio=new Map();this.voiceMaps=new Map();this.incoming=new Map();this.rates=new Map();this.speakers=new Map();this.messages=[];this.muted=new Set();transport.voice=this;this.partyTransport.voice=this;

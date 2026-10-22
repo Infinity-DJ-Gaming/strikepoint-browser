@@ -1,6 +1,6 @@
-import {ARSENAL_AUDIO} from './arsenal-audio.mjs?v=20261020-7';
-import {IMPACT_AUDIO} from './impact-data.mjs?v=20261020-7';
-import {COSMETIC_AUDIO} from './cosmetics-data.mjs?v=20261020-7';
+import {ARSENAL_AUDIO} from './arsenal-audio.mjs?v=20261021-8';
+import {IMPACT_AUDIO} from './impact-data.mjs?v=20261021-8';
+import {COSMETIC_AUDIO} from './cosmetics-data.mjs?v=20261021-8';
 import {NATIVE_AUDIO} from './audio-data.mjs?v=20261019-3';
 // Native recordings only. Audio starts on a user gesture, as browsers require.
 export class GameAudio{

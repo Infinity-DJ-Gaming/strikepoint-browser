@@ -1,8 +1,8 @@
-import {MUSIC_KITS_BY_ID} from './music-kits-data.mjs?v=20261020-7';
-import {WEAPONS,MOVEMENT,accelerate,completeReload,siteAt} from './mechanics.mjs?v=20261020-7';
-import {UTILITY} from './combat.mjs?v=20261020-7';
-import {DEFAULT_LOADOUT,allowed,categoryOf} from './loadout.mjs?v=20261020-7';
-import {members,teamForSlot,sanitizeInput,safeAction} from './online-protocol.mjs?v=20261020-7';
+import {MUSIC_KITS_BY_ID} from './music-kits-data.mjs?v=20261021-8';
+import {WEAPONS,MOVEMENT,accelerate,completeReload,siteAt} from './mechanics.mjs?v=20261021-8';
+import {UTILITY} from './combat.mjs?v=20261021-8';
+import {DEFAULT_LOADOUT,allowed,categoryOf} from './loadout.mjs?v=20261021-8';
+import {members,teamForSlot,sanitizeInput,safeAction} from './online-protocol.mjs?v=20261021-8';
 const copyFields=['x','y','z','health','armor','helmet','money','kit','taser','primary','secondary','hasBomb','kills','assists','deaths','roundKills','hits','totalDamage','ammo','reserve','blind','plants','defuses','headshots','clutchOpponents'];
 const number=n=>Math.round((Number.isFinite(n)?n:0)*1000)/1000;
 export class OnlineMatch{

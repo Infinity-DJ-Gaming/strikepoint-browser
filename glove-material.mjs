@@ -1,5 +1,5 @@
 import * as T from 'three';
-import {GLOVE_LAYERS} from './glove-layers-data.mjs?v=20261020-7';
+import {GLOVE_LAYERS} from './glove-layers-data.mjs?v=20261021-8';
 // Source 2's material compositor is not available in WebGL. Preserve its native
 // layer IDs, pattern enable flags and unpainted skin, instead of tiling a pattern
 // over the whole hand. All inputs below are original game textures/parameters.
@@ -10,7 +10,7 @@ export async function gloveMaterial(skin,item,load){
  for(const t of [mask,tint])if(t){t.magFilter=T.NearestFilter;t.minFilter=T.NearestFilter;}
  const color=v=>new T.Color().setRGB(...(v||[1,1,1]).slice(0,3),T.SRGBColorSpace),palette=Array.from({length:8},(_,i)=>color(p['g_vColorTint'+(i+1)]||p['g_vTintColor'+(i+1)])),surfaceTints=Array.from({length:4},(_,i)=>new T.Color().setRGB(...(p['g_vSurfaceColorTint'+(i+1)]||[1,1,1]).slice(0,3)));
  const indices=p.g_vPatternPaletteIndices||[1,2,3,4],patternPalette=indices.map(n=>palette[Math.max(0,Math.min(7,n-1))]);
- return source=>{const m=source.clone();if(normal)m.normalMap=normal;m.color.set(0xffffff);m.metalness=.03;m.roughness=.82;
+ return source=>{const m=source.clone();if(normal){m.normalMap=normal;m.normalScale.y=-Math.abs(m.normalScale.y||1);}m.color.set(0xffffff);m.metalness=.03;m.roughness=.82;
   if(!m.map)m.map=surface[0]||pattern;
   const uniforms={gMask:{value:mask||m.map},gTint:{value:tint||m.map},gPattern:{value:pattern||m.map},gSurfaces:{value:surface.map(t=>t||m.map)},gModern:{value:modern?1:0},gHasMask:{value:mask?1:0},gHasTint:{value:tint&&p.F_TINT_ID!==0?1:0},gHasPattern:{value:pattern?1:0},gReplace:{value:p.g_nPatternReplaceIndex??0},gPalette:{value:palette},gPatternPalette:{value:patternPalette},gSurfaceTint:{value:surfaceTints},gScale:{value:p.g_fPatternTexCoordScale??1},gRotation:{value:(p.g_fPatternTexCoordRotation??0)*Math.PI/180},gWear:{value:item.wear??.02},gDetailScale:{value:Array.from({length:4},(_,i)=>p['g_vUvScale'+(i+1)]?.[0]??p['g_fSurfaceTexCoordScale'+(i+1)]??1)}};
   m.onBeforeCompile=shader=>{Object.assign(shader.uniforms,uniforms);shader.fragmentShader='uniform sampler2D gMask,gTint,gPattern;uniform sampler2D gSurfaces[4];uniform float gModern,gHasMask,gHasTint,gHasPattern,gReplace,gScale,gRotation,gWear;uniform vec3 gPalette[8],gPatternPalette[4],gSurfaceTint[4];uniform float gDetailScale[4];\n'+shader.fragmentShader;shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>',`#ifdef USE_MAP
@@ -36,6 +36,6 @@ export async function gloveMaterial(skin,item,load){
  }
  // Wear changes the textile finish, never the separate bare fingers or sleeves.
  float grime=dot(original.rgb,vec3(.299,.587,.114));painted=mix(painted,painted*.55+original.rgb*.15,gWear*(1.-grime)*.65);
- diffuseColor*=vec4(painted,original.a);
- #endif`);};m.customProgramCacheKey=()=>skin.id+'-native-glove-layers-v7';m.needsUpdate=true;return m;};
+ diffuseColor.rgb*=painted;
+ #endif`);};m.customProgramCacheKey=()=>skin.id+'-native-glove-layers-v8';m.needsUpdate=true;return m;};
 }

@@ -1,4 +1,4 @@
-import {SKINS,SKIN_BY_ID,CASES} from './cosmetics-data.mjs?v=20261020-7';
+import {SKINS,SKIN_BY_ID,CASES} from './cosmetics-data.mjs?v=20261021-8';
 const testerDigest='b9419cc0a0792d81839db4c9fc0d7dd01b0188dce0f7df3d55a3ca287d873370';
 export async function isInventoryTester(user){if(!user?.emailVerified||!user.email)return false;const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(user.email.trim().toLowerCase()));return Array.from(new Uint8Array(digest),n=>n.toString(16).padStart(2,'0')).join('')===testerDigest;}
 export async function syncDeveloperInventory(progress,user){

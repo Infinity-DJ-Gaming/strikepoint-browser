@@ -1,4 +1,4 @@
-import {MUSIC_KITS,MUSIC_KITS_BY_ID} from './music-kits-data.mjs?v=20261020-7';
+import {MUSIC_KITS,MUSIC_KITS_BY_ID} from './music-kits-data.mjs?v=20261021-8';
 export function installMusicStore(progress,getAudioSettings=()=>({})){
  const section=document.createElement('section');section.id='musicStore';section.innerHTML='<div class="music-heading"><div><small>ORIGINAL IN-GAME MVP RECORDINGS</small><h2>MUSIC KITS · CLASSICS</h2><p>Preview, unlock with CSCoins, and equip your round MVP anthem.</p></div><button id="stopMusicPreview" class="text-button">STOP PREVIEW</button></div><div id="musicCards" class="music-grid"></div><p id="musicStoreStatus" role="status"></p>';
  document.querySelector('#storePane .catalog-wrap').prepend(section);let preview=null,previewId=null;

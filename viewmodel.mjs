@@ -1,5 +1,5 @@
 import * as T from 'three';
-import {ARSENAL} from './arsenal-data.mjs?v=20261020-7';
+import {ARSENAL} from './arsenal-data.mjs?v=20261021-8';
 import {clone} from './vendor/utils/SkeletonUtils.js';
 const base=name=>name.replace(/_\d+$/,'');
 const labels={rifle:'ak47',pistol:'deagle',glock:'glock18',awp:'awp',knife:'knife_default_t',c4:'c4',smoke:'smokegrenade',flash:'flashbang',he:'hegrenade',molotov:'molotov'};
@@ -23,4 +23,4 @@ export function createNativeView(arms,bareArms,weapons,parent,materials){
  return {model,mixer:new T.AnimationMixer(model),views,bare,ctMeshes:hidden};
 }
 
-export function detachNativeWeapon(g){g?.root.removeFromParent();for(const bone of g?.retainedBones||[])bone.removeFromParent();}
+export function detachNativeWeapon(g){g?.root.userData.disposeNativeFinish?.();g?.root.removeFromParent();for(const bone of g?.retainedBones||[])bone.removeFromParent();}

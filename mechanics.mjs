@@ -1,5 +1,5 @@
-import {ARSENAL} from './arsenal-data.mjs?v=20261020-7';
-import {nativeWeapons} from './weapon-data.mjs?v=20261020-7';
+import {ARSENAL} from './arsenal-data.mjs?v=20261021-8';
+import {nativeWeapons} from './weapon-data.mjs?v=20261021-8';
 export const UNIT=.0254;
 export const MOVEMENT={gravity:800*UNIT,jumpImpulse:301.993377*UNIT,friction:5.2,stopSpeed:80*UNIT,accelerate:5.5,airAccelerate:12,airCap:30*UNIT,step:18*UNIT,height:72*UNIT,crouchHeight:54*UNIT,radius:16*UNIT,eye:64*UNIT,crouchEye:46*UNIT};
 export const WEAPONS={};

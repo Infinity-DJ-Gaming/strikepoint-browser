@@ -1,0 +1,66 @@
+{
+  "version": "8.0.0",
+  "date": "2026-10-21",
+  "result": "passed",
+  "tests": {
+    "unit": {
+      "passed": 48,
+      "errors": []
+    },
+    "finishAndInspectorBrowser": {
+      "passed": 77,
+      "errors": []
+    },
+    "nativeFolderBrowser": {
+      "passed": 4,
+      "errors": []
+    },
+    "allGloves": {
+      "passed": 94,
+      "errors": []
+    },
+    "weaponVisibility": {
+      "passed": 98,
+      "errors": []
+    },
+    "gameplayRegression": {
+      "passed": 14,
+      "errors": []
+    },
+    "scopeRegression": {
+      "passed": 6,
+      "errors": []
+    }
+  },
+  "texturePixels": {
+    "complete": true,
+    "references": 2249,
+    "imagesDecoded": 3831,
+    "normalRGBExact": 406,
+    "categoricalRGBExact": 284,
+    "losslessDataRGBExact": 380,
+    "varyingAlphaExact": 1491,
+    "derivedTintExact": 21,
+    "uniqueOriginalSources": 2119,
+    "hostedTextureBytes": 701097944,
+    "errors": [],
+    "alphaValidation": "Original alpha resampled as one channel and compared with decoded opaque grayscale WebP scalar channel. Avoid Sharp default raw RGB expansion."
+  },
+  "nativePngDecoder": {
+    "samples": 6,
+    "byteExact": true
+  },
+  "sourceCoverage": {
+    "catalogEntries": 2147,
+    "gunFinishSamples": 68,
+    "animatedGloveFamilies": 8,
+    "allGloveFinishes": 94,
+    "nativeFolderReferences": 2501
+  },
+  "limitations": [
+    "Hosted textures use documented 1024/512 delivery bounds; optional native folder preserves original finish input resolution and decoded pixels.",
+    "Native folder does not replace optimized embedded stock/substrate GLB textures or reproduce the complete Source 2 compositor.",
+    "Browser shader effects, pattern seeds, wear, procedural twist bones and lighting remain approximations.",
+    "Online account/voice services were not modified or redeployed by this update."
+  ]
+}
