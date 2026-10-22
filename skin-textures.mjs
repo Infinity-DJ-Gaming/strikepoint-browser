@@ -1,14 +1,14 @@
 import * as T from 'three';
-import {decodeNativePNG} from './native-png.mjs?v=20261021-8';
+import {decodeNativePNG} from './native-png.mjs?v=20261022-9';
 // Browser textures are a bounded fallback. An attached native folder bypasses
 // every resize/encoder and decodes the original material RGBA as straight data.
 let directory=null,index=null,revision=0,filter=16,metadataPromise;
 const cache=new Map();
 const pending=[];let loading=0;
 function webTexture(url){return new Promise((resolve,reject)=>{pending.push({url,resolve,reject});pump();});}
-function pump(){while(loading<4&&pending.length){const job=pending.shift();loading++;(async()=>{let error;for(let attempt=0;attempt<3;attempt++){try{const url=new URL(job.url,location.href);url.searchParams.set('v','20261021-8');return await new T.TextureLoader().loadAsync(url.href);}catch(e){error=e;if(attempt<2)await new Promise(r=>setTimeout(r,250*(attempt+1)));}}throw error;})().then(job.resolve,job.reject).finally(()=>{loading--;pump();});}}
+function pump(){while(loading<4&&pending.length){const job=pending.shift();loading++;(async()=>{let error;for(let attempt=0;attempt<3;attempt++){try{const url=new URL(job.url,location.href);url.searchParams.set('v','20261022-9');return await new T.TextureLoader().loadAsync(url.href);}catch(e){error=e;if(attempt<2)await new Promise(r=>setTimeout(r,250*(attempt+1)));}}throw error;})().then(job.resolve,job.reject).finally(()=>{loading--;pump();});}}
 const keyFor=url=>'./'+new URL(url,location.href).pathname.split('/assets/').slice(1).map(p=>'assets/'+p).join('/');
-async function metadata(){return metadataPromise??=fetch('./assets/SKIN-TEXTURE-QUALITY.json?v=20261021-8').then(r=>r.ok?r.json():{}).catch(()=>({}));}
+async function metadata(){return metadataPromise??=fetch('./assets/SKIN-TEXTURE-QUALITY.json?v=20261022-9').then(r=>r.ok?r.json():{}).catch(()=>({}));}
 function database(){return new Promise((resolve,reject)=>{const r=indexedDB.open('strikepoint-native-textures',1);r.onupgradeneeded=()=>r.result.createObjectStore('folder');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
 async function saved(value){const db=await database();return new Promise((resolve,reject)=>{const tx=db.transaction('folder',value?'readwrite':'readonly'),s=tx.objectStore('folder'),r=value?s.put(value,'native'):s.get('native');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);tx.oncomplete=()=>db.close();});}
 export async function attachNativeTextureFolder(handle){const f=await handle.getFileHandle('native-texture-index.json'),data=JSON.parse(await(await f.getFile()).text());if(data.schema!==1||!data.entries||Object.keys(data.entries).length<1)throw Error('Choose the exported native texture folder containing native-texture-index.json.');directory=handle;index=data.entries;revision++;document.dispatchEvent(new CustomEvent('cs:native-textures-changed'));return Object.keys(index).length;}

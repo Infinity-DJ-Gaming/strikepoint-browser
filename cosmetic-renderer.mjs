@@ -1,7 +1,8 @@
-import {gloveMaterial} from './glove-material.mjs?v=20261021-8';
-import {textureLease,textureAlphaConstant} from './skin-textures.mjs?v=20261021-8';
-import {WEAPON_FINISH_INPUTS} from './weapon-finish-inputs.mjs?v=20261021-8';
-import {FINISH_EXTRA_TEXTURES} from './finish-extra-textures.mjs?v=20261021-8';
+import {applyBlackIce} from './black-ice.mjs?v=20261022-9';
+import {gloveMaterial} from './glove-material.mjs?v=20261022-9';
+import {textureLease,textureAlphaConstant} from './skin-textures.mjs?v=20261022-9';
+import {WEAPON_FINISH_INPUTS} from './weapon-finish-inputs.mjs?v=20261022-9';
+import {FINISH_EXTRA_TEXTURES} from './finish-extra-textures.mjs?v=20261022-9';
 import * as T from 'three';
 const white=new T.DataTexture(new Uint8Array([255,255,255,255]),1,1,T.RGBAFormat);white.needsUpdate=true;
 const protectedMaterial=s=>/bare_arm|sleeve|sticker_gaps|scope_lens|shared_scope|glass|lens/i.test(s.name)||s.transparent;
@@ -12,6 +13,7 @@ export function disposeNativeFinish(root){
 export async function applyNativeFinish(root,skin,item={}){
  if(skin?.paintKit===0)skin=null;const generation=(root.userData.finishGeneration||0)+1;root.userData.finishGeneration=generation;
  if(!skin){disposeNativeFinish(root);return;}
+ if(skin.customFinish==='black-ice'){disposeNativeFinish(root);applyBlackIce(root,item);return;}
  const lease=textureLease(),load=lease.load.bind(lease),p=skin.material?.parameters||{},f={...skin.material?.textures,...Object.fromEntries(Object.entries(p).filter(([,v])=>FINISH_EXTRA_TEXTURES[v]).map(([k,v])=>[k,FINISH_EXTRA_TEXTURES[v]]))},style=p.F_PAINT_STYLE??Math.max(0,(skin.style||1)-1),palettePattern=[1,2,4,5,9].includes(style);
  try{
  const pattern=f.g_tPattern||(skin.patternTexture!==f.g_tOverlay?skin.patternTexture:null)||f.g_tSurface1;

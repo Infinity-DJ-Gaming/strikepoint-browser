@@ -1,5 +1,5 @@
 import * as T from 'three';
-import {GLOVE_LAYERS} from './glove-layers-data.mjs?v=20261021-8';
+import {GLOVE_LAYERS} from './glove-layers-data.mjs?v=20261022-9';
 // Source 2's material compositor is not available in WebGL. Preserve its native
 // layer IDs, pattern enable flags and unpainted skin, instead of tiling a pattern
 // over the whole hand. All inputs below are original game textures/parameters.

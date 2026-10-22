@@ -18,8 +18,8 @@ export function sweepTriangle(center,half,delta,a,b,c){
 
 export class HullWorld{
  constructor(root){this.meshes=[];root.updateMatrixWorld(true);root.traverse(o=>{if(o.isMesh&&o.visible){const materials=Array.isArray(o.material)?o.material:[o.material];if(materials.some(m=>m.transparent||/foliage|grass|weed|decal|spray|glass|sky|effect|lightshaft|dust_00|trigger|nav_attribute|cs_place/i.test(m.name)))return;const g=o.geometry.clone(),position=o.geometry.attributes.position,array=new Float32Array(position.count*3),v=new T.Vector3();for(let i=0;i<position.count;i++){v.fromBufferAttribute(position,i).applyMatrix4(o.matrixWorld);array[i*3]=v.x;array[i*3+1]=v.y;array[i*3+2]=v.z;}g.setAttribute('position',new T.BufferAttribute(array,3));g.computeBoundsTree({maxLeafTris:12});g.computeBoundingBox();this.meshes.push(g);}});}
- trace(feet,delta,height=72*.0254,radius=16*.0254){
-  const half=new T.Vector3(radius,height/2,radius),center=new T.Vector3(feet.x,feet.y+height/2,feet.z),move=new T.Vector3(delta.x,delta.y,delta.z),box=new T.Box3().setFromCenterAndSize(center,half.clone().multiplyScalar(2));box.union(new T.Box3().setFromCenterAndSize(center.clone().add(move),half.clone().multiplyScalar(2))).expandByScalar(.002);
+ trace(feet,delta,height=72*.0254,radius=16*.0254,extents=null){
+  const half=extents?new T.Vector3(extents.x,extents.y,extents.z):new T.Vector3(radius,height/2,radius),center=new T.Vector3(feet.x,feet.y+height/2,feet.z),move=new T.Vector3(delta.x,delta.y,delta.z),box=new T.Box3().setFromCenterAndSize(center,half.clone().multiplyScalar(2));box.union(new T.Box3().setFromCenterAndSize(center.clone().add(move),half.clone().multiplyScalar(2))).expandByScalar(.002);
   let result={fraction:1,normal:null};
   for(const geometry of this.meshes){if(!box.intersectsBox(geometry.boundingBox))continue;geometry.boundsTree.shapecast({intersectsBounds:b=>box.intersectsBox(b),intersectsTriangle:tri=>{const hit=sweepTriangle(center,half,move,tri.a,tri.b,tri.c);if(hit&&hit.fraction<result.fraction)result=hit;return false;}});}
   return result;

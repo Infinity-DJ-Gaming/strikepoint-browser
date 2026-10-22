@@ -1,5 +1,6 @@
-import {ARSENAL} from './arsenal-data.mjs?v=20261021-8';
-import {nativeWeapons} from './weapon-data.mjs?v=20261021-8';
+import {generateRecoilTable} from './recoil-data.mjs?v=20261022-9';
+import {ARSENAL} from './arsenal-data.mjs?v=20261022-9';
+import {nativeWeapons} from './weapon-data.mjs?v=20261022-9';
 export const UNIT=.0254;
 export const MOVEMENT={gravity:800*UNIT,jumpImpulse:301.993377*UNIT,friction:5.2,stopSpeed:80*UNIT,accelerate:5.5,airAccelerate:12,airCap:30*UNIT,step:18*UNIT,height:72*UNIT,crouchHeight:54*UNIT,radius:16*UNIT,eye:64*UNIT,crouchEye:46*UNIT};
 export const WEAPONS={};
@@ -45,7 +46,7 @@ export class SourceRandom{
  constructor(seed){this.seed=-Math.abs(seed);this.last=0;this.shuffle=new Int32Array(32);}
  next(){let k;if(this.seed<=0||!this.last){this.seed=Math.max(1,-this.seed);for(let j=39;j>=0;j--){k=Math.trunc(this.seed/127773);this.seed=16807*(this.seed-k*127773)-2836*k;if(this.seed<0)this.seed+=2147483647;if(j<32)this.shuffle[j]=this.seed;}this.last=this.shuffle[0];}k=Math.trunc(this.seed/127773);this.seed=16807*(this.seed-k*127773)-2836*k;if(this.seed<0)this.seed+=2147483647;const i=Math.trunc(this.last/67108864);this.last=this.shuffle[i];this.shuffle[i]=this.seed;return Math.min(this.last/2147483647,1-1.2e-7);}
 }
-export function recoilPattern(weapon){const random=new SourceRandom(weapon.recoilSeed??1),table=[];let angle=0,magnitude=0;for(let i=0;i<64;i++){const nextAngle=(weapon.recoilAngle??0)+(random.next()*2-1)*(weapon.recoilVariance??0),nextMagnitude=(weapon.recoilMagnitude??0);random.next();angle=weapon.automatic&&i?angle*.45+nextAngle*.55:nextAngle;magnitude=weapon.automatic&&i?magnitude*.45+nextMagnitude*.55:nextMagnitude;if(weapon.automatic&&i<4)magnitude*=.75+i/4*.25;table.push({x:Math.sin(angle*Math.PI/180)*magnitude,y:Math.cos(angle*Math.PI/180)*magnitude});}return table;}
+export function recoilPattern(weapon){return generateRecoilTable(weapon);}
 
 export function hitDamage(base,part,armor,ratio=1.55,headshot=4,helmet=true){let value=base*(part==='head'?headshot:part==='leg'?.75:part==='stomach'?1.25:1),absorbed=0;if(armor>0&&part!=='leg'&&(part!=='head'||helmet)){absorbed=Math.min(armor,Math.max(0,value-value*ratio*.5)*.5);value-=absorbed*2;}return {damage:value,absorbed};}
 const bombTargets=[{"min": [59.334399999999995, 2.4383999999999997, 24.790399999999998], "max": [66.64959999999999, 4.876799999999999, 31.699199999999998]}, {"min": [63.398399999999995, 0.0, -43.8912], "max": [72.7456, 2.4383999999999997, -34.1376]}];

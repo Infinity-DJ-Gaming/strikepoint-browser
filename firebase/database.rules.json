@@ -601,6 +601,33 @@
           }
         }
       }
+    },
+    "playerSaves": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid",
+        ".validate": "newData.hasChildren(['schema','state','revision','updatedAt','devices'])",
+        "schema": {
+          ".validate": "newData.val() == 1"
+        },
+        "state": {
+          ".validate": "newData.isString() && newData.val().length <= 4000000"
+        },
+        "revision": {
+          ".validate": "newData.isNumber() && newData.val() >= 1 && (!data.exists() || newData.val() == data.val() + 1)"
+        },
+        "updatedAt": {
+          ".validate": "newData.isNumber() && newData.val() <= now"
+        },
+        "devices": {
+          "$device": {
+            ".validate": "$device.length <= 100 && newData.isNumber() && newData.val() >= 0 && (!data.exists() || newData.val() >= data.val())"
+          }
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
     }
   }
 }
