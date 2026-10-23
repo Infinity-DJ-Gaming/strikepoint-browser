@@ -1,0 +1,110 @@
+(node:52380) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/three-loader.mjs", pathToFileURL("./")); register("./tests/three-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ HE uses native99 damage and Gaussian radial falloff (0.7ms)
+✔ HE armor includes weapon ratio and clamps depleted armor (0.4715ms)
+✔ flash facing changes duration; turning away still flashes (0.0981ms)
+✔ smoke ray test uses full3D segment and endpoint bounds (0.0919ms)
+✔ loss ladder caps and planted loss bonus is separate (0.0886ms)
+✔ utility uses native fire timing and purchase limits (0.0509ms)
+✔ tagging stacks against held weapon speed and reaches native cap (0.0821ms)
+(node:52660) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/three-loader.mjs", pathToFileURL("./")); register("./tests/three-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ native Dust II navigation has 2242 areas and valid links (1.7158ms)
+✔ native T spawns connect to both sites (136.0054ms)
+✔ planting uses the original bomb-target bounds (0.1849ms)
+✔ navigation rejects movement outside original polygons (0.1153ms)
+✔ ground acceleration, walk and crouch reach native maximum speed (0.4081ms)
+✔ friction stops a player and air movement preserves forward momentum (0.1029ms)
+✔ air strafing uses the native 30 u/s projected cap (0.0743ms)
+✔ gravity and impulse produce the native jump arc (0.0641ms)
+✔ only scoped guns change FOV (0.1113ms)
+✔ classic pooled reload preserves bullets and handles a partial reserve (0.525ms)
+✔ weapon parameters come from the installed CS2 data (0.0607ms)
+✔ movement, air and sustained firing increase inaccuracy (0.0984ms)
+✔ seeded recoil is repeatable across reloads (0.6245ms)
+✔ armor excludes bare heads and legs; armor consumption is capped (0.0922ms)
+✔ a planted bomb remains active after the attacker dies (0.0611ms)
+✔ unplanted elimination and timeout resolve the round (0.0515ms)
+(node:30064) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/three-loader.mjs", pathToFileURL("./")); register("./tests/three-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ native item IDs are unique and every firearm has actual finish choices (1.806ms)
+✔ every case points at real gun finishes and a compatible special item family (0.5536ms)
+✔ all declared native images, recipes, sound files, and lazy models exist (342.4832ms)
+✔ wear labels respect all five boundaries and select actual native wear renders (0.6161ms)
+✔ all twenty knife animation sets retain exact 667-node indexing and native five-clip roles (24.1343ms)
+(node:56208) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/three-loader.mjs", pathToFileURL("./")); register("./tests/three-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ room codes use cryptographic bytes and an unambiguous 32-character alphabet (5.5291ms)
+✔ ten room positions preserve five slots on each side and party metadata (0.7843ms)
+✔ starting requires ready players on both sides (0.1743ms)
+✔ network input rejects replayed, invalid and unbounded values (0.2173ms)
+✔ packets require a known version and bounded JSON envelope (0.2358ms)
+✔ switching a remote weapon cannot create ammunition (0.844ms)
+(node:46144) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/three-loader.mjs", pathToFileURL("./")); register("./tests/three-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ a swept hull lands on a floor without tunnelling (0.9091ms)
+✔ a horizontal hull sweep stops at the wall (0.2102ms)
+✔ parallel motion does not collide with a separated wall (0.113ms)
+✔ ceiling collisions oppose upward motion (0.1369ms)
+(node:23368) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/three-loader.mjs", pathToFileURL("./")); register("./tests/three-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ native season height samples and interpolation share one coordinate system (1.8164ms)
+✔ 100 total participants replace bots with humans; deterministic loot (2.1951ms)
+✔ bots travel with bus before jumping and cannot remain at original bus spawn (1.8221ms)
+✔ bus jump, glider, landing and movement preserve CS2 acceleration (0.7855ms)
+✔ all native firearms can be picked up and use pooled ammo without discarded rounds (2.2095ms)
+✔ authoritative aim hits real head/body volumes and shields absorb before health (1.8307ms)
+✔ building costs materials, obeys distance and occupancy, and edits update collision (0.6837ms)
+✔ ramp/cone support matches native 5.12 by 3.84 building grid (0.1135ms)
+✔ storm shrinks, damages outside actors, and last survivor wins (0.4079ms)
+✔ untrusted BR actions reject invalid builds/slots/edit payloads and forged hits (0.4239ms)
+✔ 100-actor snapshots are bounded and preserve authoritative player inventory (1.3022ms)
+✔ BR cloud counters merge across devices while remapped controls persist (0.4943ms)
+✔ unarmed bots keep seeking loot when a visible enemy is close (0.4026ms)
+✔ scenery collision, visibility and destruction agree across grid boundaries (0.3285ms)
+✔ switching, picking up and dropping scoped weapons clears zoom and cancels stale actions (0.3484ms)
+✔ stationary first shots use their initial accuracy before adding the firing penalty (8.3703ms)
+(node:14364) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/three-loader.mjs", pathToFileURL("./")); register("./tests/three-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ full firearm roster retains native team, scope and reload distinctions (0.4897ms)
+✔ team loadouts remain fifteen unique legal slots and enforce starting pistols (0.2957ms)
+✔ settings validate persisted ranges and custom bindings disable the old key (0.3355ms)
+✔ combat rewards accumulate actual damage, scale clutches and persist (0.2884ms)
+✔ case transactions are atomic across reload and cannot double-spend (2.4521ms)
+✔ every case drop respects native membership, wear bounds and special-item eligibility (2.7163ms)
+✔ all exterior boundaries are exact and wear never changes on equip (0.7751ms)
+(node:9612) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/three-loader.mjs", pathToFileURL("./")); register("./tests/three-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ partial nav connections use the shared portal instead of the whole source edge midpoint (0.9733ms)
+✔ a real ray penetrates a paired thin wooden wall and loses damage before hitting the target (1.6558ms)
+✔ thick solid material and disabled penetration stop actual rays (0.462ms)
+(node:67472) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./tests/three-loader.mjs", pathToFileURL("./")); register("./tests/three-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ all native primary and alternate recoil tables are finite and deterministic (7.8872ms)
+✔ mode selection includes native alternate patterns and magnitude variance (0.4863ms)
+✔ recoil retains its shot index through short bursts and recovers after release (1.0465ms)
+✔ follow recoil projects the exact pre-spread shot direction at multiple FOVs/aspects (1.0488ms)
+✔ concurrent device earnings merge once and preserve every item (0.8178ms)
+✔ stale-device spending rejects the entire duplicate purchase or case opening (0.2655ms)
+✔ cloud deltas preserve finish wear/seed, equipment, music, preferences and StatTrak (0.2006ms)
+✔ developer benefits and music purchases cannot be charged/granted twice across devices (0.2346ms)
+✔ independent tab writers can reuse sequence numbers without losing earnings (0.1431ms)
+✔ rejected-item and rejected-music equipment selections do not survive a merge (0.1327ms)
+✔ dropped weapons inherit velocity, bounce and settle without falling through a floor (2.2301ms)
+ℹ tests 75
+ℹ suites 0
+ℹ pass 75
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 540.7308

@@ -2,7 +2,11 @@
 
 Unofficial, noncommercial Counter-Strike practice and casual multiplayer in the browser, using native Valve map, model, animation, texture and sound assets. This is an independent browser implementation.
 
-**Play Update 8:** https://infinity-dj-gaming.github.io/strikepoint-browser/?update=8
+**Play Update 10:** https://infinity-dj-gaming.github.io/strikepoint-browser/?update=10
+
+**Apollo Royale:** https://infinity-dj-gaming.github.io/strikepoint-browser/royale.html?update=10
+
+Experimental Chapter 2 Season 2 island crossover: original terrain, minimap, bus, foliage and building pieces with first-person CS2 combat. 100 total combatants, up to 10 humans with bot fill. POI compounds are reconstructed; the complete original season map buildings are not included. See [Update 10](UPDATE-10.md) for controls, provenance and prototype limits.
 
 ## Multiplayer
 

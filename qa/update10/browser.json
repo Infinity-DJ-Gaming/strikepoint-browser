@@ -1,0 +1,67 @@
+{
+  "checks": [
+    {
+      "name": "100 combatants at bus",
+      "pass": true
+    },
+    {
+      "name": "bus eject starts skydive",
+      "pass": true
+    },
+    {
+      "name": "native AK and hands visible",
+      "pass": true,
+      "binding": 12
+    },
+    {
+      "name": "glock view model",
+      "pass": true
+    },
+    {
+      "name": "hkp2000 view model",
+      "pass": true
+    },
+    {
+      "name": "pistol view model",
+      "pass": true
+    },
+    {
+      "name": "elite view model",
+      "pass": true
+    },
+    {
+      "name": "p250 view model",
+      "pass": true
+    },
+    {
+      "name": "mp7 view model",
+      "pass": true
+    },
+    {
+      "name": "knife view model",
+      "pass": true
+    },
+    {
+      "name": "building placement deducts material",
+      "pass": true
+    },
+    {
+      "name": "wall edit accepted and collision rebuilds",
+      "pass": true
+    },
+    {
+      "name": "native ray damages target",
+      "pass": true,
+      "damage": 100
+    },
+    {
+      "name": "Escape menu pauses solo only",
+      "pass": true
+    },
+    {
+      "name": "build key remapping saved",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

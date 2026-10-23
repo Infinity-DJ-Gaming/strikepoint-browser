@@ -10,3 +10,5 @@ Browser libraries: Three.js, three-mesh-bvh and meshoptimizer. Their license
 notices are retained in vendor/. Conversion scripts use glTF Transform and sharp.
 
 This is an unofficial private browser practice adaptation, not a Valve release.
+
+Update 10 experimental Apollo Royale includes original Fortnite terrain, map imagery, models and building recordings belonging to Epic Games. Community archive/Source-port credits, transformation details and hashes are retained in assets/royale/. POI compounds, material shading and some gameplay systems are reconstructed browser approximations. This is an unofficial crossover prototype, not an Epic release.

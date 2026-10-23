@@ -1,0 +1,8 @@
+{
+  "checks": [
+    "CS2 game loads with the new separate BR entry",
+    "Update 10 notes are present in the expandable news list",
+    "Existing Dust II native viewmodel still renders"
+  ],
+  "errors": []
+}

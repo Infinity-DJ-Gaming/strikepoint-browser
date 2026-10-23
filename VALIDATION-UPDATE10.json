@@ -1,0 +1,168 @@
+{
+  "version": "10.0.0",
+  "date": "2026-10-23",
+  "unitTests": {
+    "passed": 75,
+    "failed": 0
+  },
+  "browser": {
+    "browser": {
+      "passed": 15,
+      "checks": [
+        {
+          "name": "100 combatants at bus",
+          "pass": true
+        },
+        {
+          "name": "bus eject starts skydive",
+          "pass": true
+        },
+        {
+          "name": "native AK and hands visible",
+          "pass": true,
+          "binding": 12
+        },
+        {
+          "name": "glock view model",
+          "pass": true
+        },
+        {
+          "name": "hkp2000 view model",
+          "pass": true
+        },
+        {
+          "name": "pistol view model",
+          "pass": true
+        },
+        {
+          "name": "elite view model",
+          "pass": true
+        },
+        {
+          "name": "p250 view model",
+          "pass": true
+        },
+        {
+          "name": "mp7 view model",
+          "pass": true
+        },
+        {
+          "name": "knife view model",
+          "pass": true
+        },
+        {
+          "name": "building placement deducts material",
+          "pass": true
+        },
+        {
+          "name": "wall edit accepted and collision rebuilds",
+          "pass": true
+        },
+        {
+          "name": "native ray damages target",
+          "pass": true,
+          "damage": 100
+        },
+        {
+          "name": "Escape menu pauses solo only",
+          "pass": true
+        },
+        {
+          "name": "build key remapping saved",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    "extended": {
+      "passed": 6,
+      "checks": [
+        "SG 553 uses its real native optic ring, green dot and native scoped FOV",
+        "Equipped native butterfly finish and hand-wrap gloves carry into BR",
+        "100 native character instances render with native movement poses and different held guns",
+        "Full 100-bot match finishes on actual island with scenery collisions",
+        "Eliminated player automatically spectates a survivor",
+        "Focus loss leaves the match running"
+      ],
+      "errors": []
+    },
+    "network": {
+      "passed": 9,
+      "checks": [
+        {
+          "name": "separate authenticated accounts restore cloud progression",
+          "pass": true
+        },
+        {
+          "name": "BR room codes establish actual WebRTC guest/host connections",
+          "pass": true,
+          "detail": "BRLUZZGR"
+        },
+        {
+          "name": "lobby microphone can be initialized before the bus",
+          "pass": true
+        },
+        {
+          "name": "network launch replicates 2 humans plus 98 bots",
+          "pass": true
+        },
+        {
+          "name": "guest ejection is validated and applied on the host",
+          "pass": true
+        },
+        {
+          "name": "guest trigger input causes host-traced damage to the other human",
+          "pass": true
+        },
+        {
+          "name": "last human survivor receives the replicated victory result",
+          "pass": true
+        },
+        {
+          "name": "network elimination and BR stats persist in private cloud save",
+          "pass": true
+        },
+        {
+          "name": "host leaving cleanly closes the BR room for guests",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    "cloud-browser": {
+      "passed": 9,
+      "checks": [
+        "Second independent device restores coins, item float/seed/StatTrak, equipment, cases, music, preferences",
+        "Concurrent device earnings merge without overwriting or duplicating",
+        "Offline outbox replays once and merges with progress from the other device",
+        "Signing out restores the guest save without leaking account inventory or replacing the account balance",
+        "Two tabs in the same browser retain independent writer sequences",
+        "An offline initial read automatically recovers on reconnect",
+        "Another account save is unreadable",
+        "BR matches, kills, wins, difficulty and remapped building controls sync between devices",
+        "A fresh third device restores the merged cloud balance"
+      ],
+      "errors": []
+    },
+    "existing-game": {
+      "passed": 3,
+      "checks": [
+        "CS2 game loads with the new separate BR entry",
+        "Update 10 notes are present in the expandable news list",
+        "Existing Dust II native viewmodel still renders"
+      ],
+      "errors": []
+    }
+  },
+  "assets": {
+    "originalModelFiles": 23,
+    "nativeBuildingRecordings": 3,
+    "renderValidation": "All 23 converted GLBs rendered in Edge with Meshopt; no missing-texture placeholders or browser errors."
+  },
+  "limits": [
+    "100 total combatants; maximum 10 human clients.",
+    "Original terrain/minimap; reconstructed POI compounds and approximate water/materials.",
+    "Storm/drop/building logic is experimental; glider deploy animation unavailable.",
+    "Multiplayer tested with two local WebRTC peers and Firebase emulator access rules, not a 100-human WAN load test."
+  ]
+}

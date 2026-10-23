@@ -8,19 +8,19 @@ export function cleanProgress(state){
  out.items=Array.isArray(out.items)?out.items:[];out.cases=out.cases||{};out.equipped=out.equipped||{};out.stats=out.stats||{};out.musicKits=out.musicKits||[];out.coins=Math.max(0,Math.floor(safeNumber(out.coins)));out.log=(out.log||[]).slice(0,50);return out;
 }
 export function progressDelta(before,after){
- const delta={coins:safeNumber(after.coins)-safeNumber(before.coins)},maps=['cases','stats'];
+ const delta={coins:safeNumber(after.coins)-safeNumber(before.coins)},maps=['cases','stats','brStats'];
  for(const key of maps){delta[key]={};for(const id of new Set([...Object.keys(before[key]||{}),...Object.keys(after[key]||{})])){const n=safeNumber(after[key]?.[id])-safeNumber(before[key]?.[id]);if(n)delta[key][id]=n;}}
  const old=new Map((before.items||[]).map(i=>[i.uid,i])),current=new Map((after.items||[]).map(i=>[i.uid,i]));delta.items=[];delta.removed=[];delta.kills={};
  for(const [uid,item]of current){if(!old.has(uid))delta.items.push(item);else if(!equal(old.get(uid),item)){const prior=old.get(uid);if(safeNumber(item.kills)!==safeNumber(prior.kills))delta.kills[uid]=safeNumber(item.kills)-safeNumber(prior.kills);}}
  for(const uid of old.keys())if(!current.has(uid))delta.removed.push(uid);
- for(const key of ['equipped','settings','loadout']){delta[key]={};for(const id of new Set([...Object.keys(before[key]||{}),...Object.keys(after[key]||{})]))if(!equal(before[key]?.[id],after[key]?.[id]))delta[key][id]=after[key]?.[id]??null;}
+ for(const key of ['equipped','settings','loadout','brSettings']){delta[key]={};for(const id of new Set([...Object.keys(before[key]||{}),...Object.keys(after[key]||{})]))if(!equal(before[key]?.[id],after[key]?.[id]))delta[key][id]=after[key]?.[id]??null;}
  delta.musicKits=(after.musicKits||[]).filter(id=>!(before.musicKits||[]).includes(id));
  for(const key of ['selectedMusic','developerBenefitsGranted'])if(!equal(before[key],after[key]))delta[key]=after[key]??null;
  delta.damageBank=safeNumber(after.damageBank)-safeNumber(before.damageBank);
  delta.log=(after.log||[]).filter(row=>!(before.log||[]).some(old=>equal(old,row))).slice(0,50);
  return delta;
 }
-export function hasProgressDelta(d){return d.coins!==0||d.damageBank!==0||['cases','stats','kills','equipped','settings','loadout'].some(k=>Object.keys(d[k]).length)||d.items.length||d.removed.length||d.musicKits.length||d.log.length||'selectedMusic'in d||'developerBenefitsGranted'in d;}
+export function hasProgressDelta(d){return d.coins!==0||d.damageBank!==0||['cases','stats','brStats','kills','equipped','settings','loadout','brSettings'].some(k=>Object.keys(d[k]||{}).length)||d.items.length||d.removed.length||d.musicKits.length||d.log.length||'selectedMusic'in d||'developerBenefitsGranted'in d;}
 export function applyProgressDelta(input,delta){
  const state=cleanProgress(input);delta=clone(delta);
  // One-time grants and music ownership are account-wide, even if two devices
@@ -31,9 +31,9 @@ export function applyProgressDelta(input,delta){
  // purchase/open operation so its reward cannot be kept without its payment.
  if(state.coins+delta.coins<0||Object.entries(delta.cases).some(([k,n])=>(state.cases[k]||0)+n<0))return null;
  state.coins+=delta.coins;state.damageBank=Math.max(0,safeNumber(state.damageBank)+delta.damageBank);
- for(const key of ['cases','stats'])for(const [id,n]of Object.entries(delta[key]))state[key][id]=Math.max(0,safeNumber(state[key][id])+n);
+ for(const key of ['cases','stats','brStats']){if(key==='brStats'&&!state[key]&&!Object.keys(delta[key]||{}).length)continue;state[key]||={};for(const [id,n]of Object.entries(delta[key]||{}))state[key][id]=Math.max(0,safeNumber(state[key][id])+n);}
  const items=new Map(state.items.map(i=>[i.uid,i]));for(const uid of delta.removed)items.delete(uid);for(const item of delta.items)if(!items.has(item.uid))items.set(item.uid,clone(item));for(const [uid,n]of Object.entries(delta.kills))if(items.has(uid))items.get(uid).kills=Math.max(0,safeNumber(items.get(uid).kills)+n);state.items=[...items.values()];
- for(const key of ['equipped','settings','loadout']){state[key]||={};for(const [id,value]of Object.entries(delta[key])){if(value===null)delete state[key][id];else state[key][id]=clone(value);}}
+ for(const key of ['equipped','settings','loadout','brSettings']){if(key==='brSettings'&&!state[key]&&!Object.keys(delta[key]||{}).length)continue;state[key]||={};for(const [id,value]of Object.entries(delta[key]||{})){if(value===null)delete state[key][id];else state[key][id]=clone(value);}}
  state.musicKits=[...new Set([...state.musicKits,...delta.musicKits])];for(const key of ['selectedMusic','developerBenefitsGranted'])if(key in delta)state[key]=delta[key];state.log=[...delta.log,...state.log].slice(0,50);const owned=new Set(state.items.map(i=>i.uid));for(const [slot,uid]of Object.entries(state.equipped))if(!owned.has(uid))delete state.equipped[slot];if(!state.musicKits.includes(state.selectedMusic))state.selectedMusic=state.musicKits[0]||'valve_cs2_01';return state;
 }
 export function mergeProgressBatch(remote,initial,operations,device,now=Date.now()){
@@ -60,7 +60,7 @@ export class CloudProgress extends EventTarget{
   if(!uid){this.progress.key='cs-browser-inventory-v1';this.replace(this.guest);this.emit('guest');return;}
   const saved=JSON.parse(this.storage.getItem(this.key())||'null'),claimed=this.storage.getItem('cs-cloud-guest-owner');
   if(!claimed)this.storage.setItem('cs-cloud-guest-owner',uid);
-  const blank={...this.guest,coins:250,items:[],cases:{},equipped:{},stats:Object.fromEntries(Object.keys(this.guest.stats).map(k=>[k,0])),damageBank:0,log:[],musicKits:['valve_cs2_01','valve_02'],selectedMusic:'valve_cs2_01',developerBenefitsGranted:false};
+  const blank={...this.guest,coins:250,items:[],cases:{},equipped:{},stats:Object.fromEntries(Object.keys(this.guest.stats).map(k=>[k,0])),brStats:Object.fromEntries(Object.keys(this.guest.brStats||{}).map(k=>[k,0])),damageBank:0,log:[],musicKits:['valve_cs2_01','valve_02'],selectedMusic:'valve_cs2_01',developerBenefitsGranted:false};
   const canImport=!claimed||claimed===uid,legacy=cleanProgress(canImport?this.guest:blank);legacy.items=legacy.items.filter(item=>!item.developerGrant||item.developerGrant===uid);const previousDev=JSON.parse(this.storage.getItem('cs-developer-inventory-'+uid)||'null');if(previousDev?.casesGranted)legacy.developerBenefitsGranted=true;
   const initial=saved?.state||legacy;this.initial=saved?.initial||cleanProgress(blank);this.queue=this.readOutboxes(uid);this.seq=0;
   if(!saved&&canImport){const delta=progressDelta(blank,legacy),writer='guest-'+this.browser;if(hasProgressDelta(delta)&&!this.queue.some(op=>op.device===writer))this.queue.unshift({device:writer,seq:1,delta});}
@@ -85,6 +85,6 @@ export class CloudProgress extends EventTarget{
 export function installCloudSaveStatus(cloud){
  const node=document.createElement('div');node.id='cloudSaveStatus';node.className='cloud-save-status';node.setAttribute('role','status');
  const label=document.createElement('span'),button=document.createElement('button');button.type='button';button.className='text-button';button.textContent='RETRY';button.onclick=()=>{if(!cloud.ready&&cloud.uid){const user=cloud.service.user;cloud.uid=null;cloud.attach(user).catch(()=>{});}else cloud.flush(true).catch(()=>{});};node.append(label,button);document.querySelector('.party-rail').append(node);
- const text={guest:'LOCAL SAVE · Sign in to sync devices',loading:'Loading account save…',pending:'Progress saved locally · Sync pending',saving:'Saving account progress…',saved:'CLOUD SAVED · All devices',error:'Cloud unavailable · Local backup kept',conflict:'Save refreshed · Purchase conflict'};
+ const text={guest:'LOCAL SAVE Ã‚Â· Sign in to sync devices',loading:'Loading account saveÃ¢â‚¬Â¦',pending:'Progress saved locally Ã‚Â· Sync pending',saving:'Saving account progressÃ¢â‚¬Â¦',saved:'CLOUD SAVED Ã‚Â· All devices',error:'Cloud unavailable Ã‚Â· Local backup kept',conflict:'Save refreshed Ã‚Â· Purchase conflict'};
  cloud.addEventListener('status',()=>{label.textContent=text[cloud.status];node.dataset.status=cloud.status;node.title=cloud.message||text[cloud.status];button.hidden=!['error','conflict'].includes(cloud.status);});cloud.emit('guest');
 }

@@ -1,0 +1,1 @@
+Original Fortnite asset conversions for Update10. See CREDITS.json and asset-manifest.json. Only this runtime folder is intendedforcopyingintodist; parentfolderscontainrawarchivesandconversionintermediates.

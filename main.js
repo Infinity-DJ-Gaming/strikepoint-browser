@@ -1,7 +1,7 @@
 import {createDropBody,stepDrop,disposeDrop} from './dropped-weapons.mjs?v=20261022-9';
 import {installPatchNotes} from './news.mjs?v=20261022-9';
 import {grantCustomFinishes} from './custom-finishes.mjs?v=20261022-9';
-import {CloudProgress,installCloudSaveStatus} from './cloud-progress.mjs?v=20261022-9';
+import {CloudProgress,installCloudSaveStatus} from './cloud-progress.mjs?v=20261023-10';
 import {createRecoil,resetRecoil,kickRecoil,stepRecoil,recoilRecovery,recoilMode,shotQuaternion,shotDirection,recoilCrosshairOffset,VIEW_RECOIL_TRACKING} from './recoil.mjs?v=20261022-9';
 import {restoreNativeTextures,installNativeTextureControls,setSkinTextureFiltering,nativeTextureStatus} from './skin-textures.mjs?v=20261022-9';
 import {updateRifleOptic} from './rifle-optic.mjs?v=20261022-9';
@@ -28,7 +28,7 @@ import {HullWorld} from './physics.mjs?v=20261022-9';
 import {createNativeView,updateNativeWeapon,bindNativeWeapon} from './viewmodel.mjs?v=20261022-9';
 import {GameAudio} from './audio.mjs?v=20261022-9';
 import {NATIVE_AUDIO_TIMELINES} from './audio-data.mjs?v=20261022-9';
-import {installOnline} from './online-ui.mjs?v=20261022-9';
+import {installOnline} from './online-ui.mjs?v=20261023-10';
 import {OnlineComms} from './online-comms.mjs?v=20261022-9';
 import {OnlineMatch} from './online-match.mjs?v=20261022-9';
 import {detachNativeWeapon} from './viewmodel.mjs?v=20261022-9';
@@ -465,5 +465,8 @@ function applyCloudPreferences(state){if(state.settings){localStorage.setItem('c
 document.addEventListener('cs:preferences-changed',captureCloudPreferences);
 grantCustomFinishes(progress);
 $('newsPane').insertAdjacentHTML('afterbegin','<article class="patch-notes"><span class="eyebrow">OCTOBER 22, 2026 · UPDATE 9</span><h1>CONTROL THE SPRAY.</h1><h2>RECOIL & CROSSHAIR</h2><p>Native per-weapon seeds, angle and magnitude variance, alternate firing modes and recovery replace the old simplified recoil. Follow Recoil now projects the actual pre-spread aim direction through the current camera at every frame. Native inputs and Source-compatible tables are verified; current CS2 closed recoil integration is approximated.</p><h2>DROPPED EQUIPMENT</h2><p>Dropped guns inherit movement, tumble, bounce and settle against map collision. Ammunition survives dropping and pickup. The host synchronizes dropped positions and rotation in multiplayer.</p><h2>BLACK ICE</h2><p>A free community AK-47 finish based on your reference: dark steel, deep cyan ice and sharp frozen veins. Find Black Ice in your owned inventory and equip it. This custom browser finish is separate from the native Valve catalog.</p><h2>ACCOUNT CLOUD SAVES</h2><p>Sign in to save coins, skins, wear and pattern seeds, equipped items, cases, music kits, stats, loadouts and settings across devices. Local backups and a persistent sync queue retain offline progress. Purchases merge in a transaction so stale devices cannot spend the same balance twice. Guest progress remains local.</p><h2>PATCH NOTES</h2><p>Updates now expand individually with keyboard-accessible dropdowns. The latest update opens by default.</p></article>');
+$('newsPane').insertAdjacentHTML('afterbegin','<article class="patch-notes"><span class="eyebrow">OCTOBER 23, 2026 · UPDATE 10</span><h1>THE ISLAND EXPERIMENT.</h1><ul><li>Experimental Battle Royale: original Chapter 2 Season 2 terrain and map, native Battle Bus, foliage, glider and building pieces.</li><li>100 total combatants with bot fill. Jump, glide, find CS2 weapons and ammo, build and edit cover, harvest materials, use shields and healing, and survive the shrinking storm.</li><li>Remappable movement, combat and building controls. Season-inspired compass, minimap, resources, five-slot loadout, full map and spectating.</li><li>BR room codes and regional room discovery support up to 10 humans plus bots. Existing Firebase accounts, voice, coins and cloud saves carry over.</li><li>Original POI buildings/interiors are not included; island compounds are reconstructed test layouts. Drop physics, storm schedules and editing are experimental approximations.</li></ul><p><a href="royale.html?update=10">PLAY APOLLO ROYALE →</a></p></article>');
 installPatchNotes($('newsPane'));
-const update9News=document.querySelector('.home-news-body');update9News.querySelector('.eyebrow').textContent='BROWSER PRACTICE · UPDATE 9';update9News.querySelector('h1').innerHTML='CONTROL<br>THE SPRAY.';update9News.querySelector('p').innerHTML='Native recoil data. Follow your aim.<br>Black Ice. Physics. Account cloud saves.';document.querySelector('.home-news-bottom span').textContent='RECOIL · BLACK ICE · CLOUD SAVES';
+const update9News=document.querySelector('.home-news-body');update9News.querySelector('.eyebrow').textContent='BROWSER PRACTICE · UPDATE 10';update9News.querySelector('h1').innerHTML='THE ISLAND<br>EXPERIMENT.';update9News.querySelector('p').innerHTML='Chapter 2 Season 2. CS2 gunplay.<br>100 combatants. Build. Loot. Survive.';document.querySelector('.home-news-bottom span').textContent='APOLLO ROYALE · ORIGINAL ISLAND ASSETS';
+
+const royaleHomeLink=update9News.querySelector('button');royaleHomeLink.textContent='PLAY APOLLO ROYALE ↗';royaleHomeLink.onclick=()=>{location.href='royale.html?update=10';};

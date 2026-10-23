@@ -1,0 +1,99 @@
+{
+  "result": {
+    "winner": "bot-14",
+    "name": "Viper 15",
+    "kills": 7
+  },
+  "milestones": [
+    {
+      "time": 0,
+      "alive": 100,
+      "grounded": 0,
+      "armed": 0,
+      "kills": 0,
+      "storm": 0
+    },
+    {
+      "time": 30,
+      "alive": 100,
+      "grounded": 25,
+      "armed": 1,
+      "kills": 0,
+      "storm": 0
+    },
+    {
+      "time": 60,
+      "alive": 59,
+      "grounded": 58,
+      "armed": 17,
+      "kills": 41,
+      "storm": 0
+    },
+    {
+      "time": 90,
+      "alive": 35,
+      "grounded": 35,
+      "armed": 19,
+      "kills": 65,
+      "storm": 0
+    },
+    {
+      "time": 120,
+      "alive": 31,
+      "grounded": 31,
+      "armed": 16,
+      "kills": 69,
+      "storm": 1
+    },
+    {
+      "time": 150,
+      "alive": 30,
+      "grounded": 30,
+      "armed": 17,
+      "kills": 70,
+      "storm": 1
+    },
+    {
+      "time": 180,
+      "alive": 30,
+      "grounded": 30,
+      "armed": 19,
+      "kills": 70,
+      "storm": 1
+    },
+    {
+      "time": 210,
+      "alive": 26,
+      "grounded": 26,
+      "armed": 17,
+      "kills": 70,
+      "storm": 2
+    },
+    {
+      "time": 240,
+      "alive": 10,
+      "grounded": 10,
+      "armed": 7,
+      "kills": 73,
+      "storm": 3
+    },
+    {
+      "time": 270,
+      "alive": 3,
+      "grounded": 3,
+      "armed": 2,
+      "kills": 73,
+      "storm": 3
+    },
+    {
+      "time": 300,
+      "alive": 3,
+      "grounded": 3,
+      "armed": 2,
+      "kills": 73,
+      "storm": 4
+    }
+  ],
+  "elapsedMs": 1661,
+  "time": 314.43333333336784
+}

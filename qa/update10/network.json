@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "name": "separate authenticated accounts restore cloud progression",
+      "pass": true
+    },
+    {
+      "name": "BR room codes establish actual WebRTC guest/host connections",
+      "pass": true,
+      "detail": "BRLUZZGR"
+    },
+    {
+      "name": "lobby microphone can be initialized before the bus",
+      "pass": true
+    },
+    {
+      "name": "network launch replicates 2 humans plus 98 bots",
+      "pass": true
+    },
+    {
+      "name": "guest ejection is validated and applied on the host",
+      "pass": true
+    },
+    {
+      "name": "guest trigger input causes host-traced damage to the other human",
+      "pass": true
+    },
+    {
+      "name": "last human survivor receives the replicated victory result",
+      "pass": true
+    },
+    {
+      "name": "network elimination and BR stats persist in private cloud save",
+      "pass": true
+    },
+    {
+      "name": "host leaving cleanly closes the BR room for guests",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

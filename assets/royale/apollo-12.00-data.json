@@ -1,0 +1,629 @@
+{
+  "season": "Chapter 2 Season 2",
+  "version": "12.00 (season launch, February 20 2020)",
+  "coordinateConvention": "X east, Y up, Z south; UV origin northwest. Native original heightmaps rotated 90 degrees CCW for north-up. Units meters.",
+  "nativeLandscape": {
+    "source": "https://github.com/SnakeyFlea/FortniteHeightmaps#settings-apollo_terrain-ch2",
+    "sourceLocationCentimeters": [
+      -130048,
+      -130048,
+      100
+    ],
+    "sourceScale": [
+      128,
+      128,
+      100
+    ],
+    "originalResolution": [
+      2033,
+      2033
+    ],
+    "widthMeters": 2600.96,
+    "heightConversion": "meters=(unsigned16-32768)/128+1",
+    "invalidOriginalHeightValue": 0,
+    "invalidFloatHeightMeters": -255,
+    "sourceOceanBedMostCommonHeight": 26052,
+    "sourceOceanBedMeters": -51.46875,
+    "waterSurfaceNote": "Ocean bed is not ocean water level. Estimated sea surface around -40m; central Agency lake bed near -28.6m needs separate raised water surface. No authoritative water-volume transforms found."
+  },
+  "mapProjection": {
+    "terrainUvToMapUv": {
+      "scale": 0.967,
+      "offset": [
+        0.015,
+        0.013
+      ]
+    },
+    "accuracy": "Empirical fit of native sand/coast layer to archived 12.00 minimap; +/-1% possible. Not authoritative native minimap camera."
+  },
+  "poi": [
+    {
+      "name": "The Shark",
+      "kind": "boss",
+      "mapUv": [
+        0.187,
+        0.105
+      ],
+      "terrainUv": [
+        0.17787,
+        0.09514
+      ],
+      "worldMeters": [
+        -837.848,
+        -38.398,
+        -1053.026
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "The Yacht",
+      "kind": "boss",
+      "mapUv": [
+        0.92,
+        0.079
+      ],
+      "terrainUv": [
+        0.935884,
+        0.068252
+      ],
+      "worldMeters": [
+        1133.717,
+        -51.469,
+        -1122.958
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "The Agency",
+      "kind": "boss",
+      "mapUv": [
+        0.517,
+        0.477
+      ],
+      "terrainUv": [
+        0.519131,
+        0.479835
+      ],
+      "worldMeters": [
+        49.76,
+        -19.203,
+        -52.45
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "The Rig",
+      "kind": "boss",
+      "mapUv": [
+        0.18,
+        0.785
+      ],
+      "terrainUv": [
+        0.170631,
+        0.798345
+      ],
+      "worldMeters": [
+        -856.676,
+        -51.469,
+        775.984
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "The Grotto",
+      "kind": "boss",
+      "mapUv": [
+        0.91,
+        0.564
+      ],
+      "terrainUv": [
+        0.925543,
+        0.569804
+      ],
+      "worldMeters": [
+        1106.82,
+        11.469,
+        181.556
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Craggy Cliffs",
+      "kind": "town",
+      "mapUv": [
+        0.601,
+        0.132
+      ],
+      "terrainUv": [
+        0.605998,
+        0.123061
+      ],
+      "worldMeters": [
+        275.696,
+        -30.758,
+        -980.403
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Steamy Stacks",
+      "kind": "industrial",
+      "mapUv": [
+        0.853,
+        0.194
+      ],
+      "terrainUv": [
+        0.866598,
+        0.187177
+      ],
+      "worldMeters": [
+        953.506,
+        -15.508,
+        -813.641
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Pleasant Park",
+      "kind": "town",
+      "mapUv": [
+        0.443,
+        0.25
+      ],
+      "terrainUv": [
+        0.442606,
+        0.245088
+      ],
+      "worldMeters": [
+        -149.28,
+        -26.344,
+        -663.016
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Sweaty Sands",
+      "kind": "town",
+      "mapUv": [
+        0.215,
+        0.367
+      ],
+      "terrainUv": [
+        0.206825,
+        0.366081
+      ],
+      "worldMeters": [
+        -762.536,
+        -34.562,
+        -348.319
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Frenzy Farm",
+      "kind": "farm",
+      "mapUv": [
+        0.645,
+        0.364
+      ],
+      "terrainUv": [
+        0.651499,
+        0.362978
+      ],
+      "worldMeters": [
+        394.044,
+        -11.516,
+        -356.388
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Holly Hedges",
+      "kind": "town",
+      "mapUv": [
+        0.193,
+        0.546
+      ],
+      "terrainUv": [
+        0.184074,
+        0.551189
+      ],
+      "worldMeters": [
+        -821.71,
+        -11.547,
+        133.141
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Salty Springs",
+      "kind": "town",
+      "mapUv": [
+        0.406,
+        0.449
+      ],
+      "terrainUv": [
+        0.404343,
+        0.450879
+      ],
+      "worldMeters": [
+        -248.799,
+        -17.367,
+        -127.762
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Weeping Woods",
+      "kind": "forest",
+      "mapUv": [
+        0.407,
+        0.629
+      ],
+      "terrainUv": [
+        0.405377,
+        0.637022
+      ],
+      "worldMeters": [
+        -246.109,
+        -23.039,
+        356.388
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Slurpy Swamp",
+      "kind": "industrial",
+      "mapUv": [
+        0.33,
+        0.745
+      ],
+      "terrainUv": [
+        0.32575,
+        0.75698
+      ],
+      "worldMeters": [
+        -453.218,
+        -30.82,
+        668.396
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Lazy Lake",
+      "kind": "town",
+      "mapUv": [
+        0.699,
+        0.667
+      ],
+      "terrainUv": [
+        0.707342,
+        0.676319
+      ],
+      "worldMeters": [
+        539.289,
+        17.742,
+        458.597
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Misty Meadows",
+      "kind": "town",
+      "mapUv": [
+        0.595,
+        0.824
+      ],
+      "terrainUv": [
+        0.599793,
+        0.838676
+      ],
+      "worldMeters": [
+        259.558,
+        5.352,
+        880.884
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Retail Row",
+      "kind": "town",
+      "mapUv": [
+        0.864,
+        0.639
+      ],
+      "terrainUv": [
+        0.877973,
+        0.647363
+      ],
+      "worldMeters": [
+        983.093,
+        42.242,
+        383.285
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Dirty Docks",
+      "kind": "industrial",
+      "mapUv": [
+        0.916,
+        0.442
+      ],
+      "terrainUv": [
+        0.931748,
+        0.44364
+      ],
+      "worldMeters": [
+        1122.958,
+        -34.586,
+        -146.59
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    },
+    {
+      "name": "Risky Reels",
+      "kind": "landmark",
+      "mapUv": [
+        0.552,
+        0.386
+      ],
+      "terrainUv": [
+        0.555326,
+        0.385729
+      ],
+      "worldMeters": [
+        143.9,
+        -19.203,
+        -297.214
+      ],
+      "positionAccuracy": "Manual minimap center; approx +/-15m, not native actor coordinates."
+    }
+  ],
+  "building": {
+    "wallMeters": {
+      "width": 5.12,
+      "height": 3.84,
+      "thickness": 0.24
+    },
+    "floorMeters": {
+      "length": 5.12,
+      "width": 5.12,
+      "thickness": 0.24
+    },
+    "rampMeters": {
+      "length": 5.12,
+      "width": 5.12,
+      "height": 3.84,
+      "thickness": 0.24
+    },
+    "source": "https://dev.epicgames.com/documentation/fortnite/architectural-modeling-guidelines-in-unreal-editor-for-fortnite",
+    "pieceTypes": [
+      "wall",
+      "floor",
+      "stairs",
+      "roof/cone"
+    ],
+    "materialTypes": [
+      "wood",
+      "stone",
+      "metal"
+    ],
+    "buildPieceResourceCost": {
+      "value": 10,
+      "verification": "Observed legacy gameplay convention; exact C2S2 asset tuning table not obtained."
+    },
+    "turboBuildRepeatSeconds": {
+      "value": 0.05,
+      "source": "https://www.fortnite.com/patch-notes/v7-40"
+    },
+    "support": "Terrain or already supported structures; decorative props do not support player builds. Source: https://www.fortnite.com/news/v3-0-0-patch-notes"
+  },
+  "match": {
+    "participants": 100,
+    "respawn": false,
+    "objective": "Last surviving player/team wins. Loot weapons/ammo/resources from floor and chests; avoid storm.",
+    "inventoryWeaponOrConsumableSlots": 5,
+    "ammoAndResourcesUseSlots": false,
+    "source": "https://www.fortnite.com/news/patch-v-1-6-fortnite-battle-royale?lang=en-US"
+  },
+  "safeZone": {
+    "verified": "Epic default Advanced Storm Controller has 10 phases; each custom phase controls wait, resize, radius, damage and movement. Exact 12.00 playlist timings not obtained.",
+    "source": "https://dev.epicgames.com/documentation/en-us/fortnite/using-advanced-storm-controller-devices-in-fortnite-creative",
+    "suggestedExperimentalScheduleIsNotNative": true,
+    "suggestedExperimentalPhases": [
+      {
+        "phase": 1,
+        "radiusMeters": 1100,
+        "waitSeconds": 80,
+        "shrinkSeconds": 100,
+        "damagePerSecond": 1
+      },
+      {
+        "phase": 2,
+        "radiusMeters": 720,
+        "waitSeconds": 55,
+        "shrinkSeconds": 80,
+        "damagePerSecond": 1
+      },
+      {
+        "phase": 3,
+        "radiusMeters": 460,
+        "waitSeconds": 45,
+        "shrinkSeconds": 65,
+        "damagePerSecond": 2
+      },
+      {
+        "phase": 4,
+        "radiusMeters": 280,
+        "waitSeconds": 35,
+        "shrinkSeconds": 55,
+        "damagePerSecond": 2
+      },
+      {
+        "phase": 5,
+        "radiusMeters": 160,
+        "waitSeconds": 30,
+        "shrinkSeconds": 45,
+        "damagePerSecond": 5
+      },
+      {
+        "phase": 6,
+        "radiusMeters": 85,
+        "waitSeconds": 25,
+        "shrinkSeconds": 40,
+        "damagePerSecond": 5
+      },
+      {
+        "phase": 7,
+        "radiusMeters": 40,
+        "waitSeconds": 20,
+        "shrinkSeconds": 35,
+        "damagePerSecond": 10
+      },
+      {
+        "phase": 8,
+        "radiusMeters": 18,
+        "waitSeconds": 15,
+        "shrinkSeconds": 30,
+        "damagePerSecond": 10
+      },
+      {
+        "phase": 9,
+        "radiusMeters": 5,
+        "waitSeconds": 10,
+        "shrinkSeconds": 25,
+        "damagePerSecond": 10
+      },
+      {
+        "phase": 10,
+        "radiusMeters": 0,
+        "waitSeconds": 0,
+        "shrinkSeconds": 20,
+        "damagePerSecond": 10
+      }
+    ]
+  },
+  "busAndDrop": {
+    "verified": "Players may jump while bus flies over island. Skydiving then glider, no normal glider redeploy after landing. No C2S2-native bus speed/drop terminal tuning tables obtained.",
+    "suggestedExperimental": {
+      "busHeightAboveSeaMeters": 300,
+      "busFlightSeconds": 45,
+      "busDoorsOpenSeconds": 4,
+      "skydivingSpeedMetersPerSecond": 55,
+      "forcedGliderHeightAboveGroundMeters": 35,
+      "gliderSinkMetersPerSecond": 7
+    },
+    "note": "Suggested implementation values must not be advertised as exact Fortnite physics. Original bus altitude/terminal speed needs native data or measured replay."
+  },
+  "ui": {
+    "hudReference": {
+      "local": "../hud-reference-2020-05.jpg",
+      "source": "https://www.gamereactor.fr/video/498233/Fortnite%2B-%2BDuo%2BMode%2BPS4%2BGameplay/",
+      "date": "2020-05-04",
+      "kind": "Firsthand PS4 gameplay recording screenshot, Chapter 2 Season 2",
+      "normalizedRegions": {
+        "compass": [
+          0.34,
+          0.02,
+          0.34,
+          0.065
+        ],
+        "squad": [
+          0.01,
+          0.035,
+          0.17,
+          0.12
+        ],
+        "minimap": [
+          0.835,
+          0.008,
+          0.16,
+          0.278
+        ],
+        "stormCounters": [
+          0.84,
+          0.29,
+          0.15,
+          0.035
+        ],
+        "stormAnnouncement": [
+          0.35,
+          0.19,
+          0.3,
+          0.085
+        ],
+        "killFeed": [
+          0.01,
+          0.69,
+          0.4,
+          0.04
+        ],
+        "shieldBar": [
+          0.05,
+          0.87,
+          0.21,
+          0.022
+        ],
+        "healthBar": [
+          0.05,
+          0.9,
+          0.21,
+          0.027
+        ],
+        "ammo": [
+          0.666,
+          0.86,
+          0.085,
+          0.045
+        ],
+        "quickbar": [
+          0.75,
+          0.85,
+          0.25,
+          0.095
+        ],
+        "resources": [
+          0.9,
+          0.66,
+          0.1,
+          0.085
+        ],
+        "buildPieces": [
+          0.84,
+          0.79,
+          0.16,
+          0.06
+        ],
+        "xpBar": [
+          0,
+          0.986,
+          1,
+          0.01
+        ]
+      },
+      "notes": [
+        "Shield is blue above green health; both numerical values at right.",
+        "Quickbar has separate pickaxe plus five item slots; rarity colors on square tiles.",
+        "Active ammo count uses current / reserve to left of quickbar.",
+        "Compass is top center; squads top left; square minimap top right; storm time/alive/eliminations below it.",
+        "Build icons sit above quickbar, resource counters above build icons.",
+        "Reference has controller prompts; implement adjustable PC bindings in those positions."
+      ]
+    },
+    "lobbyReference": {
+      "local": "../lobby-reference-2020.jpg",
+      "source": "https://x.com/FortniteBR/status/1230442035301224449",
+      "date": "2020-02-20",
+      "kind": "Firsthand screenshot of native launch lobby shared by Fortnite News; account is not Epic official.",
+      "notes": [
+        "Season 2 lobby uses grey metallic/concrete spy headquarters wall with central gold faction emblem.",
+        "Top tabs PLAY, BATTLE PASS, COMPETE, LOCKER, ITEM SHOP, CAREER, V-BUCKS.",
+        "Left blue translucent season/level/medal/mission panel; center player on lit blue circular platform.",
+        "Right mode panel with cyan CHANGE and bold yellow PLAY! button.",
+        "No unsupported store purchases or battle-pass progression should be suggested by decorative controls."
+      ]
+    },
+    "officialSeasonTrailer": "https://www.youtube.com/watch?v=LzYSH2TADh8"
+  }
+}

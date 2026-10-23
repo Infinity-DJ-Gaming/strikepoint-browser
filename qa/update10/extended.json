@@ -1,0 +1,11 @@
+{
+  "checks": [
+    "SG 553 uses its real native optic ring, green dot and native scoped FOV",
+    "Equipped native butterfly finish and hand-wrap gloves carry into BR",
+    "100 native character instances render with native movement poses and different held guns",
+    "Full 100-bot match finishes on actual island with scenery collisions",
+    "Eliminated player automatically spectates a survivor",
+    "Focus loss leaves the match running"
+  ],
+  "errors": []
+}

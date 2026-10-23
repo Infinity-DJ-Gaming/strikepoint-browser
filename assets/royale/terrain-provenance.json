@@ -1,0 +1,41 @@
+{
+  "heightmapArchive": "https://github.com/iamstillchris/Fortnite-Heightmaps/blob/main/HM%20Archive/CH2%20-%20HMS/Season%202/S12.00%20-%20HM.zip",
+  "heightmapRawDownload": "https://raw.githubusercontent.com/iamstillchris/Fortnite-Heightmaps/main/HM%20Archive/CH2%20-%20HMS/Season%202/S12.00%20-%20HM.zip",
+  "heightmapDescription": "Archive maintainer credits CharlesRBLX for heightmap additions, Minshu for extraction tool. Files are claimed extracted Epic game data, not independently verified by matching installed 12.00 assets.",
+  "minimapArchive": "https://github.com/yaelbrinkert/fortnite-archives/tree/main/chapter_2/season_2/12_00",
+  "minimapRawDownload": "https://raw.githubusercontent.com/yaelbrinkert/fortnite-archives/main/chapter_2/season_2/12_00/12_00.jpg",
+  "minimapDescription": "2048x2048 season-launch map. Archive readme says its map images were retrieved from Fortnite fandom wiki. Image depicts 12.00 season-launch Agency/Shark/Grotto/Rig/Yacht; contains coordinate grid.",
+  "originalContentOwner": "Epic Games; downloaded archive does not assert independent ownership or provide copyright permission.",
+  "sourceSettings": "https://github.com/SnakeyFlea/FortniteHeightmaps#settings-apollo_terrain-ch2",
+  "epicBuildingDimensions": "https://dev.epicgames.com/documentation/fortnite/architectural-modeling-guidelines-in-unreal-editor-for-fortnite",
+  "epicLandscapeEncoding": "https://dev.epicgames.com/documentation/en-us/unreal-engine/landscape-technical-guide-in-unreal-engine",
+  "epicMatchFlow": "https://www.fortnite.com/news/patch-v-1-6-fortnite-battle-royale?lang=en-US",
+  "epicTurboBuild": "https://www.fortnite.com/patch-notes/v7-40",
+  "epicStructuralSupport": "https://www.fortnite.com/news/v3-0-0-patch-notes",
+  "epicStormFormat": "https://dev.epicgames.com/documentation/en-us/fortnite/using-advanced-storm-controller-devices-in-fortnite-creative",
+  "officialSeasonTrailer": "https://www.youtube.com/watch?v=LzYSH2TADh8",
+  "officialSeasonBlog": "https://www.fortnite.com/news/lock-in-your-chapter-2-season-2-fortnite-agency-and-maya-choices%3Flang%3Den-US",
+  "retrievedDate": "2026-10-23",
+  "hashes": [
+    {
+      "file": "S12.00-HM.zip",
+      "bytes": 5914639,
+      "sha256": "9ae9cafd01178e472d3069596163a3976806c8902e1151b6bfc20886b6880d42"
+    },
+    {
+      "file": "map-12.00.jpg",
+      "bytes": 888039,
+      "sha256": "6c6e202da9d168e0fb17ea2107ed5880614d761a8061877380d1b38a859388e7"
+    },
+    {
+      "file": "lobby-reference-2020.jpg",
+      "bytes": 113552,
+      "sha256": "02b0070277fd4af38c5573fc16012d476d18b173d5247b06f10493a2858a6576"
+    },
+    {
+      "file": "hud-reference-2020-05.jpg",
+      "bytes": 159336,
+      "sha256": "94580a3b6029d58ef643984dd668077b745e8a33d7f07aba4af6bd8be5b71d2c"
+    }
+  ]
+}

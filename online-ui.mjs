@@ -1,6 +1,6 @@
 import {AVATARS,AVATARS_BY_ID} from './avatar-data.mjs?v=20261022-9';
 const avatarUrl=id=>AVATARS_BY_ID[id]?.file||'./assets/ui/'+(id==='t'?'t':'ct')+'_logo_1c.svg';
-import {OnlineService} from './online-service.mjs?v=20261022-9';
+import {OnlineService} from './online-service.mjs?v=20261023-10';
 import {OnlineTransport} from './online-transport.mjs?v=20261022-9';
 import {members,canStart,REGIONS} from './online-protocol.mjs?v=20261022-9';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

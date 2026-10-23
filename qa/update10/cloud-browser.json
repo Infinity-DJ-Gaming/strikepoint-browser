@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "Second independent device restores coins, item float/seed/StatTrak, equipment, cases, music, preferences",
+    "Concurrent device earnings merge without overwriting or duplicating",
+    "Offline outbox replays once and merges with progress from the other device",
+    "Signing out restores the guest save without leaking account inventory or replacing the account balance",
+    "Two tabs in the same browser retain independent writer sequences",
+    "An offline initial read automatically recovers on reconnect",
+    "Another account save is unreadable",
+    "BR matches, kills, wins, difficulty and remapped building controls sync between devices",
+    "A fresh third device restores the merged cloud balance"
+  ],
+  "errors": []
+}

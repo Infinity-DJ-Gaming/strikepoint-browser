@@ -1,0 +1,67 @@
+{
+  "owner": "Epic Games",
+  "assets": [
+    {
+      "name": "Classic Battle Bus",
+      "porter": "ArachnitCZ",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1490980970"
+    },
+    {
+      "name": "Build pieces wood/brick/metal",
+      "porter": "ArachnitCZ",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914"
+    },
+    {
+      "name": "Apollo Chapter2 trees",
+      "porter": "pivotman319 (Trans Rights FTW!)",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2324870291"
+    },
+    {
+      "name": "StarryFlight glider",
+      "porter": "MrShlapa / Cipher Nine",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1674069349"
+    },
+    {
+      "name": "Furnished brickhouse",
+      "porter": "Affurab",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3383128863"
+    },
+    {
+      "name": "Buriedtreasurechest",
+      "porter": "thistoy / Chase",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1679055121"
+    },
+    {
+      "name": "Building sounds",
+      "porter": "Update / Alien31[ITA]",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1433010063"
+    }
+  ],
+  "conversionTools": [
+    "REDxEYE/SourceIO",
+    "Blender4.4.3",
+    "glTF-Transform4.2.1",
+    "Meshoptimizer0.24",
+    "Sharp0.35.5"
+  ],
+  "transforms": [
+    "All geometry and texture artwork derives from credited original Fortnite assets, no generative models or artwork.",
+    "Source ports have author material edits; browser materials approximate native Unreal shading.",
+    "Textures delivered at max1024 pixels WebPquality90/92, geometry not simplified; Meshopt vertex quantization/compression.",
+    "Builds: wall thinX,widthZ,bottomY0. Floor/ramp/roof sourceX0to5.4,Zapproximately+-2.7; ramp rises+X. Use runtime normalization for grid5.12x3.84.",
+    "Bus and balloon combined in one static scene; nativebus referencepose.",
+    "StarryFlight was available beforeChapter2Season2; providedreferenceposeisfolded, originaldeployanimationunavailable.",
+    "Brickhouse source is a furnished typicalfirstchaptersFortnitebrickhouse, notverifiedspecificSeason12POIplacement.",
+    "Chest is originalburiedtreasurepiratechest, notstandardambientlootsmallchest.",
+    "OriginalfullSeason12buildingplacements/POIgeometrywasnotobtained; nativearchivedterrain/layershandledseparately."
+  ],
+  "downloadManifestFiles": [
+    "battle-bus.gma.source.json",
+    "brick-house.zip.source.json",
+    "building-structures.zip.source.json",
+    "building-tool.gma.source.json",
+    "chapter2-trees.zip.source.json",
+    "chest.zip.source.json",
+    "glider-starryflight.zip.source.json"
+  ]
+}

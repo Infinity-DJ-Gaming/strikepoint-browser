@@ -1,0 +1,822 @@
+{
+  "version": 1,
+  "models": {
+    "wood-wall": {
+      "id": "wood-wall",
+      "path": "wood-wall.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/wood/pbw_w1_solid.mdl",
+      "min": [
+        -0.24315695464611053,
+        -4.657325553125702e-05,
+        -2.7123305797576904
+      ],
+      "max": [
+        0.2629721164703369,
+        4.150821208953857,
+        2.715009927749634
+      ],
+      "size": [
+        0.5061290711164474,
+        4.150867782209389,
+        5.427340507507324
+      ],
+      "bytes": 485708,
+      "file": "wood-wall.glb",
+      "sha256": "34dee84536a1d120cd4f24dda9b845fce29292d00f100b5c24ca50f13f5e79c2",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "wood-floor": {
+      "id": "wood-floor",
+      "path": "wood-floor.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/wood/pbw_w1_floor.mdl",
+      "min": [
+        -0.07475967705249786,
+        -0.10981680452823639,
+        -2.7234697341918945
+      ],
+      "max": [
+        5.456452369689941,
+        0.18774820864200592,
+        2.7555625438690186
+      ],
+      "size": [
+        5.531212046742439,
+        0.2975650131702423,
+        5.479032278060913
+      ],
+      "bytes": 468832,
+      "file": "wood-floor.glb",
+      "sha256": "5c918e19897862a8ab7c5938707b752704e2fb2fdee4b87b676b10d94f8c0de8",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "wood-ramp": {
+      "id": "wood-ramp",
+      "path": "wood-ramp.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/wood/pbw_w1_stairw.mdl",
+      "min": [
+        -0.1483706831932068,
+        -0.12754549086093903,
+        -2.743541955947876
+      ],
+      "max": [
+        5.404938220977783,
+        4.140376091003418,
+        2.710590362548828
+      ],
+      "size": [
+        5.55330890417099,
+        4.267921581864357,
+        5.454132318496704
+      ],
+      "bytes": 470256,
+      "file": "wood-ramp.glb",
+      "sha256": "93287d3dc548705b9d52c829ed69e4385a395542b7cf2f0705dd3583e90b8d26",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "wood-roof": {
+      "id": "wood-roof",
+      "path": "wood-roof.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/wood/pbw_w1_roofc.mdl",
+      "min": [
+        -0.012087704613804817,
+        -0.10314638912677765,
+        -2.7643494606018066
+      ],
+      "max": [
+        5.435091018676758,
+        1.9011213779449463,
+        2.657613515853882
+      ],
+      "size": [
+        5.447178723290563,
+        2.004267767071724,
+        5.4219629764556885
+      ],
+      "bytes": 475712,
+      "file": "wood-roof.glb",
+      "sha256": "7f03665d6f196668345b0005d8cbe840ed58c233e0ebd1a6345882dd63ebd9fa",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "brick-wall": {
+      "id": "brick-wall",
+      "path": "brick-wall.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/brick/pbw_b1_solid.mdl",
+      "min": [
+        -0.25284481048583984,
+        -3.4697425377316904e-08,
+        -2.7186429500579834
+      ],
+      "max": [
+        0.28592127561569214,
+        4.067250728607178,
+        2.774975061416626
+      ],
+      "size": [
+        0.538766086101532,
+        4.067250763304603,
+        5.493618011474609
+      ],
+      "bytes": 353872,
+      "file": "brick-wall.glb",
+      "sha256": "49388806a2a1489ed45f75e390d5053669656718e732244281273cb302881cc9",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "brick-floor": {
+      "id": "brick-floor",
+      "path": "brick-floor.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/brick/pbw_b1_floor.mdl",
+      "min": [
+        -0.0049479445442557335,
+        -0.08834370225667953,
+        -2.708402633666992
+      ],
+      "max": [
+        5.4163947105407715,
+        0.19943493604660034,
+        2.7044990062713623
+      ],
+      "size": [
+        5.421342655085027,
+        0.2877786383032799,
+        5.4129016399383545
+      ],
+      "bytes": 190624,
+      "file": "brick-floor.glb",
+      "sha256": "9332b7516bdd20baf8cde2d6acae666e5e205919aa123bca382c31cf6fa0693f",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "brick-ramp": {
+      "id": "brick-ramp",
+      "path": "brick-ramp.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/brick/pbw_b1_stairw.mdl",
+      "min": [
+        -0.36924752593040466,
+        -0.08240217715501785,
+        -2.72183895111084
+      ],
+      "max": [
+        5.5089640617370605,
+        4.13286018371582,
+        2.704909086227417
+      ],
+      "size": [
+        5.878211587667465,
+        4.215262360870838,
+        5.426748037338257
+      ],
+      "bytes": 218568,
+      "file": "brick-ramp.glb",
+      "sha256": "019dbdcde5a89fdeb574e7ca98e79a77b3bb2df6be1f412964b7f5e6f52f2519",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "brick-roof": {
+      "id": "brick-roof",
+      "path": "brick-roof.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/brick/pbw_b1_roofc.mdl",
+      "min": [
+        -0.07302799075841904,
+        -0.10270499438047409,
+        -2.776470899581909
+      ],
+      "max": [
+        5.431245803833008,
+        2.0495498180389404,
+        2.8084142208099365
+      ],
+      "size": [
+        5.504273794591427,
+        2.1522548124194145,
+        5.584885120391846
+      ],
+      "bytes": 365652,
+      "file": "brick-roof.glb",
+      "sha256": "1f3d4ec4712fbe998babb2140193cb5c687d78596d9c9a862b8b5a745815e5e7",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "metal-wall": {
+      "id": "metal-wall",
+      "path": "metal-wall.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/metal/pbw_m1_solid.mdl",
+      "min": [
+        -0.19450831413269043,
+        -0.02686382830142975,
+        -2.847669839859009
+      ],
+      "max": [
+        0.2702598571777344,
+        4.118622303009033,
+        2.746743679046631
+      ],
+      "size": [
+        0.4647681713104248,
+        4.145486131310463,
+        5.59441351890564
+      ],
+      "bytes": 286788,
+      "file": "metal-wall.glb",
+      "sha256": "4f2a58fad5cf20c830c1c67fdd7cdce5328d8a2f177b169f2ba86a42cdb49f7a",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "metal-floor": {
+      "id": "metal-floor",
+      "path": "metal-floor.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/metal/pbw_m1_floor.mdl",
+      "min": [
+        -0.06972545385360718,
+        -0.07973966002464294,
+        -2.780233144760132
+      ],
+      "max": [
+        5.516544342041016,
+        0.23362986743450165,
+        2.774965524673462
+      ],
+      "size": [
+        5.586269795894623,
+        0.3133695274591446,
+        5.555198669433594
+      ],
+      "bytes": 270936,
+      "file": "metal-floor.glb",
+      "sha256": "fca28198a457bb73f245e0a5ef3e9c1e427afa9f986c870db6ac8a78fa02061e",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "metal-ramp": {
+      "id": "metal-ramp",
+      "path": "metal-ramp.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/metal/pbw_m1_stairw.mdl",
+      "min": [
+        -0.028720345348119736,
+        -0.15547749400138855,
+        -2.7148799896240234
+      ],
+      "max": [
+        5.503784656524658,
+        4.163647174835205,
+        2.7176923751831055
+      ],
+      "size": [
+        5.532505001872778,
+        4.319124668836594,
+        5.432572364807129
+      ],
+      "bytes": 300612,
+      "file": "metal-ramp.glb",
+      "sha256": "a991629f45339f0f7140d566982863cf99daec062d1e96fe00a5de97d54cfe27",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "metal-roof": {
+      "id": "metal-roof",
+      "path": "metal-roof.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/metal/pbw_m1_roofc.mdl",
+      "min": [
+        -0.20711380243301392,
+        -0.10904700309038162,
+        -2.8480215072631836
+      ],
+      "max": [
+        5.540065288543701,
+        2.260103702545166,
+        2.7854270935058594
+      ],
+      "size": [
+        5.747179090976715,
+        2.3691507056355476,
+        5.633448600769043
+      ],
+      "bytes": 300708,
+      "file": "metal-roof.glb",
+      "sha256": "70d206d8edd258f420f2be5044256d979b5289302b00b4c673cde24170a774fb",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "tree-birchtree_small": {
+      "id": "tree-birchtree_small",
+      "path": "tree-birchtree_small.glb",
+      "source": "chapter2-trees/models/props_fortnite/imported/apollo/environment/foliage/birchtrees/birchtree_small.mdl",
+      "min": [
+        -1.5700544118881226,
+        -0.2680038511753082,
+        -1.588830590248108
+      ],
+      "max": [
+        2.2727675437927246,
+        8.511985778808594,
+        2.246267795562744
+      ],
+      "size": [
+        3.842821955680847,
+        8.779989629983902,
+        3.835098385810852
+      ],
+      "bytes": 187532,
+      "file": "tree-birchtree_small.glb",
+      "sha256": "0f7cee80bd8175dbeae5c9a51e86d16331921eb3781caf7905d9abbe52679408",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2324870291",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "tree-medium_tree_2": {
+      "id": "tree-medium_tree_2",
+      "path": "tree-medium_tree_2.glb",
+      "source": "chapter2-trees/models/props_fortnite/imported/apollo/environment/foliage/medium_tree/medium_tree_2.mdl",
+      "min": [
+        -5.28211784362793,
+        -1.6976312398910522,
+        -5.208976745605469
+      ],
+      "max": [
+        6.25172233581543,
+        12.987224578857422,
+        5.425930500030518
+      ],
+      "size": [
+        11.53384017944336,
+        14.684855818748474,
+        10.634907245635986
+      ],
+      "bytes": 345960,
+      "file": "tree-medium_tree_2.glb",
+      "sha256": "75abdc6289b9e1f155c7d07b993d8ecf6263ffc036aa3b3dd0026af07f9fba9a",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2324870291",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "tree-mountain_pine_a": {
+      "id": "tree-mountain_pine_a",
+      "path": "tree-mountain_pine_a.glb",
+      "source": "chapter2-trees/models/props_fortnite/imported/apollo/environment/foliage/mountain_pines/mountain_pine_a.mdl",
+      "min": [
+        -5.365041255950928,
+        -0.8004553914070129,
+        -5.166060447692871
+      ],
+      "max": [
+        6.226508140563965,
+        20.61165428161621,
+        4.6800689697265625
+      ],
+      "size": [
+        11.591549396514893,
+        21.412109673023224,
+        9.846129417419434
+      ],
+      "bytes": 616592,
+      "file": "tree-mountain_pine_a.glb",
+      "sha256": "4e3e3ee89bddb0c5e667db7521eefe4e11a46a7adb58a7a1dc756d065f85891e",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2324870291",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "tree-sm_pinetree_small": {
+      "id": "tree-sm_pinetree_small",
+      "path": "tree-sm_pinetree_small.glb",
+      "source": "chapter2-trees/models/props_fortnite/imported/apollo/environment/foliage/pinetree/sm_pinetree_small.mdl",
+      "min": [
+        -1.7870668172836304,
+        -0.4348936676979065,
+        -1.7051966190338135
+      ],
+      "max": [
+        1.6425063610076904,
+        5.167357444763184,
+        1.9313560724258423
+      ],
+      "size": [
+        3.429573178291321,
+        5.60225111246109,
+        3.6365526914596558
+      ],
+      "bytes": 1119888,
+      "file": "tree-sm_pinetree_small.glb",
+      "sha256": "9d7ba24c4f82a5356fddd5719628f8402a8e27ee11f1ff5cb7a7fa6c417f988c",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2324870291",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "tree-redalder2": {
+      "id": "tree-redalder2",
+      "path": "tree-redalder2.glb",
+      "source": "chapter2-trees/models/props_fortnite/imported/apollo/environment/foliage/redalder/redalder2.mdl",
+      "min": [
+        -13.091007232666016,
+        -1.8437775373458862,
+        -12.23478889465332
+      ],
+      "max": [
+        14.787460327148438,
+        27.044845581054688,
+        14.452252388000488
+      ],
+      "size": [
+        27.878467559814453,
+        28.888623118400574,
+        26.68704128265381
+      ],
+      "bytes": 559864,
+      "file": "tree-redalder2.glb",
+      "sha256": "bc1be1b5f872ddc2a357625f5580c223047977ebc62923e3f265bc49a081ddbf",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2324870291",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "tree-swamp_tree_small": {
+      "id": "tree-swamp_tree_small",
+      "path": "tree-swamp_tree_small.glb",
+      "source": "chapter2-trees/models/props_fortnite/imported/apollo/environment/foliage/swamptree_small/swamp_tree_small.mdl",
+      "min": [
+        -6.0709357261657715,
+        -1.010378360748291,
+        -5.767752170562744
+      ],
+      "max": [
+        4.992687702178955,
+        13.498209953308105,
+        4.647078990936279
+      ],
+      "size": [
+        11.063623428344727,
+        14.508588314056396,
+        10.414831161499023
+      ],
+      "bytes": 478544,
+      "file": "tree-swamp_tree_small.glb",
+      "sha256": "425a3451e8e0ec42bd1cae6d6c70afa46c42ac87827cc2f4a45ea7569fedf277",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2324870291",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "tree-willow_tree": {
+      "id": "tree-willow_tree",
+      "path": "tree-willow_tree.glb",
+      "source": "chapter2-trees/models/props_fortnite/imported/apollo/environment/foliage/willow_tree/willow_tree.mdl",
+      "min": [
+        -7.951303005218506,
+        -1.2461992502212524,
+        -7.957606315612793
+      ],
+      "max": [
+        7.9002556800842285,
+        15.000775337219238,
+        7.3023247718811035
+      ],
+      "size": [
+        15.851558685302734,
+        16.24697458744049,
+        15.259931087493896
+      ],
+      "bytes": 570596,
+      "file": "tree-willow_tree.glb",
+      "sha256": "fd6fba527e4afdd3034429983913440e62804fcbdf0b9f469e14456fecd7eb35",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2324870291",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "glider-starryflight": {
+      "id": "glider-starryflight",
+      "path": "glider-starryflight.glb",
+      "source": "glider-starryflight/models/mrshlapa/fortnite/gliders/starry flight/starry flight.mdl",
+      "min": [
+        -1.2002618312835693,
+        -0.35051771998405457,
+        -0.7553838491439819
+      ],
+      "max": [
+        1.200449824333191,
+        0.09139390289783478,
+        0.8019571900367737
+      ],
+      "size": [
+        2.4007116556167603,
+        0.44191162288188934,
+        1.5573410391807556
+      ],
+      "bytes": 382376,
+      "file": "glider-starryflight.glb",
+      "sha256": "b8e32607707ae20a6a28db7e8a5c9d7cedf46e1b3dcc873456a910f853ffd335",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1674069349",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "battle-bus": {
+      "id": "battle-bus",
+      "path": "battle-bus.glb",
+      "source": "battle-bus/models/arachnit/fortnite/vehicles/battle_bus.mdl",
+      "min": [
+        -3.9934298992156982,
+        -1.7790241241455078,
+        -7.618939399719238
+      ],
+      "max": [
+        3.9934306144714355,
+        17.34722328186035,
+        7.75698709487915
+      ],
+      "size": [
+        7.986860513687134,
+        19.12624740600586,
+        15.375926494598389
+      ],
+      "bytes": 3496812,
+      "file": "battle-bus.glb",
+      "sha256": "679a5982a82398c6cb3754798b0630143ff698ee444e57f88280b48d19d30546",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1490980970",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "brick-house": {
+      "id": "brick-house",
+      "path": "brick-house.glb",
+      "source": "brick-house/models/affurab/fortnitehome/fortnite home brick 1.mdl",
+      "min": [
+        -25.051973342895508,
+        -0.47235041856765747,
+        -4.330320358276367
+      ],
+      "max": [
+        2.982088565826416,
+        15.115641593933105,
+        24.61731719970703
+      ],
+      "size": [
+        28.034061908721924,
+        15.587992012500763,
+        28.9476375579834
+      ],
+      "bytes": 8098288,
+      "file": "brick-house.glb",
+      "sha256": "5c18de8a2e0150e67d470e7174ef80aeb433040334d44b3b1e71b8c7039c25ad",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3383128863",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "chest": {
+      "id": "chest",
+      "path": "chest.glb",
+      "source": "chest/models/thistoy/chest/chest.mdl",
+      "min": [
+        -0.9943409562110901,
+        -0.012816484086215496,
+        -0.761660635471344
+      ],
+      "max": [
+        0.9943409562110901,
+        1.861794114112854,
+        0.8351881504058838
+      ],
+      "size": [
+        1.9886819124221802,
+        1.8746105981990695,
+        1.5968487858772278
+      ],
+      "bytes": 304044,
+      "file": "chest.glb",
+      "sha256": "d4efbdc26a560d108321777351488519ead35fdc043cffa8d5fc6d1634250ea0",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1679055121",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry"
+    },
+    "stone-wall": {
+      "id": "brick-wall",
+      "path": "brick-wall.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/brick/pbw_b1_solid.mdl",
+      "min": [
+        -0.25284481048583984,
+        -3.4697425377316904e-08,
+        -2.7186429500579834
+      ],
+      "max": [
+        0.28592127561569214,
+        4.067250728607178,
+        2.774975061416626
+      ],
+      "size": [
+        0.538766086101532,
+        4.067250763304603,
+        5.493618011474609
+      ],
+      "bytes": 353872,
+      "file": "brick-wall.glb",
+      "sha256": "49388806a2a1489ed45f75e390d5053669656718e732244281273cb302881cc9",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry",
+      "aliasOf": "brick-wall"
+    },
+    "stone-floor": {
+      "id": "brick-floor",
+      "path": "brick-floor.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/brick/pbw_b1_floor.mdl",
+      "min": [
+        -0.0049479445442557335,
+        -0.08834370225667953,
+        -2.708402633666992
+      ],
+      "max": [
+        5.4163947105407715,
+        0.19943493604660034,
+        2.7044990062713623
+      ],
+      "size": [
+        5.421342655085027,
+        0.2877786383032799,
+        5.4129016399383545
+      ],
+      "bytes": 190624,
+      "file": "brick-floor.glb",
+      "sha256": "9332b7516bdd20baf8cde2d6acae666e5e205919aa123bca382c31cf6fa0693f",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry",
+      "aliasOf": "brick-floor"
+    },
+    "stone-ramp": {
+      "id": "brick-ramp",
+      "path": "brick-ramp.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/brick/pbw_b1_stairw.mdl",
+      "min": [
+        -0.36924752593040466,
+        -0.08240217715501785,
+        -2.72183895111084
+      ],
+      "max": [
+        5.5089640617370605,
+        4.13286018371582,
+        2.704909086227417
+      ],
+      "size": [
+        5.878211587667465,
+        4.215262360870838,
+        5.426748037338257
+      ],
+      "bytes": 218568,
+      "file": "brick-ramp.glb",
+      "sha256": "019dbdcde5a89fdeb574e7ca98e79a77b3bb2df6be1f412964b7f5e6f52f2519",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry",
+      "aliasOf": "brick-ramp"
+    },
+    "stone-roof": {
+      "id": "brick-roof",
+      "path": "brick-roof.glb",
+      "source": "building-structures/models/arachnit/fortnite/building_structures/brick/pbw_b1_roofc.mdl",
+      "min": [
+        -0.07302799075841904,
+        -0.10270499438047409,
+        -2.776470899581909
+      ],
+      "max": [
+        5.431245803833008,
+        2.0495498180389404,
+        2.8084142208099365
+      ],
+      "size": [
+        5.504273794591427,
+        2.1522548124194145,
+        5.584885120391846
+      ],
+      "bytes": 365652,
+      "file": "brick-roof.glb",
+      "sha256": "1f3d4ec4712fbe998babb2140193cb5c687d78596d9c9a862b8b5a745815e5e7",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1590842914",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry",
+      "aliasOf": "brick-roof"
+    },
+    "glider": {
+      "id": "glider-starryflight",
+      "path": "glider-starryflight.glb",
+      "source": "glider-starryflight/models/mrshlapa/fortnite/gliders/starry flight/starry flight.mdl",
+      "min": [
+        -1.2002618312835693,
+        -0.35051771998405457,
+        -0.7553838491439819
+      ],
+      "max": [
+        1.200449824333191,
+        0.09139390289783478,
+        0.8019571900367737
+      ],
+      "size": [
+        2.4007116556167603,
+        0.44191162288188934,
+        1.5573410391807556
+      ],
+      "bytes": 382376,
+      "file": "glider-starryflight.glb",
+      "sha256": "b8e32607707ae20a6a28db7e8a5c9d7cedf46e1b3dcc873456a910f853ffd335",
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1674069349",
+      "native": true,
+      "axis": "Y-up (glTF)",
+      "rawScale": 0.0254,
+      "pose": "native reference pose baked to static geometry",
+      "aliasOf": "glider-starryflight"
+    }
+  },
+  "sounds": {
+    "wood": {
+      "file": "audio/build-wood.wav",
+      "original": true,
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1433010063"
+    },
+    "stone": {
+      "file": "audio/build-stone.wav",
+      "original": true,
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1433010063"
+    },
+    "metal": {
+      "file": "audio/build-metal.wav",
+      "original": true,
+      "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1433010063"
+    }
+  },
+  "notes": [
+    "All geometry and texture artwork derives from credited original Fortnite assets, no generative models or artwork.",
+    "Source ports have author material edits; browser materials approximate native Unreal shading.",
+    "Textures delivered at max1024 pixels WebPquality90/92, geometry not simplified; Meshopt vertex quantization/compression.",
+    "Builds: wall thinX,widthZ,bottomY0. Floor/ramp/roof sourceX0to5.4,Zapproximately+-2.7; ramp rises+X. Use runtime normalization for grid5.12x3.84.",
+    "Bus and balloon combined in one static scene; nativebus referencepose.",
+    "StarryFlight was available beforeChapter2Season2; providedreferenceposeisfolded, originaldeployanimationunavailable.",
+    "Brickhouse source is a furnished typicalfirstchaptersFortnitebrickhouse, notverifiedspecificSeason12POIplacement.",
+    "Chest is originalburiedtreasurepiratechest, notstandardambientlootsmallchest.",
+    "OriginalfullSeason12buildingplacements/POIgeometrywasnotobtained; nativearchivedterrain/layershandledseparately."
+  ]
+}
